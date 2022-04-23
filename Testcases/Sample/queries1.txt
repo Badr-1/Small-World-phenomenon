@@ -1,0 +1,12 @@
+A/B
+C/E
+F/G
+E/H
+E/K
+E/N
+C/F
+Z/B
+Z/D
+Z/G
+Z/J
+Z/L
