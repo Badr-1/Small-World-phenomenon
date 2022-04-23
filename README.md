@@ -1,4 +1,4 @@
-# Small_World_henomenon
+# Small_World_phenomenon
 
 ## Team members
 
