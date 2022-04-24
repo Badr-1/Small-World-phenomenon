@@ -1,16 +1,8 @@
-E:\6th semester\Analysis and Design of Algorithms\Labs\[StudentsVer] Lab7 - Project Release\[4] Small World Phenomenon\Small World Phenomenon\bin\Debug\Small World Phenomenon.exe.config
-E:\6th semester\Analysis and Design of Algorithms\Labs\[StudentsVer] Lab7 - Project Release\[4] Small World Phenomenon\Small World Phenomenon\bin\Debug\Small World Phenomenon.exe
-E:\6th semester\Analysis and Design of Algorithms\Labs\[StudentsVer] Lab7 - Project Release\[4] Small World Phenomenon\Small World Phenomenon\bin\Debug\Small World Phenomenon.pdb
-E:\6th semester\Analysis and Design of Algorithms\Labs\[StudentsVer] Lab7 - Project Release\[4] Small World Phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.csproj.AssemblyReference.cache
-E:\6th semester\Analysis and Design of Algorithms\Labs\[StudentsVer] Lab7 - Project Release\[4] Small World Phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.csproj.SuggestedBindingRedirects.cache
-E:\6th semester\Analysis and Design of Algorithms\Labs\[StudentsVer] Lab7 - Project Release\[4] Small World Phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.csproj.CoreCompileInputs.cache
-E:\6th semester\Analysis and Design of Algorithms\Labs\[StudentsVer] Lab7 - Project Release\[4] Small World Phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.exe
-E:\6th semester\Analysis and Design of Algorithms\Labs\[StudentsVer] Lab7 - Project Release\[4] Small World Phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.pdb
-E:\[4] Small World Phenomenon\Small World Phenomenon\bin\Debug\Small World Phenomenon.exe.config
-E:\[4] Small World Phenomenon\Small World Phenomenon\bin\Debug\Small World Phenomenon.exe
-E:\[4] Small World Phenomenon\Small World Phenomenon\bin\Debug\Small World Phenomenon.pdb
-E:\[4] Small World Phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.csproj.AssemblyReference.cache
-E:\[4] Small World Phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.csproj.SuggestedBindingRedirects.cache
-E:\[4] Small World Phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.csproj.CoreCompileInputs.cache
-E:\[4] Small World Phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.exe
-E:\[4] Small World Phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.pdb
+E:\Small-World-phenomenon\Small World Phenomenon\bin\Debug\Small World Phenomenon.exe.config
+E:\Small-World-phenomenon\Small World Phenomenon\bin\Debug\Small World Phenomenon.exe
+E:\Small-World-phenomenon\Small World Phenomenon\bin\Debug\Small World Phenomenon.pdb
+E:\Small-World-phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.csproj.AssemblyReference.cache
+E:\Small-World-phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.csproj.SuggestedBindingRedirects.cache
+E:\Small-World-phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.csproj.CoreCompileInputs.cache
+E:\Small-World-phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.exe
+E:\Small-World-phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.pdb
