@@ -1,0 +1,93 @@
+askedMovieList = 1,7,0,2
+askedActorsList = A,B,D,Z
+who = C
+answerlist = 
+
+
+C -> F
+1   7
+A   A
+B   B
+C   C
+    D
+search in 1,7 for F
+degree++
+from C in movie 1:
+    add to askedMovieList
+    add to answerlist
+    A -> F
+    0   1   2   7
+    skip what in askedMovieList
+    0   2
+    A   A
+    Z   B
+        E
+        D
+    add to askedActorsList
+    B -> F
+    1   2   7
+    skip what in askedMovieList
+    null
+    add to askedActorsList
+    C -> F don't because is who
+    didn't find answer? remove movie from answerlist
+
+from C in movie 7:
+    add to answerlist
+    add to askedMovieList
+    A -> F don't because is in askedActorsList
+    B -> F don't because is in askedActorsList
+    C -> F don't because is who
+    D -> F
+    2   7
+    skip what in askedMovieList
+    null
+    add to askedActorsList
+    didn't find answer? remove movie from answerlist
+degree++
+iterate over actors in askedActorsList
+A   B   D
+0
+1
+2
+7
+
+from A in movie 0:
+    add to answerlist
+    add to askedMovieList
+    actors: A,Z
+    skip actors in askedActorsList and who
+    actors: Z
+    Z -> F
+    movies: 0
+    skip movies in askedMovieList
+    movies:
+    add to askedActorsList
+    didn't find answer? remove movie from answerlist
+
+from A in movie 1:
+    add to answerlist
+    add to askedMovieList
+    actors:A,B,C
+    skip actors in askedActorsList and who
+    actors:
+    didn't find answer? remove movie from answerlist
+
+from A in movie 2:
+    add to answerlist
+    add to askedMovieList
+    actors: A,B,E,D
+    skip actors in askedActorsList and who
+    actors: E
+    E -> F
+    movies:2,3
+    skip movies in askedMovieList
+    movies:3
+    3
+    E
+    F
+    G
+
+    F is found  in movie 2 from A
+    A is found from movies: 1,7
+    didn't find answer? remove movie from answerlist
