@@ -7,9 +7,9 @@ namespace Small_World_Phenomenon
 {
     internal class Program
     {
-        static string moviesPath, queriesPath;
+        static string moviesPath, queriesPath, solutionPath;
         static List<KeyValuePair<string, string>> queries = new List<KeyValuePair<string, string>>();
-
+        static Queue<string> answers = new Queue<string>();
         // optimized
         static Dictionary<string, HashSet<string>> actorsInMovie = new Dictionary<string, HashSet<string>>();
         static Dictionary<string, HashSet<string>> moviesOfActor = new Dictionary<string, HashSet<string>>();
@@ -34,6 +34,7 @@ namespace Small_World_Phenomenon
                 //TODO: for bonus
                 //generateQueries();
                 parseQueries();
+                parseSolution();
                 Console.WriteLine("Parsing Is Done");
                 runTestCase();
 
@@ -56,6 +57,28 @@ namespace Small_World_Phenomenon
             }
         }
 
+        public static void parseSolution()
+        {
+            StreamReader reader = new StreamReader(solutionPath);
+            string answer = "";
+            while (true)
+            {
+                string line = reader.ReadLine();
+                if (line == null)
+                    break;
+                if (line == "")
+                {
+                    answers.Enqueue(answer);
+                    answer = "";
+                }
+                else
+                {
+                    answer += line + "\n";
+                }
+
+            }
+            Console.WriteLine("Solution Parsing Done, {0} answers", answers.Count());
+        }
         public static void generateQueries()
         {
             string from = actorsInMovie[moviesNames[0]].First();
@@ -191,11 +214,13 @@ namespace Small_World_Phenomenon
                     path += @"Complete\small\Case1\";
                     moviesPath = path + "Movies193.txt";
                     queriesPath = path + "queries110.txt";
+                    solutionPath = path + @"\Solution\queries110 - Solution.txt";
                     break;
                 case "2":
                     path += @"Complete\small\Case2\";
                     moviesPath = path + "Movies187.txt";
                     queriesPath = path + "queries50.txt";
+                    solutionPath = path + @"\Solution\queries50 - Solution.txt";
                     break;
                 case "3":
                     path += @"Complete\medium\Case1\";
@@ -248,29 +273,46 @@ namespace Small_World_Phenomenon
 
         }
 
+        public static bool isAnswerCorrect(string answer)
+        {
+            string actual = answers.Dequeue();
+            return answer == actual;
+        }
+
         public static void runTestCase()
         {
-
-
+            Queue<string> answers2 = new Queue<string>();
+            int current = 1;
+            bool passed = true;
             double newOne;
             long timeBefore = System.Environment.TickCount;
             foreach (KeyValuePair<string, string> kvp in queries)
             {
-                solve(kvp.Key, kvp.Value);
+                string actual = answers.Dequeue();
+                answers2.Enqueue(actual);
+                if (solve(kvp.Key, kvp.Value) != actual)
+                    passed = false;
+                current++;
             }
+            Console.WriteLine(passed ? "Passed!" : "Failed!");
             long timeAfter = System.Environment.TickCount;
             newOne = (timeAfter - timeBefore) * 0.001;
             Console.WriteLine("============================================================");
+            passed = true;
             timeBefore = System.Environment.TickCount;
             foreach (KeyValuePair<string, string> kvp in queries)
             {
-                oldSolve(kvp.Key, kvp.Value);
+                string actual = answers2.Dequeue();
+                if (oldSolve(kvp.Key, kvp.Value) != actual)
+                    passed = false;
+                current++;
             }
+            Console.WriteLine(passed ? "Passed!" : "Failed!");
             timeAfter = System.Environment.TickCount;
             Console.WriteLine("New Time taken: {0} seconds", (newOne));
             Console.WriteLine("Old Time taken: {0} seconds", (timeAfter - timeBefore) * 0.001);
 
-          
+
 
 
 
@@ -279,7 +321,7 @@ namespace Small_World_Phenomenon
 
 
         }
-        public static void solve(string who, string whom)
+        public static string solve(string who, string whom)
         {
 
             if (who == whom)
@@ -326,8 +368,10 @@ namespace Small_World_Phenomenon
                             {
                                 if (actorInMovie != actor.name)
                                 {
+                                    
                                     List<string> commonMovies = moviesOfActor[actorInMovie].Intersect(moviesOfActor[actor.name]).ToList();
                                     movieActor.commonMovies = commonMovies;
+                                    movieActor.setWeight();
                                 }
                                 dictActors[actorInMovie] = movieActor;
                             }
@@ -345,12 +389,12 @@ namespace Small_World_Phenomenon
                                     List<string> commonMovies = moviesOfActor[actorInMovie].Intersect(moviesOfActor[actor.name]).ToList();
 
                                     nextLvlActors.Add(actorInMovie);
-                                    int current = movieActor.parent.commonMovies.Count() + movieActor.commonMovies.Count();
-                                    int @new = actor.commonMovies.Count() + commonMovies.Count();
-                                    if (@new > current)
+                                    
+                                    if (actor.weight + commonMovies.Count() > movieActor.parent.weight + movieActor.commonMovies.Count())
                                     {
                                         movieActor.parent = actor;
                                         movieActor.commonMovies = commonMovies;
+                                        movieActor.setWeight();
                                     }
 
                                 }
@@ -429,17 +473,18 @@ namespace Small_World_Phenomenon
                 {
                     if (answer.relation == maxRelation)
                     {
-                        answer.print(who, whom);
-                        break;
+                        return answer.print(who, whom);
                     }
                 }
 
+
             }
+            return "";
         }
 
 
 
-        public static void oldSolve(string who, string whom)
+        public static string oldSolve(string who, string whom)
         {
             if (who == whom)
             {
@@ -527,6 +572,7 @@ namespace Small_World_Phenomenon
                                     {
                                         List<string> commonMovies = getCommonMovies(actorInMovie, actor.name);
                                         movieActor.commonMovies = commonMovies;
+                                        movieActor.setWeight();
                                     }
                                     actors.Add(movieActor);
                                 }
@@ -544,12 +590,11 @@ namespace Small_World_Phenomenon
                                             nextLvlActors.Add(actorInMovie);
 
                                         List<string> commonMovies = getCommonMovies(actorInMovie, actor.name);
-                                        int current = movieActor.parent.commonMovies.Count() + movieActor.commonMovies.Count();
-                                        int @new = actor.commonMovies.Count() + commonMovies.Count();
-                                        if (@new > current)
+                                        if (actor.weight + commonMovies.Count() > movieActor.parent.weight + movieActor.commonMovies.Count())
                                         {
                                             movieActor.parent = actor;
                                             movieActor.commonMovies = commonMovies;
+                                            movieActor.setWeight();
                                         }
                                     }
 
@@ -578,11 +623,11 @@ namespace Small_World_Phenomenon
                 {
                     if (answer.relation == maxRelation)
                     {
-                        answer.print(who, whom);
-                        break;
+                        return answer.print(who, whom);
                     }
                 }
             }
+            return "";
         }
 
 
@@ -614,6 +659,7 @@ namespace Small_World_Phenomenon
         }
         public class actor
         {
+            public int weight = 0;
             public string name;
             public actor parent;
             public bool asked = false;
@@ -624,6 +670,32 @@ namespace Small_World_Phenomenon
             {
                 this.name = name;
                 this.parent = parent;
+            }
+
+            public actor(int weight, string name, actor parent, bool asked, bool toSkip, List<string> commonMovies, Dictionary<string, bool> askedMovies)
+            {
+                this.weight = weight;
+                this.name = name;
+                this.parent = parent;
+                this.asked = asked;
+                this.toSkip = toSkip;
+                this.commonMovies = commonMovies;
+                this.askedMovies = askedMovies;
+            }
+
+            public actor copy()
+            {
+                return new actor(weight, name, parent, asked, toSkip, commonMovies, askedMovies);
+            }
+            public void setWeight()
+            {
+                actor dummy = copy();
+                weight = 0;
+                while (dummy != null)
+                {
+                    weight += dummy.commonMovies.Count();
+                    dummy = dummy.parent;
+                }
             }
 
         }
@@ -645,26 +717,40 @@ namespace Small_World_Phenomenon
             public Stack<string> moviesList = new Stack<string>();
             public Stack<string> actorList = new Stack<string>();
 
-            public void print(string who, string whom)
+            public string print(string who, string whom)
             {
-                Console.WriteLine();
-                Console.WriteLine("{0}/{1}", who, whom);
-                Console.WriteLine("DoS = {0}, RS = {1}", degree, relation);
-                Console.Write("CHAIN OF ACTORS: {0} -> ", who);
+                string answer = "";
+                //Console.WriteLine();
+                //Console.WriteLine("{0}/{1}", who, whom);
+                answer += String.Format("{0}/{1}\n", who, whom);
+                //Console.WriteLine("DoS = {0}, RS = {1}", degree, relation);
+                answer += String.Format("DoS = {0}, RS = {1}\n", degree, relation);
+                //Console.Write("CHAIN OF ACTORS: {0} -> ", who);
+                answer += String.Format("CHAIN OF ACTORS: {0} -> ", who);
                 while (actorList.Count() != 0)
                 {
-                    Console.Write(actorList.Pop());
+                    //Console.Write(actorList.Pop());
+                    answer += actorList.Pop();
                     if (actorList.Count() != 0)
-                        Console.Write(" -> ");
+                        //Console.Write(" -> ");
+                        answer += " -> ";
                 }
-                Console.WriteLine();
-                Console.Write("CHAIN OF MOVIES:  => ");
+                //Console.WriteLine();
+                answer += "\n";
+                //Console.Write("CHAIN OF MOVIES:  => ");
+                answer += "CHAIN OF MOVIES:  =>";
                 while (moviesList.Count() != 0)
                 {
-                    Console.Write(moviesList.Pop());
-                    Console.Write(" => ");
+                    //Console.Write(moviesList.Pop());
+                    answer += " " + moviesList.Pop();
+                    //Console.Write(" => ");
+                    answer += " =>";
+
                 }
-                Console.WriteLine();
+                //Console.WriteLine();
+                answer += "\n";
+
+                return answer;
             }
         }
     }
