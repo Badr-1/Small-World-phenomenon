@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Diagnostics;
-namespace Small_World_Phenomenon
+namespace WinForms
 {
-    internal class Program
+    public partial class Normal : Form
     {
         static string moviesPath, queriesPath, solutionPath;
         static List<KeyValuePair<string, string>> queries = new List<KeyValuePair<string, string>>();
@@ -23,41 +17,106 @@ namespace Small_World_Phenomenon
         // old
         static List<movie> movies = new List<movie>();
 
-        static void Main(string[] args)
+        public class actor
         {
-            while (true)
+            public int weight = 0;
+            public string name;
+            public actor parent;
+            public bool asked = false;
+            public bool toSkip = false;
+            public List<string> commonMovies = new List<string>();
+            public Dictionary<string, bool> askedMovies = new Dictionary<string, bool>();
+            public actor(string name, actor parent)
             {
+                this.name = name;
+                this.parent = parent;
+            }
 
+            public actor(int weight, string name, actor parent, bool asked, bool toSkip, List<string> commonMovies, Dictionary<string, bool> askedMovies)
+            {
+                this.weight = weight;
+                this.name = name;
+                this.parent = parent;
+                this.asked = asked;
+                this.toSkip = toSkip;
+                this.commonMovies = commonMovies;
+                this.askedMovies = askedMovies;
+            }
 
-                selectTestCase();
-                Console.WriteLine("Parsing Test Case ...");
-                parseMovies();
-                //TODO: for bonus
-                //generateQueries();
-                parseQueries();
-                parseSolution();
-                Console.WriteLine("Parsing Is Done");
-                runTestCase();
+            public actor copy()
+            {
+                return new actor(weight, name, parent, asked, toSkip, commonMovies, askedMovies);
+            }
+            public void setWeight()
+            {
+                actor dummy = copy();
+                weight = 0;
+                while (dummy != null)
+                {
+                    weight += dummy.commonMovies.Count();
+                    dummy = dummy.parent;
+                }
+            }
 
-                //bonus
-                //Console.WriteLine("Deg. of Separ.\tFrequency");
-                //foreach (var item in degressOfSaperation)
-                //{
-                //    Console.WriteLine("{0}\t\t{1}", item.Key, item.Value);
-                //}
-                //degressOfSaperation.Clear();
-
-                asked.Clear();
-                moviesNames.Clear();
-                actorsInMovie.Clear();
-                moviesOfActor.Clear();
-                queries.Clear();
-                movies.Clear();
-                answers.Clear();
-                Console.ReadLine();
-                Console.Clear();
+        }
+        public class movie
+        {
+            public string name;
+            public List<string> actors = new List<string>();
+            public movie(string name)
+            {
+                this.name = name;
             }
         }
+        public class answer
+        {
+            public int degree;
+            public int relation;
+            public Stack<string> moviesList = new Stack<string>();
+            public Stack<string> actorList = new Stack<string>();
+
+            public string print(string who, string whom)
+            {
+                string answer = "";
+                //Console.WriteLine();
+                //Console.WriteLine("{0}/{1}", who, whom);
+                answer += String.Format("{0}/{1}\n", who, whom);
+                //Console.WriteLine("DoS = {0}, RS = {1}", degree, relation);
+                answer += String.Format("DoS = {0}, RS = {1}\n", degree, relation);
+                //Console.Write("CHAIN OF ACTORS: {0} -> ", who);
+                answer += String.Format("CHAIN OF ACTORS: {0} -> ", who);
+                while (actorList.Count() != 0)
+                {
+                    //Console.Write(actorList.Pop());
+                    answer += actorList.Pop();
+                    if (actorList.Count() != 0)
+                        //Console.Write(" -> ");
+                        answer += " -> ";
+                }
+                //Console.WriteLine();
+                answer += "\n";
+                //Console.Write("CHAIN OF MOVIES:  => ");
+                answer += "CHAIN OF MOVIES:  =>";
+                while (moviesList.Count() != 0)
+                {
+                    //Console.Write(moviesList.Pop());
+                    answer += " " + moviesList.Pop();
+                    //Console.Write(" => ");
+                    answer += " =>";
+
+                }
+                //Console.WriteLine();
+                answer += "\n";
+
+                return answer;
+            }
+        }
+        public Normal()
+        {
+            InitializeComponent();
+        }
+
+
 
         public static void parseSolution()
         {
@@ -142,69 +201,9 @@ namespace Small_World_Phenomenon
             }
         }
 
-        public static void selectTestCase()
+        public static void selectTestCase(string choice)
         {
-            string path = @"..\..\..\Testcases\";
-            string choice;
-
-            do
-            {
-                Console.Clear();
-                Console.WriteLine("0.Sample");
-
-                Console.WriteLine("-Complete");
-
-                Console.WriteLine(" -small");
-                Console.WriteLine("\t1-Case1");
-                Console.WriteLine("\t2-Case2");
-
-                Console.WriteLine(" -medium");
-                Console.WriteLine("  -Case1");
-                Console.WriteLine("\t3.queries85");
-                Console.WriteLine("\t4.queries4000");
-
-                Console.WriteLine("  -Case2");
-                Console.WriteLine("\t5.queries110");
-                Console.WriteLine("\t6.queries2000");
-
-                Console.WriteLine(" -large");
-                Console.WriteLine("\t7.queries26");
-                Console.WriteLine("\t8.queries600");
-
-
-                Console.WriteLine(" -extreme");
-                Console.WriteLine("\t9.queries22");
-                Console.WriteLine("\t10.queries200");
-
-                Console.Write("Select Test Case: ");
-                choice = Console.ReadLine();
-            }
-            while
-            (!
-                (
-                    choice == "0"
-                    ||
-                    choice == "1"
-                    ||
-                    choice == "2"
-                    ||
-                    choice == "3"
-                    ||
-                    choice == "4"
-                    ||
-                    choice == "5"
-                    ||
-                    choice == "6"
-                    ||
-                    choice == "7"
-                    ||
-                    choice == "8"
-                    ||
-                    choice == "9"
-                    ||
-                    choice == "10"
-                )
-            );
+            string path = @"..\..\..\..\Testcases\";  
             switch (choice)
             {
                 case "0":
@@ -293,35 +292,38 @@ namespace Small_World_Phenomenon
             return answer == actual;
         }
 
-        public static void runTestCase()
+        public  void runTestCase()
         {
-           
-            double newOne;
+            run.Enabled = false;
+            do_parse();
+            long timeBefore = System.Environment.TickCount;
+            double @new;
             int current = 1;
             bool passed = true;
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
             foreach (KeyValuePair<string, string> kvp in queries)
             {
                 string actual = answers.Dequeue();
                 string answer = solve(kvp.Key, kvp.Value);
                 if (answer != actual)
                 {
-                    Console.WriteLine("+=======================+");
-                    Console.WriteLine("Query {0} failed: {1}/{2}", current, kvp.Key, kvp.Value);
-                    Console.WriteLine("Expected: {0}", actual);
-                    Console.WriteLine("Actual: {0}", answer);
                     passed = false;
                 }
-                else
-                    Console.WriteLine("Passed Test {0}", current);
+                //else
+                //    Console.WriteLine(answer);
                 current++;
             }
-            stopwatch.Stop();
-            Console.WriteLine("New Time taken: {0} seconds", (stopwatch.ElapsedMilliseconds / 1000.0));
-            Console.WriteLine(passed ? "Passed!" : "Failed!");
+            long timeAfter = System.Environment.TickCount;
+            @new = (timeAfter - timeBefore) * 0.001;
+            int mins = (int)@new / 60;
+            @new %= 60;
+            ltime.Text = String.Format("Time: {0} min(s) and {1} sec(s)", mins, @new);
+            lstatus.Text = String.Format("Status: {0}",passed ? "Passed!" : "Failed!");
+            if (passed)
+                lstatus.ForeColor = Color.Green;
+            else
+                lstatus.ForeColor = Color.Red;
 
-
+            run.Enabled = true;
 
 
 
@@ -662,102 +664,38 @@ namespace Small_World_Phenomenon
             return commonMovies;
 
         }
-        public class actor
+
+        private void do_parse()
         {
-            public int weight = 0;
-            public string name;
-            public actor parent;
-            public bool asked = false;
-            public bool toSkip = false;
-            public List<string> commonMovies = new List<string>();
-            public Dictionary<string, bool> askedMovies = new Dictionary<string, bool>();
-            public actor(string name, actor parent)
-            {
-                this.name = name;
-                this.parent = parent;
-            }
-
-            public actor(int weight, string name, actor parent, bool asked, bool toSkip, List<string> commonMovies, Dictionary<string, bool> askedMovies)
-            {
-                this.weight = weight;
-                this.name = name;
-                this.parent = parent;
-                this.asked = asked;
-                this.toSkip = toSkip;
-                this.commonMovies = commonMovies;
-                this.askedMovies = askedMovies;
-            }
-
-            public actor copy()
-            {
-                return new actor(weight, name, parent, asked, toSkip, commonMovies, askedMovies);
-            }
-            public void setWeight()
-            {
-                actor dummy = copy();
-                weight = 0;
-                while (dummy != null)
-                {
-                    weight += dummy.commonMovies.Count();
-                    dummy = dummy.parent;
-                }
-            }
-
+            asked.Clear();
+            moviesNames.Clear();
+            actorsInMovie.Clear();
+            moviesOfActor.Clear();
+            queries.Clear();
+            movies.Clear();
+            answers.Clear();
+            parseMovies();
+            parseQueries();
+            parseSolution();
+            lsummary.Text = String.Format("Summary:\n\t{0} Movies {1} Actors {2} Queries {3} Solutions", actorsInMovie.Count(), moviesOfActor.Count(), queries.Count(), answers.Count());
+            run.Enabled = true;
         }
 
-        public class movie
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            public string name;
-            public List<string> actors = new List<string>();
-            public movie(string name)
-            {
-                this.name = name;
-            }
+            ltime.Text = "Time:";
+            lstatus.Text = "Status:";
+            lsummary.Text = "Summary:";
+            lstatus.ForeColor = Color.Black;
+            selectTestCase(testCasesCombo.SelectedItem.ToString());
+            run.Enabled = true;
         }
+     
 
-        public class answer
+        private void run_Click(object sender, EventArgs e)
         {
-            public int degree;
-            public int relation;
-            public Stack<string> moviesList = new Stack<string>();
-            public Stack<string> actorList = new Stack<string>();
-
-            public string print(string who, string whom)
-            {
-                string answer = "";
-                //Console.WriteLine();
-                //Console.WriteLine("{0}/{1}", who, whom);
-                answer += String.Format("{0}/{1}\n", who, whom);
-                //Console.WriteLine("DoS = {0}, RS = {1}", degree, relation);
-                answer += String.Format("DoS = {0}, RS = {1}\n", degree, relation);
-                //Console.Write("CHAIN OF ACTORS: {0} -> ", who);
-                answer += String.Format("CHAIN OF ACTORS: {0} -> ", who);
-                while (actorList.Count() != 0)
-                {
-                    //Console.Write(actorList.Pop());
-                    answer += actorList.Pop();
-                    if (actorList.Count() != 0)
-                        //Console.Write(" -> ");
-                        answer += " -> ";
-                }
-                //Console.WriteLine();
-                answer += "\n";
-                //Console.Write("CHAIN OF MOVIES:  => ");
-                answer += "CHAIN OF MOVIES:  =>";
-                while (moviesList.Count() != 0)
-                {
-                    //Console.Write(moviesList.Pop());
-                    answer += " " + moviesList.Pop();
-                    //Console.Write(" => ");
-                    answer += " =>";
-
-                }
-                //Console.WriteLine();
-                answer += "\n";
-
-                return answer;
-            }
-        }
+            var thread = new System.Threading.Thread(runTestCase);
+            thread.Start();
+        }        
     }
-
 }

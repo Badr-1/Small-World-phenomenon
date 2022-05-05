@@ -1,0 +1,17 @@
+E:\Small-World-phenomenon\WinForms\bin\Debug\net6.0-windows\WinForms.exe
+E:\Small-World-phenomenon\WinForms\bin\Debug\net6.0-windows\WinForms.deps.json
+E:\Small-World-phenomenon\WinForms\bin\Debug\net6.0-windows\WinForms.runtimeconfig.json
+E:\Small-World-phenomenon\WinForms\bin\Debug\net6.0-windows\WinForms.dll
+E:\Small-World-phenomenon\WinForms\bin\Debug\net6.0-windows\WinForms.pdb
+E:\Small-World-phenomenon\WinForms\obj\Debug\net6.0-windows\WinForms.csproj.AssemblyReference.cache
+E:\Small-World-phenomenon\WinForms\obj\Debug\net6.0-windows\WinForms.csproj.GenerateResource.cache
+E:\Small-World-phenomenon\WinForms\obj\Debug\net6.0-windows\WinForms.GeneratedMSBuildEditorConfig.editorconfig
+E:\Small-World-phenomenon\WinForms\obj\Debug\net6.0-windows\WinForms.AssemblyInfoInputs.cache
+E:\Small-World-phenomenon\WinForms\obj\Debug\net6.0-windows\WinForms.AssemblyInfo.cs
+E:\Small-World-phenomenon\WinForms\obj\Debug\net6.0-windows\WinForms.csproj.CoreCompileInputs.cache
+E:\Small-World-phenomenon\WinForms\obj\Debug\net6.0-windows\WinForms.dll
+E:\Small-World-phenomenon\WinForms\obj\Debug\net6.0-windows\refint\WinForms.dll
+E:\Small-World-phenomenon\WinForms\obj\Debug\net6.0-windows\WinForms.pdb
+E:\Small-World-phenomenon\WinForms\obj\Debug\net6.0-windows\WinForms.genruntimeconfig.cache
+E:\Small-World-phenomenon\WinForms\obj\Debug\net6.0-windows\ref\WinForms.dll
+E:\Small-World-phenomenon\WinForms\obj\Debug\net6.0-windows\WinForms.Normal.resources
