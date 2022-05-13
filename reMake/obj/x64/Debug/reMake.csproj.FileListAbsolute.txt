@@ -1,0 +1,8 @@
+E:\reMake\bin\x64\Debug\reMake.exe.config
+E:\reMake\bin\x64\Debug\reMake.exe
+E:\reMake\bin\x64\Debug\reMake.pdb
+E:\reMake\obj\x64\Debug\reMake.csproj.AssemblyReference.cache
+E:\reMake\obj\x64\Debug\reMake.csproj.SuggestedBindingRedirects.cache
+E:\reMake\obj\x64\Debug\reMake.csproj.CoreCompileInputs.cache
+E:\reMake\obj\x64\Debug\reMake.exe
+E:\reMake\obj\x64\Debug\reMake.pdb
