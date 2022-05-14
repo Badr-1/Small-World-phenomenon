@@ -58,7 +58,7 @@ namespace redone
 
         public static int selectTestCase()
         {
-            string path = @"Testcases\";
+            string path = @"..\..\..\Testcases\";
             string choice;
 
             do
@@ -355,8 +355,8 @@ namespace redone
 
             int iFirst = index[src];
             int iSecond = index[dest];
-            Dictionary<int, int> parent = new Dictionary<int, int>();
-            Dictionary<int, int> weight = new Dictionary<int, int>();
+            int[] parent = new int[index.Count()];
+            int[] weight = new int[index.Count()];
             bool[] visited = new bool[index.Count()];
             findShortestPath(parent, weight, visited, index.Count(), iFirst, iSecond);
 
@@ -425,7 +425,7 @@ namespace redone
         /// <param name="dest">dest actor</param>
         /// <returns></returns>
 
-        static void findShortestPath(Dictionary<int, int> parent, Dictionary<int, int> wieght, bool[] visited, int n, int start, int end)
+        static void findShortestPath(int[] parent, int[] wieght, bool[] visited, int n, int start, int end)
         {
             bool foundShorter = false;
             int maxDist = int.MaxValue;
@@ -487,7 +487,7 @@ namespace redone
 
 
 
-        public static bool checkForShorterPath(int u, int v, int end, Dictionary<int, int> parent)
+        public static bool checkForShorterPath(int u, int v, int end, int[] parent)
         {
             if (prevAnswers.ContainsKey(actorsName[u] + "/" + actorsName[end]))
             {
