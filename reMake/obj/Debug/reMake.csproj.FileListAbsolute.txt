@@ -6,11 +6,3 @@ E:\reMake\obj\Debug\reMake.csproj.SuggestedBindingRedirects.cache
 E:\reMake\obj\Debug\reMake.csproj.CoreCompileInputs.cache
 E:\reMake\obj\Debug\reMake.exe
 E:\reMake\obj\Debug\reMake.pdb
-C:\Users\ayman\Desktop\Pdf\6th semester\ALGORITHM\Small-World-phenomenon\reMake\bin\Debug\reMake.exe.config
-C:\Users\ayman\Desktop\Pdf\6th semester\ALGORITHM\Small-World-phenomenon\reMake\bin\Debug\reMake.exe
-C:\Users\ayman\Desktop\Pdf\6th semester\ALGORITHM\Small-World-phenomenon\reMake\bin\Debug\reMake.pdb
-C:\Users\ayman\Desktop\Pdf\6th semester\ALGORITHM\Small-World-phenomenon\reMake\obj\Debug\reMake.csproj.AssemblyReference.cache
-C:\Users\ayman\Desktop\Pdf\6th semester\ALGORITHM\Small-World-phenomenon\reMake\obj\Debug\reMake.csproj.SuggestedBindingRedirects.cache
-C:\Users\ayman\Desktop\Pdf\6th semester\ALGORITHM\Small-World-phenomenon\reMake\obj\Debug\reMake.csproj.CoreCompileInputs.cache
-C:\Users\ayman\Desktop\Pdf\6th semester\ALGORITHM\Small-World-phenomenon\reMake\obj\Debug\reMake.exe
-C:\Users\ayman\Desktop\Pdf\6th semester\ALGORITHM\Small-World-phenomenon\reMake\obj\Debug\reMake.pdb
