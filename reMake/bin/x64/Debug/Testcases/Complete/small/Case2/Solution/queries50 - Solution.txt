@@ -1,0 +1,250 @@
+McClure, Marc/Bacon, Kevin
+DoS = 1, RS = 1
+CHAIN OF ACTORS: McClure, Marc -> Bacon, Kevin
+CHAIN OF MOVIES:  => Apollo 13 (1995) =>
+
+Vienne, Denise/Arcoraci, Vene L.
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Vienne, Denise -> Arcoraci, Vene L.
+CHAIN OF MOVIES:  => Dumb & Dumber (1994) =>
+
+Venegas, Arturo/Baldwin, Alec
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Venegas, Arturo -> Baldwin, Alec
+CHAIN OF MOVIES:  => Notting Hill (1999) =>
+
+Bybee, Klair/Boss, Mike
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Bybee, Klair -> Boss, Mike
+CHAIN OF MOVIES:  => Jerry Maguire (1996) =>
+
+Pandher, Arjun/Aykroyd, Dan
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Pandher, Arjun -> Aykroyd, Dan
+CHAIN OF MOVIES:  => Indiana Jones and the Temple of Doom (1984) =>
+
+Driver, F./Elliott, Robert
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Driver, F. -> Elliott, Robert
+CHAIN OF MOVIES:  => Gone with the Wind (1939) =>
+
+Ingham, Jill/Bailey, Bill
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Ingham, Jill -> Bailey, Bill
+CHAIN OF MOVIES:  => Superman (1978) =>
+
+Edmiston, Walker/Bates, Kathy
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Edmiston, Walker -> Bates, Kathy
+CHAIN OF MOVIES:  => Dick Tracy (1990) =>
+
+Turney, Michael/Feldman, Corey
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Turney, Michael -> Feldman, Corey
+CHAIN OF MOVIES:  => Teenage Mutant Ninja Turtles (1990) =>
+
+Beddington, Carol/Aykroyd, Dan
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Beddington, Carol -> Aykroyd, Dan
+CHAIN OF MOVIES:  => Indiana Jones and the Temple of Doom (1984) =>
+
+Koenig, Walter/Bates, Kathy
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Koenig, Walter -> Schuck, John -> Bates, Kathy
+CHAIN OF MOVIES:  => Star Trek IV: The Voyage Home (1986) => Dick Tracy (1990) =>
+
+Polcyn, Beverly/Carroll, Larry
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Polcyn, Beverly -> Burton, Tony -> Carroll, Larry
+CHAIN OF MOVIES:  => Hook (1991) => Rocky (1976) =>
+
+Lowden, Kenneth E./Proctor, Philip
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Lowden, Kenneth E. -> Applegate, Royce D. -> Proctor, Philip
+CHAIN OF MOVIES:  => Rain Man (1988) => Doctor Dolittle (1998) =>
+
+Aaltonen, Minna/Driver, Minnie
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Aaltonen, Minna -> Baker, Joe Don -> Driver, Minnie
+CHAIN OF MOVIES:  => Tomorrow Never Dies (1997) => GoldenEye (1995) =>
+
+Allen, Tim/Applegate, Royce D.
+DoS = 2, RS = 3
+CHAIN OF ACTORS: Allen, Tim -> Proctor, Philip -> Applegate, Royce D.
+CHAIN OF MOVIES:  => Toy Story (1995) => Doctor Dolittle (1998) =>
+
+Mele, Joshua/Affleck, Ben
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Mele, Joshua -> Affleck, Casey -> Affleck, Ben
+CHAIN OF MOVIES:  => American Pie (1999) => Good Will Hunting (1997) =>
+
+Prima, Louis/Darlington, Marion
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Prima, Louis -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Jungle Book, The (1967) => Bambi (1942) =>
+
+Chinn, Jeanne/Chinlund, Nick
+DoS = 2, RS = 3
+CHAIN OF ACTORS: Chinn, Jeanne -> Wynands, Danny -> Chinlund, Nick
+CHAIN OF MOVIES:  => Lethal Weapon 4 (1998) => Eraser (1996) =>
+
+Mattos, Tony A./Albertini Dow, Ellen
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Mattos, Tony A. -> Cotton, James Anthony -> Albertini Dow, Ellen
+CHAIN OF MOVIES:  => Phenomenon (1996) => Patch Adams (1998) =>
+
+Brewton, Maia/Albertini Dow, Ellen
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Brewton, Maia -> Alden, Norman -> Albertini Dow, Ellen
+CHAIN OF MOVIES:  => Back to the Future (1985) => Patch Adams (1998) =>
+
+Darga, Christopher/Williams, Robin
+DoS = 3, RS = 4
+CHAIN OF ACTORS: Darga, Christopher -> Walsh, Wendy L. -> Welker, Frank -> Williams, Robin
+CHAIN OF MOVIES:  => Mask, The (1994) => Independence Day (1996) => Aladdin (1992) =>
+
+Sorbello, Joe/Attenborough, Richard
+DoS = 3, RS = 3
+CHAIN OF ACTORS: Sorbello, Joe -> Baldwin Sr., Bill -> Brown, Jophery C. -> Attenborough, Richard
+CHAIN OF MOVIES:  => Rocky (1976) => Rocky III (1982) => Jurassic Park (1993) =>
+
+Fein, Caitlin/Roberts, Julia
+DoS = 3, RS = 4
+CHAIN OF ACTORS: Fein, Caitlin -> Leoni, T�a -> Marshall, Garry -> Roberts, Julia
+CHAIN OF MOVIES:  => Deep Impact (1998) => League of Their Own, A (1992) => Pretty Woman (1990) =>
+
+Charrois, Michael/Blum, Richard
+DoS = 3, RS = 4
+CHAIN OF ACTORS: Charrois, Michael -> Hackman, Gene -> Kidder, Margot -> Blum, Richard
+CHAIN OF MOVIES:  => Unforgiven (1992) => Superman (1978) => Maverick (1994) =>
+
+Qian, Zu-Wu/Finnegan, Tom
+DoS = 3, RS = 4
+CHAIN OF ACTORS: Qian, Zu-Wu -> Pesci, Joe -> O'Hara, Catherine -> Finnegan, Tom
+CHAIN OF MOVIES:  => Lethal Weapon 4 (1998) => Home Alone (1990) => Dick Tracy (1990) =>
+
+Fagerbakke, Bill/Schiff, Richard
+DoS = 3, RS = 5
+CHAIN OF ACTORS: Fagerbakke, Bill -> Pinney, Patrick -> Proctor, Philip -> Schiff, Richard
+CHAIN OF MOVIES:  => Hunchback of Notre Dame, The (1996) => Aladdin (1992) => Doctor Dolittle (1998) =>
+
+Raven, Elsa/Jones, Tommy Lee
+DoS = 3, RS = 4
+CHAIN OF ACTORS: Raven, Elsa -> Platt, Oliver -> Hodges, David U. -> Jones, Tommy Lee
+CHAIN OF MOVIES:  => Indecent Proposal (1993) => Time to Kill, A (1996) => Batman Forever (1995) =>
+
+Imperio, Liz/Guinness, Alec
+DoS = 3, RS = 5
+CHAIN OF ACTORS: Imperio, Liz -> Camp, Hamilton -> Hamill, Mark -> Guinness, Alec
+CHAIN OF MOVIES:  => Dick Tracy (1990) => Little Mermaid, The (1989) => Star Wars (1977) =>
+
+Aufdenberg, Jeane/Ford, Harrison
+DoS = 3, RS = 6
+CHAIN OF ACTORS: Aufdenberg, Jeane -> Smith, Clint -> Jones, James Earl -> Ford, Harrison
+CHAIN OF MOVIES:  => Firm, The (1993) => Coming to America (1988) => Clear and Present Danger (1994) =>
+
+Keith, Kate/Edwards, Paddi
+DoS = 3, RS = 4
+CHAIN OF ACTORS: Keith, Kate -> Williams, Robin -> Welker, Frank -> Edwards, Paddi
+CHAIN OF MOVIES:  => Patch Adams (1998) => Aladdin (1992) => Little Mermaid, The (1989) =>
+
+Hill, William/Elliott, Robert
+DoS = 4, RS = 5
+CHAIN OF ACTORS: Hill, William -> Barringer, Daniel W. -> Berkeley, Xander -> Bacon, Kevin -> Elliott, Robert
+CHAIN OF MOVIES:  => Analyze This (1999) => Air Force One (1997) => Apollo 13 (1995) => Animal House (1978) =>
+
+Giorgio, Tony/Bell, Michael
+DoS = 4, RS = 5
+CHAIN OF ACTORS: Giorgio, Tony -> Brando, Marlon -> Ratzenberger, John -> Proctor, Philip -> Bell, Michael
+CHAIN OF MOVIES:  => Godfather, The (1972) => Superman (1978) => Toy Story (1995) => Rugrats Movie, The (1998) =>
+
+Jackson, Micha/Darlington, Marion
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Jackson, Micha -> Welker, Frank -> Wright, Ben -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Santa Clause, The (1994) => Little Mermaid, The (1989) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Fletcher, Andrea/Darlington, Marion
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Fletcher, Andrea -> Auberjonois, Rene -> Wright, Ben -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Batman Forever (1995) => Little Mermaid, The (1989) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Arcoraci, Vene L./Darlington, Marion
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Arcoraci, Vene L. -> Matthews, Hillary -> Howard, Clint -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Dumb & Dumber (1994) => Parenthood (1989) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Doughan, Jim)/Holloway, Sterling
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Doughan, Jim) -> Bays, Joe -> Harrelson, Woody -> Howard, Clint -> Holloway, Sterling
+CHAIN OF MOVIES:  => Stuart Little (1999) => Indecent Proposal (1993) => Austin Powers: The Spy Who Shagged Me (1999) => Jungle Book, The (1967) =>
+
+Blakeslee, Douglas/Darlington, Marion
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Blakeslee, Douglas -> Hanks, Tom -> Howard, Clint -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => League of Their Own, A (1992) => Apollo 13 (1995) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Lo, Chi Moui/Darlington, Marion
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Lo, Chi Moui -> Harrelson, Woody -> Howard, Clint -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Indecent Proposal (1993) => Austin Powers: The Spy Who Shagged Me (1999) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Aimer, Travis Cody/Elliott, Robert
+DoS = 4, RS = 5
+CHAIN OF ACTORS: Aimer, Travis Cody -> Kusatsu, Clyde -> Senzy, Arthur -> Bacon, Kevin -> Elliott, Robert
+CHAIN OF MOVIES:  => American Pie (1999) => In the Line of Fire (1993) => Apollo 13 (1995) => Animal House (1978) =>
+
+Baker, Eileen/Darlington, Marion
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Baker, Eileen -> Hamill, Mark -> Wright, Ben -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Star Wars: Episode VI - Return of the Jedi (1983) => Little Mermaid, The (1989) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Schreffler, Marilyn/Darlington, Marion
+DoS = 5, RS = 7
+CHAIN OF ACTORS: Schreffler, Marilyn -> Rabson, Jan -> Angel, Jack -> Wright, Ben -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Fatal Attraction (1987) => Prince of Egypt, The (1998) => Little Mermaid, The (1989) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Subert, Gaston/Darlington, Marion
+DoS = 5, RS = 6
+CHAIN OF ACTORS: Subert, Gaston -> Friend, Bob -> Howard, Rance -> Howard, Clint -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Mission: Impossible (1996) => Independence Day (1996) => Apollo 13 (1995) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Dapkunaite, Ingeborga/Darlington, Marion
+DoS = 5, RS = 6
+CHAIN OF ACTORS: Dapkunaite, Ingeborga -> Friend, Bob -> Howard, Rance -> Howard, Clint -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Mission: Impossible (1996) => Independence Day (1996) => Apollo 13 (1995) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Leschin, Luisa/Darlington, Marion
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Leschin, Luisa -> Applegate, Royce D. -> Camp, Hamilton -> Wright, Ben -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Rain Man (1988) => Doctor Dolittle (1998) => Little Mermaid, The (1989) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Eisner, David/Darlington, Marion
+DoS = 5, RS = 6
+CHAIN OF ACTORS: Eisner, David -> Williams, Robin -> Welker, Frank -> Wright, Ben -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Good Will Hunting (1997) => Aladdin (1992) => Little Mermaid, The (1989) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Hansen, Janis/Darlington, Marion
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Hansen, Janis -> Bell, Michael -> Adler, Charles -> Wright, Ben -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Airport (1970) => Rugrats Movie, The (1998) => Little Mermaid, The (1989) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Silveira, Ruth/Darlington, Marion
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Silveira, Ruth -> Applegate, Royce D. -> Camp, Hamilton -> Wright, Ben -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Rain Man (1988) => Doctor Dolittle (1998) => Little Mermaid, The (1989) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Winslow, Dick/Darlington, Marion
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Winslow, Dick -> Bell, Michael -> Adler, Charles -> Wright, Ben -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Airport (1970) => Rugrats Movie, The (1998) => Little Mermaid, The (1989) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Pennello, Anthony T./Darlington, Marion
+DoS = 5, RS = 6
+CHAIN OF ACTORS: Pennello, Anthony T. -> Gibson, Mel -> Hallowell, Todd -> Howard, Clint -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Lethal Weapon 3 (1992) => Ransom (1996) => Apollo 13 (1995) => Jungle Book, The (1967) => Bambi (1942) =>
+
+Barracks, Ron/Darlington, Marion
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Barracks, Ron -> Dafoe, Willem -> Cooney, Kevin -> Howard, Clint -> Holloway, Sterling -> Darlington, Marion
+CHAIN OF MOVIES:  => Platoon (1986) => Clear and Present Danger (1994) => Austin Powers: The Spy Who Shagged Me (1999) => Jungle Book, The (1967) => Bambi (1942) =>
+

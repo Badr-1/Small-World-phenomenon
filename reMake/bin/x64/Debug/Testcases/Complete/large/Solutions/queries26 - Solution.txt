@@ -1,0 +1,130 @@
+Billings, Joe/Barry, Ivor
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Billings, Joe -> Barry, Ivor
+CHAIN OF MOVIES:  => Andromeda Strain, The (1971) =>
+
+LaFortune, Roc/Perron, Michel
+DoS = 1, RS = 4
+CHAIN OF ACTORS: LaFortune, Roc -> Perron, Michel
+CHAIN OF MOVIES:  => Coyote Run (1996) =>
+
+Loud, Lance/Antin, Robin
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Loud, Lance -> Antin, Robin
+CHAIN OF MOVIES:  => Inside Monkey Zetterland (1992) =>
+
+Freeman, Don/Bercovici, Luca
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Freeman, Don -> Bercovici, Luca
+CHAIN OF MOVIES:  => Granny, The (1995) =>
+
+MacDonald, Jessica Wight/Carlin, Amanda
+DoS = 1, RS = 1
+CHAIN OF ACTORS: MacDonald, Jessica Wight -> Carlin, Amanda
+CHAIN OF MOVIES:  => Lianna (1983) =>
+
+Wollter, Sven/Abrahams, Doug
+DoS = 2, RS = 3
+CHAIN OF ACTORS: Wollter, Sven -> Acheson, Mark -> Abrahams, Doug
+CHAIN OF MOVIES:  => 13th Warrior, The (1999) => 3000 Miles to Graceland (2001) =>
+
+Gray, Margery/Moffat, Donald
+DoS = 2, RS = 4
+CHAIN OF ACTORS: Gray, Margery -> Dooley, Paul -> Moffat, Donald
+CHAIN OF MOVIES:  => Raggedy Ann and Andy (1977) => H.E.A.L.T.H. (1979) =>
+
+Varela, Elizabeth/D'Alessandro, Richard
+DoS = 2, RS = 3
+CHAIN OF ACTORS: Varela, Elizabeth -> Divoff, Andrew -> D'Alessandro, Richard
+CHAIN OF MOVIES:  => Blast (1996) => Dangerous Touch (1994) =>
+
+Bohay, Heidi/Beck, Vincent
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Bohay, Heidi -> Baldwin Sr., Bill -> Beck, Vincent
+CHAIN OF MOVIES:  => Voices (1979) => Bamboo Saucer, The (1968) =>
+
+Shaw, Polly/Carpenter, Willie C.
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Shaw, Polly -> Dillon, Matt -> Carpenter, Willie C.
+CHAIN OF MOVIES:  => Over the Edge (1979) => Albino Alligator (1996) =>
+
+Clark, James/Foray, June
+DoS = 3, RS = 7
+CHAIN OF ACTORS: Clark, James -> Collins, Greg -> Welker, Frank -> Foray, June
+CHAIN OF MOVIES:  => Under Siege 2: Dark Territory (1995) => Godzilla (1998) => DuckTales: The Movie - Treasure of the Lost Lamp (1990) =>
+
+Sanders, Brian/Ciarfalio, Carl
+DoS = 3, RS = 6
+CHAIN OF ACTORS: Sanders, Brian -> Dunard, David -> Richmond, Branscombe -> Ciarfalio, Carl
+CHAIN OF MOVIES:  => Return to Two Moon Junction (1994) => El Diablo (1990) => Cage (1989,I) =>
+
+Cross, Roger R./Cotterill, Ralph
+DoS = 3, RS = 6
+CHAIN OF ACTORS: Cross, Roger R. -> McBeath, Tom -> Anderson, Peter -> Cotterill, Ralph
+CHAIN OF MOVIES:  => Double Jeopardy (1999) => Certain Fury (1985) => Halifax f.p: Sweet Dreams (1996) =>
+
+Griesemer, Ida/Garcin, Henri
+DoS = 3, RS = 6
+CHAIN OF ACTORS: Griesemer, Ida -> Sartain, Gailard -> Carradine, Keith -> Garcin, Henri
+CHAIN OF MOVIES:  => Spitfire Grill, The (1996) => Choose Me (1984) => Almost Perfect Affair, An (1979) =>
+
+Vinovich, Steve/Brooks, Iris
+DoS = 3, RS = 8
+CHAIN OF ACTORS: Vinovich, Steve -> De Niro, Robert -> Winkler, Margo -> Brooks, Iris
+CHAIN OF MOVIES:  => Awakenings (1990) => Goodfellas (1990) => Up the Sandbox (1972) =>
+
+McKinley, Narcissa/Morikawa, Toshiyuki
+DoS = 4, RS = 8
+CHAIN OF ACTORS: McKinley, Narcissa -> Allen, Woody -> Kavner, Julie -> Stone, Doug -> Morikawa, Toshiyuki
+CHAIN OF MOVIES:  => Love and Death (1975) => Deconstructing Harry (1997) => Doctor Dolittle (1998) => Moldiver (1993) =>
+
+Proctor, William/Busquets, Narciso
+DoS = 4, RS = 9
+CHAIN OF ACTORS: Proctor, William -> Caan, James -> Duvall, Robert -> Jenson, Roy -> Busquets, Narciso
+CHAIN OF MOVIES:  => Bulletproof (1996) => Godfather Trilogy: 1901-1980, The (1992) => Breakout (1975) => Demonoid, Messenger of Death (1981) =>
+
+Rauch, Sibylle/Stacy, John
+DoS = 4, RS = 6
+CHAIN OF ACTORS: Rauch, Sibylle -> Gahr, Michael -> Pleasence, Donald -> Vaughn, Robert -> Stacy, John
+CHAIN OF MOVIES:  => Ahava Tzeira (1987) => Great Escape II: The Untold Story, The (1988) => Buried Alive (1990,I) => Statue, The (1971) =>
+
+Stevens, Leon B./Han, Suk-kyu
+DoS = 4, RS = 6
+CHAIN OF ACTORS: Stevens, Leon B. -> Spader, James -> Welker, Frank -> Kim, Derek -> Han, Suk-kyu
+CHAIN OF MOVIES:  => Endless Love (1981) => Stargate (1994) => Dunston Checks In (1996) => Swiri (1999) =>
+
+Collins, Rob Evan/Sundquist, Bj�rn
+DoS = 4, RS = 8
+CHAIN OF ACTORS: Collins, Rob Evan -> De Niro, Robert -> Keitel, Harvey -> Byrne, Gabriel -> Sundquist, Bj�rn
+CHAIN OF MOVIES:  => Raging Bull (1980) => Cop Land (1997) => Point of No Return (1993) => H�kon H�konsen (1990) =>
+
+de Oliviera, Isaura/Miller, Rand
+DoS = 5, RS = 7
+CHAIN OF ACTORS: de Oliviera, Isaura -> Lee, Christopher -> Capodice, John -> Lauria, Dan -> Goold, Sheila -> Miller, Rand
+CHAIN OF MOVIES:  => Blood of Fu Manchu, The (1968) => Gremlins 2: The New Batch (1990) => Independence Day (1996) => Ricochet River (1998) => Riven: The Sequel to Myst (1997) =>
+
+Komorowska, Maja/�tsuka, Akio
+DoS = 5, RS = 8
+CHAIN OF ACTORS: Komorowska, Maja -> Wilson, Scott -> Steiger, Rod -> Dobson, Michael -> Miki, Shinichir� -> �tsuka, Akio
+CHAIN OF MOVIES:  => Rok spokojnego slonca (1984) => In the Heat of the Night (1967) => Carpool (1996) => Escaflowne (2000,II) => S�sei kishi Gaiarth (1992) =>
+
+Smith, Earl W./Miller, Rand
+DoS = 5, RS = 8
+CHAIN OF ACTORS: Smith, Earl W. -> Herrmann, Edward -> Smitrovich, Bill -> Lauria, Dan -> Goold, Sheila -> Miller, Rand
+CHAIN OF MOVIES:  => Death Valley (1982) => Little Sex, A (1982) => Independence Day (1996) => Ricochet River (1998) => Riven: The Sequel to Myst (1997) =>
+
+Carliez, Michel/Miller, Rand
+DoS = 5, RS = 6
+CHAIN OF ACTORS: Carliez, Michel -> Depardieu, G�rard -> Spall, Timothy -> Glave, Matthew -> Goold, Sheila -> Miller, Rand
+CHAIN OF MOVIES:  => Hussard sur le toit, Le (1995) => Hamlet (1996) => Rock Star (2001) => Ricochet River (1998) => Riven: The Sequel to Myst (1997) =>
+
+Damian, Christopher/Parker, Cecilia
+DoS = 5, RS = 9
+CHAIN OF ACTORS: Damian, Christopher -> Johnson, Ed -> Napier, Charles -> Walter, Tracey -> Burns, Bob -> Parker, Cecilia
+CHAIN OF MOVIES:  => Dungeon of Desire (1999) => Ripper Man (1996) => Beloved (1998) => Drive (1996,I) => Tombstone Canyon (1932) =>
+
+Ahn, Phillip/Taguchi, Tomoro
+DoS = 6, RS = 13
+CHAIN OF ACTORS: Ahn, Phillip -> Pak, Ho Sung -> Chan, Jackie -> Piven, Jeremy -> Cusack, John -> Mitsuishi, Ken -> Taguchi, Tomoro
+CHAIN OF MOVIES:  => Mortal Kombat II (1993) => Jui kuen II (1994) => Rush Hour 2 (2001) => Bob Roberts (1992) => Thin Red Line, The (1998) => Love Letter (1995) =>
+

@@ -1,0 +1,550 @@
+Murcell, George/Jordan, Patrick
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Murcell, George -> Jordan, Patrick
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) =>
+
+Hoey, John/Kennedy, Arthur
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Hoey, John -> Kennedy, Arthur
+CHAIN OF MOVIES:  => Home Is the Hero (1959) =>
+
+Gomez, David/Michael, Christopher
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Gomez, David -> Michael, Christopher
+CHAIN OF MOVIES:  => South Bronx Heroes (1985) =>
+
+Puhy, Tiffany/Belushi, James
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Puhy, Tiffany -> Belushi, James
+CHAIN OF MOVIES:  => Last Action Hero (1993) =>
+
+Reed, George/Barthelmess, Richard
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Reed, George -> Barthelmess, Richard
+CHAIN OF MOVIES:  => Modern Hero, A (1934) =>
+
+Neville, Marjean/Hoyt, Arthur
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Neville, Marjean -> Hoyt, Arthur
+CHAIN OF MOVIES:  => Hail the Conquering Hero (1944) =>
+
+Aguilar, George/Clemenson, Christian
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Aguilar, George -> Clemenson, Christian
+CHAIN OF MOVIES:  => Almost Heroes (1998) =>
+
+Doonan, Patric/Herbert, Percy
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Doonan, Patric -> Herbert, Percy
+CHAIN OF MOVIES:  => Cockleshell Heroes, The (1955) =>
+
+Rambeau, Marjorie/Barthelmess, Richard
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Rambeau, Marjorie -> Barthelmess, Richard
+CHAIN OF MOVIES:  => Modern Hero, A (1934) =>
+
+McMurry, Murray/Pickett, Cindy
+DoS = 1, RS = 1
+CHAIN OF ACTORS: McMurry, Murray -> Pickett, Cindy
+CHAIN OF MOVIES:  => Cherokee Trail, The (1981) =>
+
+Frakes, Jonathan/Arnold, Tom
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Frakes, Jonathan -> David, Keith -> Arnold, Tom
+CHAIN OF MOVIES:  => Gargoyles: The Heroes Awaken (1994) => Arnold Schwarzenegger: Hollywood Hero (1999) =>
+
+Hall, Douglas Kent/Baldwin, Daniel
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Hall, Douglas Kent -> Arnold, Tom -> Baldwin, Daniel
+CHAIN OF MOVIES:  => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) =>
+
+Salinas, Ricardo/Coburn, James
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Salinas, Ricardo -> Arnold, Tom -> Coburn, James
+CHAIN OF MOVIES:  => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) =>
+
+Elliott, Lillian/Lease, Rex
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Elliott, Lillian -> Homans, Robert -> Lease, Rex
+CHAIN OF MOVIES:  => Heroes in Blue (1939) => Heroes of the Night (1927) =>
+
+Davis, Don S./Coburn, James
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Davis, Don S. -> Arnold, Tom -> Coburn, James
+CHAIN OF MOVIES:  => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) =>
+
+Tenbrook, Harry/Barcroft, Roy
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Tenbrook, Harry -> Cobb, Edmund -> Barcroft, Roy
+CHAIN OF MOVIES:  => Heroes of the West (1932) => Cherokee Flash, The (1945) =>
+
+Toussaint, Lorraine/Arnold, Tom
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Toussaint, Lorraine -> Coburn, James -> Arnold, Tom
+CHAIN OF MOVIES:  => Cherokee Kid, The (1996) => Arnold Schwarzenegger: Hollywood Hero (1999) =>
+
+Stamper, Sumer/Arnold, Tom
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Stamper, Sumer -> Chaykin, Maury -> Arnold, Tom
+CHAIN OF MOVIES:  => Unstrung Heroes (1995) => Hero (1992) =>
+
+Valanios, Lee/Taylor, Dub
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Valanios, Lee -> Buster, Budd -> Taylor, Dub
+CHAIN OF MOVIES:  => Heroes of the Alamo (1937) => Sagebrush Heroes (1944) =>
+
+Le Gon, Jeni/Barcroft, Roy
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Le Gon, Jeni -> Collier, Lois -> Barcroft, Roy
+CHAIN OF MOVIES:  => My Son, the Hero (1943) => Outlaws of Cherokee Trail (1941) =>
+
+Schienle, Martin/Guardino, Harry
+DoS = 3, RS = 3
+CHAIN OF ACTORS: Schienle, Martin -> Arnold, Tom -> Coburn, James -> Guardino, Harry
+CHAIN OF MOVIES:  => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) =>
+
+Kelly, Paul/Corbett, Ben
+DoS = 3, RS = 3
+CHAIN OF ACTORS: Kelly, Paul -> Elliott, Dick -> Kibbee, Milton -> Corbett, Ben
+CHAIN OF MOVIES:  => Public Hero #1 (1935) => High School Hero (1946) => Cherokee Strip, The (1937) =>
+
+Farese, Jude/DeVito, Danny
+DoS = 3, RS = 3
+CHAIN OF ACTORS: Farese, Jude -> Cole, Olivia -> Field, Sally -> DeVito, Danny
+CHAIN OF MOVIES:  => Some Kind of Hero (1981) => Heroes (1977) => America: A Tribute to Heroes (2001) =>
+
+Grey, Martin/Baldwin, Daniel
+DoS = 3, RS = 3
+CHAIN OF ACTORS: Grey, Martin -> Coburn, James -> Arnold, Tom -> Baldwin, Daniel
+CHAIN OF MOVIES:  => Cherokee Kid, The (1996) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) =>
+
+Kain, Khalil/Coburn, James
+DoS = 3, RS = 3
+CHAIN OF ACTORS: Kain, Khalil -> Pugsley, Don -> Arnold, Tom -> Coburn, James
+CHAIN OF MOVIES:  => Ali: An American Hero (2000) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) =>
+
+Pawn, Doris/Barcroft, Roy
+DoS = 3, RS = 3
+CHAIN OF ACTORS: Pawn, Doris -> Mattox, Martha -> Cobb, Edmund -> Barcroft, Roy
+CHAIN OF MOVIES:  => Hero, The (1923) => Heroes of the West (1932) => Cherokee Flash, The (1945) =>
+
+Coleman, Irene/London, Tom
+DoS = 3, RS = 4
+CHAIN OF ACTORS: Coleman, Irene -> Bupp, Tommy -> Osborne, Bud -> London, Tom
+CHAIN OF MOVIES:  => Hero for a Day (1939) => Cherokee Strip, The (1937) => Cherokee Flash, The (1945) =>
+
+Williams, Brook/Guardino, Harry
+DoS = 3, RS = 3
+CHAIN OF ACTORS: Williams, Brook -> Jordan, Patrick -> Knight, Don -> Guardino, Harry
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) => Too Late the Hero (1970) => Hell with Heroes, The (1968) =>
+
+Kaitlyn, Peter/Coburn, James
+DoS = 3, RS = 3
+CHAIN OF ACTORS: Kaitlyn, Peter -> Chaykin, Maury -> Arnold, Tom -> Coburn, James
+CHAIN OF MOVIES:  => Unstrung Heroes (1995) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) =>
+
+Van Peebles, Melvin/Guardino, Harry
+DoS = 3, RS = 3
+CHAIN OF ACTORS: Van Peebles, Melvin -> Belushi, James -> Coburn, James -> Guardino, Harry
+CHAIN OF MOVIES:  => Last Action Hero (1993) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) =>
+
+Jones, Barry/Coburn, James
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Jones, Barry -> Jordan, Patrick -> Knight, Don -> Guardino, Harry -> Coburn, James
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) =>
+
+Williams, Lottie/Ford, Harrison
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Williams, Lottie -> Cobb, Edmund -> Taylor, Dub -> Capshaw, Kate -> Ford, Harrison
+CHAIN OF MOVIES:  => Cherokee Strip, The (1937) => Sagebrush Heroes (1944) => My Heroes Have Always Been Cowboys (1991) => George Lucas: Heroes, Myths and Magic (1993) =>
+
+Boyd, Joshua/Guardino, Harry
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Boyd, Joshua -> Chaykin, Maury -> Arnold, Tom -> Coburn, James -> Guardino, Harry
+CHAIN OF MOVIES:  => Unstrung Heroes (1995) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) =>
+
+McGuire, Tom/Hearn, Edward
+DoS = 4, RS = 4
+CHAIN OF ACTORS: McGuire, Tom -> McCullough, Philo -> Cobb, Edmund -> Chesebro, George -> Hearn, Edward
+CHAIN OF MOVIES:  => Hail the Conquering Hero (1944) => Heroes of the West (1932) => Cherokee Flash, The (1945) => Fighting Hero (1934) =>
+
+Hammer, M.C./Knight, Don
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Hammer, M.C. -> Belushi, James -> Coburn, James -> Guardino, Harry -> Knight, Don
+CHAIN OF MOVIES:  => Last Action Hero (1993) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) =>
+
+Kelly, Patsy/Busey, Gary
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Kelly, Patsy -> Collier, Lois -> Friedkin, Joel -> Taylor, Dub -> Busey, Gary
+CHAIN OF MOVIES:  => My Son, the Hero (1943) => Outlaws of Cherokee Trail (1941) => Sagebrush Heroes (1944) => My Heroes Have Always Been Cowboys (1991) =>
+
+DeKay, Tim/Guardino, Harry
+DoS = 4, RS = 4
+CHAIN OF ACTORS: DeKay, Tim -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry
+CHAIN OF MOVIES:  => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) =>
+
+Steele, Tom/Clemenson, Christian
+DoS = 4, RS = 5
+CHAIN OF ACTORS: Steele, Tom -> Barcroft, Roy -> Osborne, Bud -> Hart, Gordon -> Clemenson, Christian
+CHAIN OF MOVIES:  => Ranger of Cherokee Strip (1949) => Cherokee Flash, The (1945) => Cherokee Strip, The (1937) => Almost Heroes (1998) =>
+
+Harris, Richard/Coburn, James
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Harris, Richard -> Jordan, Patrick -> Knight, Don -> Guardino, Harry -> Coburn, James
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) =>
+
+Big Tree, Chief John/Clemenson, Christian
+DoS = 4, RS = 4
+CHAIN OF ACTORS: Big Tree, Chief John -> Coats, Tommy -> Cobb, Edmund -> Hart, Gordon -> Clemenson, Christian
+CHAIN OF MOVIES:  => Heroes of the Saddle (1940) => Cherokee Flash, The (1945) => Cherokee Strip, The (1937) => Almost Heroes (1998) =>
+
+Ryan, Roz/Bupp, Tommy
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Ryan, Roz -> David, Keith -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Bupp, Tommy
+CHAIN OF MOVIES:  => Hercules: Zero to Hero (1999) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) =>
+
+Oddo, Lynn/Herbert, Percy
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Oddo, Lynn -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+Hatton, Raymond/Arnold, Tom
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Hatton, Raymond -> Coats, Tommy -> Cobb, Edmund -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom
+CHAIN OF MOVIES:  => Heroes of the Saddle (1940) => Cherokee Flash, The (1945) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) =>
+
+Carothers, AJ/Baldwin, Daniel
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Carothers, AJ -> McCarthy, Kevin -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Baldwin, Daniel
+CHAIN OF MOVIES:  => Hero at Large (1980) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) =>
+
+Strange, Glenn/Cole, Olivia
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Strange, Glenn -> Cobb, Edmund -> Taylor, Dub -> Capshaw, Kate -> Ford, Harrison -> Cole, Olivia
+CHAIN OF MOVIES:  => Cherokee Strip, The (1937) => Sagebrush Heroes (1944) => My Heroes Have Always Been Cowboys (1991) => George Lucas: Heroes, Myths and Magic (1993) => Heroes (1977) =>
+
+James, Gladden/Arnold, Tom
+DoS = 5, RS = 5
+CHAIN OF ACTORS: James, Gladden -> Elliott, Dick -> Kibbee, Milton -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom
+CHAIN OF MOVIES:  => Public Hero #1 (1935) => High School Hero (1946) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) =>
+
+Beatty, Ned/DeVito, Danny
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Beatty, Ned -> Busey, Gary -> Capshaw, Kate -> Ford, Harrison -> Field, Sally -> DeVito, Danny
+CHAIN OF MOVIES:  => Last American Hero, The (1973) => My Heroes Have Always Been Cowboys (1991) => George Lucas: Heroes, Myths and Magic (1993) => Heroes (1977) => America: A Tribute to Heroes (2001) =>
+
+Phillips, Betty/Knight, Don
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Phillips, Betty -> Davis, Don S. -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don
+CHAIN OF MOVIES:  => Hero in the Family (1986) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) =>
+
+Pennell, R.O./Busey, Gary
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Pennell, R.O. -> Paddock, Charles -> Lease, Rex -> Buster, Budd -> Taylor, Dub -> Busey, Gary
+CHAIN OF MOVIES:  => Olympic Hero, The (1928) => College Hero, The (1927) => Heroes of the Alamo (1937) => Sagebrush Heroes (1944) => My Heroes Have Always Been Cowboys (1991) =>
+
+Webb, Frank/Baldwin, Daniel
+DoS = 5, RS = 5
+CHAIN OF ACTORS: Webb, Frank -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Baldwin, Daniel
+CHAIN OF MOVIES:  => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) =>
+
+Smith, Jack C./Guardino, Harry
+DoS = 6, RS = 6
+CHAIN OF ACTORS: Smith, Jack C. -> Corbett, Ben -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry
+CHAIN OF MOVIES:  => Heroes of the Alamo (1937) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) =>
+
+Walburn, Raymond/Coburn, James
+DoS = 6, RS = 6
+CHAIN OF ACTORS: Walburn, Raymond -> McCullough, Philo -> Cobb, Edmund -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James
+CHAIN OF MOVIES:  => Hail the Conquering Hero (1944) => Heroes of the West (1932) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) =>
+
+Gethers, Amani/Herbert, Percy
+DoS = 6, RS = 6
+CHAIN OF ACTORS: Gethers, Amani -> Pugsley, Don -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => Ali: An American Hero (2000) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+Krull, Kendra/Herbert, Percy
+DoS = 6, RS = 6
+CHAIN OF ACTORS: Krull, Kendra -> Chaykin, Maury -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => Unstrung Heroes (1995) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+Duvall, Wayne/Herbert, Percy
+DoS = 6, RS = 6
+CHAIN OF ACTORS: Duvall, Wayne -> Chaykin, Maury -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => Unstrung Heroes (1995) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+McNeal, Heidi/Clark, Harvey
+DoS = 6, RS = 6
+CHAIN OF ACTORS: McNeal, Heidi -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Flockhart, Calista/Herbert, Percy
+DoS = 6, RS = 6
+CHAIN OF ACTORS: Flockhart, Calista -> DeVito, Danny -> Belushi, James -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => America: A Tribute to Heroes (2001) => Last Action Hero (1993) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+Wahlberg, Mark/Herbert, Percy
+DoS = 6, RS = 6
+CHAIN OF ACTORS: Wahlberg, Mark -> DeVito, Danny -> Belushi, James -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => America: A Tribute to Heroes (2001) => Last Action Hero (1993) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+Baker, Mary/Cole, Olivia
+DoS = 6, RS = 6
+CHAIN OF ACTORS: Baker, Mary -> Kibbee, Milton -> Cobb, Edmund -> Taylor, Dub -> Capshaw, Kate -> Ford, Harrison -> Cole, Olivia
+CHAIN OF MOVIES:  => Modern Hero, A (1934) => Cherokee Strip, The (1937) => Sagebrush Heroes (1944) => My Heroes Have Always Been Cowboys (1991) => George Lucas: Heroes, Myths and Magic (1993) => Heroes (1977) =>
+
+Wayne, John/Cole, Olivia
+DoS = 6, RS = 6
+CHAIN OF ACTORS: Wayne, John -> Steele, Bob -> Friedkin, Joel -> Taylor, Dub -> Capshaw, Kate -> Ford, Harrison -> Cole, Olivia
+CHAIN OF MOVIES:  => Comancheros, The (1961) => Outlaws of Cherokee Trail (1941) => Sagebrush Heroes (1944) => My Heroes Have Always Been Cowboys (1991) => George Lucas: Heroes, Myths and Magic (1993) => Heroes (1977) =>
+
+Hicks, Chuck/Hearn, Edward
+DoS = 7, RS = 8
+CHAIN OF ACTORS: Hicks, Chuck -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Osborne, Bud -> London, Tom -> Hearn, Edward
+CHAIN OF MOVIES:  => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Cherokee Flash, The (1945) => Fighting Hero (1934) =>
+
+Robinson, Michael/Clark, Harvey
+DoS = 7, RS = 7
+CHAIN OF ACTORS: Robinson, Michael -> Tobolowsky, Stephen -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => My Father the Hero (1994) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Hudson, Ernie/Hearn, Edward
+DoS = 7, RS = 8
+CHAIN OF ACTORS: Hudson, Ernie -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Osborne, Bud -> London, Tom -> Hearn, Edward
+CHAIN OF MOVIES:  => Cherokee Kid, The (1996) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Cherokee Flash, The (1945) => Fighting Hero (1934) =>
+
+Ryusaki, Bill M./Knight, Don
+DoS = 7, RS = 7
+CHAIN OF ACTORS: Ryusaki, Bill M. -> Cole, Olivia -> Field, Sally -> DeVito, Danny -> Belushi, James -> Coburn, James -> Guardino, Harry -> Knight, Don
+CHAIN OF MOVIES:  => Some Kind of Hero (1981) => Heroes (1977) => America: A Tribute to Heroes (2001) => Last Action Hero (1993) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) =>
+
+Santillan, Eileen/Clark, Harvey
+DoS = 7, RS = 7
+CHAIN OF ACTORS: Santillan, Eileen -> Tobolowsky, Stephen -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => My Father the Hero (1994) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Phelps, Tex/Knight, Don
+DoS = 7, RS = 7
+CHAIN OF ACTORS: Phelps, Tex -> Corbett, Ben -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don
+CHAIN OF MOVIES:  => Heroes of the Alamo (1937) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) =>
+
+McGlynn Jr., Frank/Guardino, Harry
+DoS = 7, RS = 7
+CHAIN OF ACTORS: McGlynn Jr., Frank -> Elliott, Dick -> Kibbee, Milton -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry
+CHAIN OF MOVIES:  => Public Hero #1 (1935) => High School Hero (1946) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) =>
+
+Farr, Hugh/Guardino, Harry
+DoS = 7, RS = 7
+CHAIN OF ACTORS: Farr, Hugh -> Mason, LeRoy -> Kirk, Jack -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry
+CHAIN OF MOVIES:  => Gay Ranchero, The (1948) => Heroes of the Hills (1938) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) =>
+
+Elliott, Lillian/Guardino, Harry
+DoS = 7, RS = 7
+CHAIN OF ACTORS: Elliott, Lillian -> McKee, Lafe -> Corbett, Ben -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry
+CHAIN OF MOVIES:  => Heroes in Blue (1939) => Heroes of the Alamo (1937) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) =>
+
+Conway, Pamela/Hart, Gordon
+DoS = 7, RS = 7
+CHAIN OF ACTORS: Conway, Pamela -> Jordan, Patrick -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) =>
+
+Ansara, Michael/Knight, Don
+DoS = 8, RS = 8
+CHAIN OF ACTORS: Ansara, Michael -> Steele, Bob -> Osborne, Bud -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don
+CHAIN OF MOVIES:  => Comancheros, The (1961) => Outlaws of Cherokee Trail (1941) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) =>
+
+James, Gladden/Knight, Don
+DoS = 8, RS = 8
+CHAIN OF ACTORS: James, Gladden -> Elliott, Dick -> Kibbee, Milton -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don
+CHAIN OF MOVIES:  => Public Hero #1 (1935) => High School Hero (1946) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) =>
+
+Davis, Edwards/Guardino, Harry
+DoS = 8, RS = 9
+CHAIN OF ACTORS: Davis, Edwards -> Hearn, Edward -> London, Tom -> Osborne, Bud -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry
+CHAIN OF MOVIES:  => Hero on Horseback, A (1927) => Fighting Hero (1934) => Cherokee Flash, The (1945) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) =>
+
+Le Gon, Jeni/Knight, Don
+DoS = 8, RS = 8
+CHAIN OF ACTORS: Le Gon, Jeni -> Collier, Lois -> Osborne, Bud -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don
+CHAIN OF MOVIES:  => My Son, the Hero (1943) => Outlaws of Cherokee Trail (1941) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) =>
+
+Kim, Leigh C./Herbert, Percy
+DoS = 8, RS = 8
+CHAIN OF ACTORS: Kim, Leigh C. -> Cole, Olivia -> Field, Sally -> DeVito, Danny -> Belushi, James -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => Some Kind of Hero (1981) => Heroes (1977) => America: A Tribute to Heroes (2001) => Last Action Hero (1993) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+Grey, Clifford/Guardino, Harry
+DoS = 8, RS = 8
+CHAIN OF ACTORS: Grey, Clifford -> Warwick, Robert -> McCullough, Philo -> Cobb, Edmund -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry
+CHAIN OF MOVIES:  => Heart of a Hero, The (1916) => Hail the Conquering Hero (1944) => Heroes of the West (1932) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) =>
+
+Marston, John/Herbert, Percy
+DoS = 8, RS = 8
+CHAIN OF ACTORS: Marston, John -> Kibbee, Milton -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => Heroes for Sale (1933) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+Ford, Francis/Herbert, Percy
+DoS = 8, RS = 8
+CHAIN OF ACTORS: Ford, Francis -> Cobb, Edmund -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => Heroes of the West (1932) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+Lenehan, Nancy/Clark, Harvey
+DoS = 8, RS = 8
+CHAIN OF ACTORS: Lenehan, Nancy -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Cherokee Kid, The (1996) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Everton, Paul/Knight, Don
+DoS = 8, RS = 8
+CHAIN OF ACTORS: Everton, Paul -> Marlowe, Jerry -> Bupp, Tommy -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don
+CHAIN OF MOVIES:  => Borrowed Hero (1941) => Hero for a Day (1939) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) =>
+
+Ricketts, Tom/Knight, Don
+DoS = 9, RS = 9
+CHAIN OF ACTORS: Ricketts, Tom -> Hoyt, Arthur -> McCullough, Philo -> Cobb, Edmund -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don
+CHAIN OF MOVIES:  => Desperate Hero, The (1920) => Hail the Conquering Hero (1944) => Heroes of the West (1932) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) =>
+
+Harlan, Kenneth/Herbert, Percy
+DoS = 9, RS = 9
+CHAIN OF ACTORS: Harlan, Kenneth -> McKee, Lafe -> Corbett, Ben -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => Heroes in Blue (1939) => Heroes of the Alamo (1937) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+Kitaeva, Ida/Herbert, Percy
+DoS = 9, RS = 9
+CHAIN OF ACTORS: Kitaeva, Ida -> McCullough, Philo -> Cobb, Edmund -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => Hail the Conquering Hero (1944) => Heroes of the West (1932) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+Farley, Dot/Herbert, Percy
+DoS = 9, RS = 9
+CHAIN OF ACTORS: Farley, Dot -> McCullough, Philo -> Cobb, Edmund -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => Hail the Conquering Hero (1944) => Heroes of the West (1932) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+McCarthy, Kevin/Clark, Harvey
+DoS = 9, RS = 9
+CHAIN OF ACTORS: McCarthy, Kevin -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Cafiso, Matteo/Hearn, Edward
+DoS = 9, RS = 10
+CHAIN OF ACTORS: Cafiso, Matteo -> McCarthy, Kevin -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Osborne, Bud -> London, Tom -> Hearn, Edward
+CHAIN OF MOVIES:  => Hero at Large (1980) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Cherokee Flash, The (1945) => Fighting Hero (1934) =>
+
+Norton, Jack/Herbert, Percy
+DoS = 9, RS = 9
+CHAIN OF ACTORS: Norton, Jack -> McCullough, Philo -> Cobb, Edmund -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => Hail the Conquering Hero (1944) => Heroes of the West (1932) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+Conrad, Jan/Marlowe, Jerry
+DoS = 9, RS = 9
+CHAIN OF ACTORS: Conrad, Jan -> Jordan, Patrick -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Bupp, Tommy -> Marlowe, Jerry
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Hero for a Day (1939) =>
+
+Richards, Addison/Herbert, Percy
+DoS = 9, RS = 9
+CHAIN OF ACTORS: Richards, Addison -> Fowley, Douglas -> Kibbee, Milton -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => Cherokee Strip (1940) => High School Hero (1946) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+Hall, Lois/Herbert, Percy
+DoS = 9, RS = 9
+CHAIN OF ACTORS: Hall, Lois -> Cody, Iron Eyes -> Osborne, Bud -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => Cherokee Uprising (1950) => Outlaws of Cherokee Trail (1941) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+O'Connell, James/Clark, Harvey
+DoS = 10, RS = 10
+CHAIN OF ACTORS: O'Connell, James -> McCarthy, Kevin -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Hero at Large (1980) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Waters, Russell/Hearn, Edward
+DoS = 10, RS = 11
+CHAIN OF ACTORS: Waters, Russell -> Jordan, Patrick -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Osborne, Bud -> London, Tom -> Hearn, Edward
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Cherokee Flash, The (1945) => Fighting Hero (1934) =>
+
+Frees, Wolf/Hearn, Edward
+DoS = 10, RS = 11
+CHAIN OF ACTORS: Frees, Wolf -> Jordan, Patrick -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Osborne, Bud -> London, Tom -> Hearn, Edward
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Cherokee Flash, The (1945) => Fighting Hero (1934) =>
+
+Newley, Anthony/Hearn, Edward
+DoS = 10, RS = 11
+CHAIN OF ACTORS: Newley, Anthony -> Herbert, Percy -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Osborne, Bud -> London, Tom -> Hearn, Edward
+CHAIN OF MOVIES:  => Cockleshell Heroes, The (1955) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Cherokee Flash, The (1945) => Fighting Hero (1934) =>
+
+Carricart, Robert/Clark, Harvey
+DoS = 10, RS = 10
+CHAIN OF ACTORS: Carricart, Robert -> McCarthy, Kevin -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Hero at Large (1980) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Douglas, Howard/Hearn, Edward
+DoS = 10, RS = 11
+CHAIN OF ACTORS: Douglas, Howard -> Jordan, Patrick -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Osborne, Bud -> London, Tom -> Hearn, Edward
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Cherokee Flash, The (1945) => Fighting Hero (1934) =>
+
+Andon, Kurt/Clark, Harvey
+DoS = 10, RS = 10
+CHAIN OF ACTORS: Andon, Kurt -> McCarthy, Kevin -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Hero at Large (1980) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Bacon, Kevin/Clark, Harvey
+DoS = 10, RS = 10
+CHAIN OF ACTORS: Bacon, Kevin -> McCarthy, Kevin -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Hero at Large (1980) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Masset, Andrew/Clark, Harvey
+DoS = 10, RS = 10
+CHAIN OF ACTORS: Masset, Andrew -> McCarthy, Kevin -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Hero at Large (1980) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Doonan, Patric/Hearn, Edward
+DoS = 10, RS = 11
+CHAIN OF ACTORS: Doonan, Patric -> Herbert, Percy -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Osborne, Bud -> London, Tom -> Hearn, Edward
+CHAIN OF MOVIES:  => Cockleshell Heroes, The (1955) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Cherokee Flash, The (1945) => Fighting Hero (1934) =>
+
+Maddern, Victor/Clark, Harvey
+DoS = 11, RS = 11
+CHAIN OF ACTORS: Maddern, Victor -> Herbert, Percy -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Cockleshell Heroes, The (1955) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Waters, Russell/Clark, Harvey
+DoS = 11, RS = 11
+CHAIN OF ACTORS: Waters, Russell -> Jordan, Patrick -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Keen, Geoffrey/Clark, Harvey
+DoS = 11, RS = 11
+CHAIN OF ACTORS: Keen, Geoffrey -> Jordan, Patrick -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Bryan, Dora/Clark, Harvey
+DoS = 11, RS = 11
+CHAIN OF ACTORS: Bryan, Dora -> Herbert, Percy -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Cockleshell Heroes, The (1955) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Frees, Wolf/Clark, Harvey
+DoS = 11, RS = 11
+CHAIN OF ACTORS: Frees, Wolf -> Jordan, Patrick -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+French, Charles K./Herbert, Percy
+DoS = 11, RS = 11
+CHAIN OF ACTORS: French, Charles K. -> Clark, Harvey -> Paddock, Charles -> Lease, Rex -> Corbett, Ben -> Hart, Gordon -> Clemenson, Christian -> Arnold, Tom -> Coburn, James -> Guardino, Harry -> Knight, Don -> Herbert, Percy
+CHAIN OF MOVIES:  => This Hero Stuff (1919) => Olympic Hero, The (1928) => College Hero, The (1927) => Heroes of the Alamo (1937) => Cherokee Strip, The (1937) => Almost Heroes (1998) => Hero (1992) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hell Is for Heroes (1962) => Hell with Heroes, The (1968) => Too Late the Hero (1970) =>
+
+Hilary, Jennifer/Clark, Harvey
+DoS = 11, RS = 11
+CHAIN OF ACTORS: Hilary, Jennifer -> Jordan, Patrick -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Campbell, Beatrice/Clark, Harvey
+DoS = 11, RS = 11
+CHAIN OF ACTORS: Campbell, Beatrice -> Herbert, Percy -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Cockleshell Heroes, The (1955) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Beaumont, Victor/Clark, Harvey
+DoS = 11, RS = 11
+CHAIN OF ACTORS: Beaumont, Victor -> Jordan, Patrick -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Heroes of Telemark, The (1965) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+
+Fitzgerald, William/Clark, Harvey
+DoS = 11, RS = 11
+CHAIN OF ACTORS: Fitzgerald, William -> Herbert, Percy -> Knight, Don -> Guardino, Harry -> Coburn, James -> Arnold, Tom -> Clemenson, Christian -> Hart, Gordon -> Corbett, Ben -> Lease, Rex -> Paddock, Charles -> Clark, Harvey
+CHAIN OF MOVIES:  => Cockleshell Heroes, The (1955) => Too Late the Hero (1970) => Hell with Heroes, The (1968) => Hell Is for Heroes (1962) => Arnold Schwarzenegger: Hollywood Hero (1999) => Hero (1992) => Almost Heroes (1998) => Cherokee Strip, The (1937) => Heroes of the Alamo (1937) => College Hero, The (1927) => Olympic Hero, The (1928) =>
+

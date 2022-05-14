@@ -10,61 +10,64 @@ namespace redone
 {
     internal class Program
     {
-        static int shorterPaths = 0;
         static string moviesPath = "", queriesPath = "", solutionPath = "";
         static List<string> queries = new List<string>();
         static Queue<string> answers = new Queue<string>();
 
+        static Dictionary<int, Dictionary<int, int>> weight = new Dictionary<int, Dictionary<int, int>>();
+        static Dictionary<string, int> index = new Dictionary<string, int>();
+        static List<string> moviesNames = new List<string>();
+        static List<List<int>> movies = new List<List<int>>();
         static List<string> actorsName = new List<string>();
         static List<HashSet<int>> adjs = new List<HashSet<int>>();
         static List<List<int>> actorsMovies = new List<List<int>>();
-
-        static Dictionary<string, int> index = new Dictionary<string, int>();
-        static Dictionary<int, List<string>> movies = new Dictionary<int, List<string>>();
-        static Dictionary<string, List<int>> prevAnswers = new Dictionary<string, List<int>>();
-        static List<string> moviesNames = new List<string>();
-
 
         static void Main(string[] args)
         {
             while (true)
             {
 
-                int testCase = selectTestCase();
+                SelectTestCase();
                 Console.WriteLine("Test case selected");
                 Console.WriteLine("Parsing...");
-                parseMovies();
-                parseQueries();
-                parseSolutions(testCase);
+                ParseMovies();
+                ParseQueries();
+                ParseSolutions();
                 Console.WriteLine("Parsing done");
-                runTestCase();
-
-                shorterPaths = 0;
-                queries.Clear();
-                answers.Clear();
-                index.Clear();
-                movies.Clear();
-                moviesNames.Clear();
-                actorsName.Clear();
-                adjs.Clear();
-                actorsMovies.Clear();
-                prevAnswers.Clear();
-
-
+                RunTestCase();
+                ClearAll();
                 Console.ReadLine();
                 Console.Clear();
             }
         }
 
-        public static int selectTestCase()
+        /// <summary>
+        /// Clear All Data Used in the previous test case
+        /// </summary>
+        public static void ClearAll()
         {
-            string path = @"Testcases\";
-            string choice;
+            queries.Clear();
+            answers.Clear();
+            index.Clear();
+            movies.Clear();
+            moviesNames.Clear();
+            actorsName.Clear();
+            adjs.Clear();
+            actorsMovies.Clear();
+            weight.Clear();
+        }
 
+        /// <summary>
+        /// Selects the test case to run
+        /// </summary>
+        public static void SelectTestCase()
+        {
+            string path = @"..\..\..\Testcases\";
+            string choice;
             do
             {
                 Console.Clear();
-                Console.WriteLine("0.Sample");
+                //Console.WriteLine("0.Sample");
 
                 Console.WriteLine("-Complete");
 
@@ -96,8 +99,8 @@ namespace redone
             while
             (!
                 (
-                    choice == "0"
-                    ||
+                    //choice == "0"
+                    //||
                     choice == "1"
                     ||
                     choice == "2"
@@ -198,11 +201,10 @@ namespace redone
 
 
             }
-            return int.Parse(choice);
+            
         }
 
-
-        public static void parseMovies()
+        public static void ParseMovies()
         {
             StreamReader reader = new StreamReader(moviesPath);
             while (true)
@@ -212,46 +214,55 @@ namespace redone
                     break;
 
                 string movie_name = line.Substring(0, line.IndexOf('/'));
-                List<string> movieActors = new List<string>();
+                List<int> movieActors = new List<int>();
                 while (true)
                 {
                     line = line.Remove(0, (line.IndexOf('/') != -1) ? line.IndexOf('/') + 1 : line.Length);
                     if (line.Length == 0)
                         break;
                     string actor_name = (line.IndexOf('/') != -1) ? line.Substring(0, line.IndexOf('/')) : line;
-                    movieActors.Add(actor_name);
+
 
                     if (!index.ContainsKey(actor_name))
                     {
-                        index[actor_name] = actorsName.Count();
+                        int newActorIndex = actorsName.Count();
+                        index[actor_name] = newActorIndex;
+                        movieActors.Add(newActorIndex);
                         actorsMovies.Add(new List<int>());
                         adjs.Add(new HashSet<int>());
-                        actorsMovies[actorsName.Count()].Add(moviesNames.Count());
+                        actorsMovies[newActorIndex].Add(moviesNames.Count());
                         actorsName.Add(actor_name);
                     }
                     else
                     {
-                        actorsMovies[index[actor_name]].Add(moviesNames.Count());
+                        int prevActorIndex = index[actor_name];
+                        movieActors.Add(prevActorIndex);
+                        actorsMovies[prevActorIndex].Add(moviesNames.Count());
                     }
                 }
 
-                movies[moviesNames.Count()] = new List<string>();
+                movies.Add(new List<int>());
                 movies[moviesNames.Count()].AddRange(movieActors);
                 moviesNames.Add(movie_name);
             }
-
             foreach (var movie in movies)
             {
-                foreach (var actor in movie.Value)
+                foreach (var actor in movie)
                 {
 
-                    int act = index[actor];
-                    foreach (var adj in movie.Value)
+                    if (!weight.ContainsKey(actor))
+                        weight[actor] = new Dictionary<int, int>();
+                    foreach (var adj in movie)
                     {
+
+                        
                         if (adj != actor)
                         {
-                            int iadj = index[adj];
-                            adjs[act].Add(iadj);
+                            if (!weight[actor].ContainsKey(adj))
+                                weight[actor][adj] = 0;
+
+                            adjs[actor].Add(adj);
+                            weight[actor][adj]++;
                         }
                     }
                 }
@@ -261,7 +272,10 @@ namespace redone
             reader.Close();
         }
 
-        public static void parseQueries()
+        /// <summary>
+        /// Parse the queries file for the Choosen test Case from <c>SelectTestCase</c> method and store the queries in <c>queries</c> list.
+        /// </summary>
+        public static void ParseQueries()
         {
             StreamReader reader = new StreamReader(queriesPath);
             while (true)
@@ -273,7 +287,10 @@ namespace redone
             }
         }
 
-        public static void parseSolutions(int testCase)
+        /// <summary>
+        /// Parse the solution file for the Choosen test Case from  <c>SelectTestCase</c> method and stores in <c>answers</c> Queue
+        /// </summary>
+        public static void ParseSolutions()
         {
             StreamReader reader = new StreamReader(solutionPath);
             List<string> answer = new List<string>();
@@ -286,10 +303,8 @@ namespace redone
                 if (line == "")
                 {
                     string ans;
-                    if (testCase == 0)
-                        ans = answer[0] + answer[1];
-                    else
-                        ans = answer[0] + answer[1] + answer[2] + answer[3];
+                    
+                    ans = answer[0] + answer[1] + answer[2] + answer[3];
                     answers.Enqueue(ans);
                     answer.Clear();
                 }
@@ -302,44 +317,52 @@ namespace redone
             Console.WriteLine("Solution Parsing Done, {0} answers", answers.Count());
         }
 
-
-        public static void runTestCase()
+        /// <summary>
+        /// Run test Choosen test Case from <c>SelectTestCase()</c> method
+        /// </summary>
+        public static void RunTestCase()
         {
 
-            double newOne;
             int current = 1;
             int passed = 0;
             long start = System.Environment.TickCount;
             foreach (string query in queries)
             {
-
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.Write("Query {0}/{1} ", current, queries.Count);
+                Console.ResetColor();
                 string actual = answers.Dequeue();
                 string first = query.Substring(0, query.IndexOf('/'));
                 string second = query.Substring(query.IndexOf('/') + 1);
-                string answer = solve(first, second);
-                //if (answer != actual)
-                //{
-                //    Console.WriteLine("+=======================+");
-                //    Console.WriteLine("Query {0} failed: {1}/{2}", current, first, second);
-                //    Console.WriteLine("Expected:\n {0}", actual);
-                //    Console.WriteLine("Actual:\n {0}", answer);
-                //}
-                //else
-                //{
-                passed++;
-                Console.WriteLine(answer);
-                //}
+                string answer = Solve(first, second);
+                if (answer != actual)
+                {
+                    Console.WriteLine("+=======================+");
+                    Console.WriteLine("Query {0} failed: {1}/{2}", current, first, second);
+                    Console.WriteLine("Expected:\n {0}", actual);
+                    Console.WriteLine("Actual:\n {0}", answer);
 
-                Console.WriteLine("Query {0}/{1} {2}% at {3}", current, queries.Count, (double)current / queries.Count() * 100, (System.Environment.TickCount - start) / 1000);
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write($" Failed\n");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    passed++;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write($" Passed\n");
+                    Console.ResetColor();
+                    Console.WriteLine(answer);
+                }
+
                 current++;
 
 
             }
             long end = System.Environment.TickCount;
-            Console.WriteLine("New Time taken: {0} seconds", ((end - start) / 1000.0));
-            Console.WriteLine("Passed {0}/{1} ie {2}%", passed, queries.Count, (double)passed / queries.Count() * 100);
-            Console.WriteLine($"Shorter Paths: {shorterPaths}");
-            //Console.WriteLine(solve("C", "E"));
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.Write("Time taken: {0} seconds", ((end - start) / 1000.0));
+            Console.ResetColor();
 
 
         }
@@ -347,39 +370,25 @@ namespace redone
         /// <summary>
         /// mix solution between bfs and dfs to find shortest and strongest path from src to dest
         /// </summary>
-        /// <param name="src">src actor</param>
-        /// <param name="dest">dest actor</param>
-        /// <returns></returns>
-        public static string solve(string src, string dest)
+        /// <param name="src">source actor</param>
+        /// <param name="dest">destination actor</param>
+        /// <returns>string with answer</returns>
+        public static string Solve(string src, string dest)
         {
 
             int iFirst = index[src];
             int iSecond = index[dest];
-            Dictionary<int, int> parent = new Dictionary<int, int>();
-            Dictionary<int, int> weight = new Dictionary<int, int>();
-            bool[] visited = new bool[index.Count()];
-            findShortestPath(parent, weight, visited, index.Count(), iFirst, iSecond);
+            List<int> shortestPath = FindShortestPath(iFirst, iSecond);
 
-            List<int> path = new List<int>();
-
-            // fill path with actors in reverse order from parent 
-            int i = iSecond;
-            while (i != -1)
-            {
-                path.Add(i);
-                if (prevAnswers.ContainsKey(actorsName[i] + "/" + actorsName[iSecond]))
-                {
-                    Console.WriteLine("PREV: " + generateAnswer(prevAnswers[actorsName[i] + "/" + actorsName[iSecond]]));
-                    shorterPaths++;
-                }
-                i = parent[i];
-            }
-            prevAnswers[src + "/" + dest] = path;
-
-
-            return generateAnswer(path);
+            return generateAnswer(shortestPath);
         }
 
+
+        /// <summary>
+        /// Generate an Answer from path to a desired format
+        /// </summary>
+        /// <param name="path">contains the indices of actors from src to dest</param>
+        /// <returns>string following the desired format</returns>
         public static string generateAnswer(List<int> path)
         {
             int degree = 0, relation = 0;
@@ -418,26 +427,28 @@ namespace redone
             return answer;
 
         }
-        /// <summary>
-        /// Finds the shortest path between two actors using BFS
-        /// </summary>
-        /// <param name="src">source actor</param>
-        /// <param name="dest">dest actor</param>
-        /// <returns></returns>
 
-        static void findShortestPath(Dictionary<int, int> parent, Dictionary<int, int> wieght, bool[] visited, int n, int start, int end)
+
+        /// <summary>
+        /// Find shortest path between src and dest using bfs using weight array
+        /// </summary>
+        /// <param name="start">Source Actor</param>
+        /// <param name="end">Destination Actor</param>
+        /// <returns>return shrotest path from <c>start</c> to <c>end</c></returns>
+        static List<int> FindShortestPath(int start, int end)
         {
-            bool foundShorter = false;
+            int[] parent = new int[index.Count()];
+            int[] weight = new int[index.Count()];
+            bool[] visited = new bool[index.Count()];
             int maxDist = int.MaxValue;
-            int[] dist = new int[n];
-            dist = Enumerable.Repeat(int.MaxValue, n).ToArray();
+            int[] dist = new int[index.Count()];
             Queue<int> q = new Queue<int>();
             q.Enqueue(start);
             parent[start] = -1;
-            wieght[start] = 0;
+            weight[start] = 0;
 
             dist[start] = 0;
-            while (q.Count != 0 && !foundShorter)
+            while (q.Count != 0)
             {
 
                 int u = q.Dequeue();
@@ -448,33 +459,30 @@ namespace redone
 
                 foreach (int v in adjs[u])
                 {
-                    if (dist[v] > dist[u] + 1)
+                    if (v == start)
+                        continue;
+                    if (dist[v] == 0 || dist[v] > dist[u] + 1)
                     {
-                        int commonWithU = actorsMovies[v].Intersect(actorsMovies[u]).Count() + wieght[u];
+                        int commonWithU = Program.weight[v][u] /*actorsMovies[v].Intersect(actorsMovies[u]).Count()*/ + weight[u];
                         dist[v] = dist[u] + 1;
                         q.Enqueue(v);
                         parent[v] = -1;
-                        wieght[v] = 0;
+                        weight[v] = 0;
                         parent[v] = u;
-                        wieght[v] = commonWithU;
-                        foundShorter = checkForShorterPath(u, v, end, parent);
-                        if (foundShorter)
-                            break;
-
-
+                        weight[v] = commonWithU;
+                        //checkForShorterPath(u, v, end, parent);
                     }
                     else if (dist[v] == dist[u] + 1)
                     {
-                        int commonWithU = actorsMovies[v].Intersect(actorsMovies[u]).Count() + wieght[u];
-                        int commonWithParent = actorsMovies[v].Intersect(actorsMovies[parent[v]]).Count() + wieght[parent[v]];
+                        int commonWithU = Program.weight[v][u] /* actorsMovies[v].Intersect(actorsMovies[u]).Count()*/ + weight[u];
+                        int commonWithParent = Program.weight[v][parent[v]] /*actorsMovies[v].Intersect(actorsMovies[parent[v]]).Count()*/ + weight[parent[v]];
                         if (commonWithU > commonWithParent)
                         {
                             parent[v] = u;
-                            wieght[v] = commonWithU;
+                            weight[v] = commonWithU;
                         }
-                        foundShorter = checkForShorterPath(u, v, end, parent);
-                        if (foundShorter)
-                            break;
+                        //checkForShorterPath(u, v, end, parent);
+
                     }
                     if (v == end)
                     {
@@ -483,28 +491,26 @@ namespace redone
                     visited[u] = true;
                 }
             }
+            return ConstructPath(parent, end);
         }
 
 
-
-        public static bool checkForShorterPath(int u, int v, int end, Dictionary<int, int> parent)
+        /// <summary>
+        /// Construct path from parent array
+        /// </summary>
+        /// <param name="parent">integer array Contains parent index of every actor</param>
+        /// <param name="dest">destination actor index</param>
+        /// <returns>return path indices</returns>
+        public static List<int> ConstructPath(int[] parent, int dest)
         {
-            if (prevAnswers.ContainsKey(actorsName[u] + "/" + actorsName[end]))
+            List<int> path = new List<int>();
+            int i = dest;
+            while (i != -1)
             {
-                List<int> shorterPath = prevAnswers[actorsName[u] + "/" + actorsName[end]];
-                if (shorterPath.Last() == u && shorterPath[shorterPath.Count - 2] == v)
-                {
-
-                    for (int i = 0; i < shorterPath.Count() - 1; i++)
-                    {
-                        parent[shorterPath[i]] = shorterPath[i + 1];
-                    }
-
-                    return true;
-                }
-
+                path.Add(i);
+                i = parent[i];
             }
-            return false;
+            return path;
         }
 
     }

@@ -1,0 +1,110 @@
+Bernier, Marie-Lise/Archambault, Sylvio
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Bernier, Marie-Lise -> Archambault, Sylvio
+CHAIN OF MOVIES:  => Sphinx, Le (1995) =>
+
+Costa, Jim/Alexander, Jace
+DoS = 1, RS = 1
+CHAIN OF ACTORS: Costa, Jim -> Alexander, Jace
+CHAIN OF MOVIES:  => Matewan (1987) =>
+
+Tesla, Aleksander/Dafoe, Willem
+DoS = 2, RS = 4
+CHAIN OF ACTORS: Tesla, Aleksander -> Keitel, Harvey -> Dafoe, Willem
+CHAIN OF MOVIES:  => Taking Sides (2001) => Dear America: Letters Home from Vietnam (1987) =>
+
+Cresci, Frances/Adams, Jonathan
+DoS = 2, RS = 2
+CHAIN OF ACTORS: Cresci, Frances -> Anderson, Jeff -> Adams, Jonathan
+CHAIN OF MOVIES:  => Clerks. (1994) => Air Bud: Golden Receiver (1998) =>
+
+Noi, Ratanaporn/Intachai, Prinya
+DoS = 3, RS = 3
+CHAIN OF ACTORS: Noi, Ratanaporn -> Chatree, Sorapong -> Pongwilai, Suchao -> Intachai, Prinya
+CHAIN OF MOVIES:  => 1 2 3 duan mahaphai (1977) => Suriyothai (2001) => 303 Fear Faith Revenge (1998) =>
+
+Florence, Davone/Stewart, Alexandra
+DoS = 3, RS = 7
+CHAIN OF ACTORS: Florence, Davone -> Keitel, Harvey -> Brialy, Jean-Claude -> Stewart, Alexandra
+CHAIN OF MOVIES:  => Blue Collar (1978) => Nuit de Varennes, La (1982) => Bel �ge, Le (1959) =>
+
+Conoyer, Brian Mark/Soriano, Jos�
+DoS = 4, RS = 17
+CHAIN OF ACTORS: Conoyer, Brian Mark -> Lauria, Dan -> von Sydow, Max -> Andersson, Bibi -> Soriano, Jos�
+CHAIN OF MOVIES:  => Overexposed (1992) => Kojak: The Belarus File (1985) => Ansiktet (1958) => Pobre mariposa (1986) =>
+
+Woloshyn, Illya/Paul, Bernhard
+DoS = 4, RS = 9
+CHAIN OF ACTORS: Woloshyn, Illya -> Kostelka, Lubom�r -> Lohnisk�, V�clav -> Herz, Juraj -> Paul, Bernhard
+CHAIN OF MOVIES:  => Beethoven Lives Upstairs (1989) => Kde alibi nestac� (1960) => Dev�t� srdce (1978) => Dumme Augustine, Die (1993) =>
+
+O'Hara, Brett/Pierini, David
+DoS = 5, RS = 49
+CHAIN OF ACTORS: O'Hara, Brett -> Clark, Steve -> Buster, Budd -> Smith, Patricia -> Johnson, Kurt -> Pierini, David
+CHAIN OF MOVIES:  => Incredibly Strange Creatures Who Stopped Living and Became Mixed-Up Zombies, The (1963) => Arizona Gunfighter (1937) => Spirit of St. Louis, The (1957) => Mad City (1997) => Last Way Out, The (1997) =>
+
+Langford, Barry/S.P., Lakshmana Swamy
+DoS = 5, RS = 11
+CHAIN OF ACTORS: Langford, Barry -> Lee, Bernard -> Attenborough, Richard -> Khan, Amjad -> Raju -> S.P., Lakshmana Swamy
+CHAIN OF MOVIES:  => Saturday Night Out (1963) => Angry Silence, The (1960) => Shatranj Ke Khiladi (1977) => Ele, My Friend (1992) => Tenali Ramakrishna (1941) =>
+
+Coombes, Gordon/Magsamen, Seraphina
+DoS = 6, RS = 10
+CHAIN OF ACTORS: Coombes, Gordon -> Mueller-Stahl, Armin -> Geschonneck, Erwin -> Borgelt, Peter -> Poppe, Matthias -> Kennedy, Adrian -> Magsamen, Seraphina
+CHAIN OF MOVIES:  => Shine (1996) => Andere neben dir, Der (1963) => Polizeiruf 110 - Der Tod des Professors (1974) => Polizeiruf 110 - Thanners neuer Job (1991) => Lake, The (1994) => Bridge, The (1995) =>
+
+Marr, Ericka/Bracke, Chad
+DoS = 6, RS = 9
+CHAIN OF ACTORS: Marr, Ericka -> Gabrielle, Monique -> Naples, Toni -> Hoffman, Eric -> Cahill, Beth -> Cargerman, Jack -> Bracke, Chad
+CHAIN OF MOVIES:  => Big Bet, The (1985) => Deathstalker II (1987) => Sorority House Massacre II (1990) => Fatty Drives the Bus (1999) => They Came... THEY CAME! (1989) => Guide to Urban Golf, The (1994) =>
+
+Hammer, M.C./Salunke, Anna
+DoS = 7, RS = 15
+CHAIN OF ACTORS: Hammer, M.C. -> Quinn, Anthony -> Naish, J. Carrol -> Singh, Ram -> Pawar, Lalita -> Pendharkar, Baburao -> Shinde, Ganpat -> Salunke, Anna
+CHAIN OF MOVIES:  => Last Action Hero (1993) => Blood and Sand (1941) => Lives of a Bengal Lancer, The (1935) => Ramshastri (1944) => Amrit (1941,I) => Sinhagad (1933) => Lanka Dahan (1917) =>
+
+Gr�we, Michael/Sr., Sriranjani
+DoS = 7, RS = 13
+CHAIN OF ACTORS: Gr�we, Michael -> Krause, Horst -> Sapara, Ade -> Kapoor, Shashi -> Helen -> Ranga Rao, S.V. -> Venkatramaiah, Relangi -> Sr., Sriranjani
+CHAIN OF MOVIES:  => Tach, Herr Dokter (1999) => Nachtgestalten (1999) => Sammy and Rosie Get Laid (1987) => Bombay Talkie (1970) => Bhookailas (1956) => Appu Chesi Pappu Koodu (1958) => Vara Vikrayam (1939) =>
+
+Graaf, Mark de/Bai, Yang
+DoS = 8, RS = 11
+CHAIN OF ACTORS: Graaf, Mark de -> Vries, Dolf de -> Hauer, Rutger -> Chen, Joan -> Zhang, Fengyi -> Zheng, Zhenyao -> Wang, Pei -> Zhao, Dan -> Bai, Yang
+CHAIN OF MOVIES:  => Vroeger is dood (1987) => Soldaat van Oranje (1977) => Blood of Heroes, The (1988) => You Seng (1993) => Cheng nan jiu shi (1983) => Lin ju (1981) => Wuya yu maque (1949) => Shizi jietou (1937) =>
+
+Tyson, Stephon/Dabke, D.D.
+DoS = 8, RS = 9
+CHAIN OF ACTORS: Tyson, Stephon -> DeMasi, Kacee -> Penn, Sean -> Nemo -> Pawar, Lalita -> Pendharkar, Baburao -> Shinde, Ganpat -> Salunke, Anna -> Dabke, D.D.
+CHAIN OF MOVIES:  => Teddy Bear Syndrome, The (2001) => Being John Malkovich (1999) => Before Night Falls (2000) => Shree 420 (1955) => Amrit (1941,I) => Sinhagad (1933) => Lanka Dahan (1917) => Satyavadi Raja Harishchandra (1917) =>
+
+Armstrong, Stretch/Razavi, Atefeh
+DoS = 9, RS = 9
+CHAIN OF ACTORS: Armstrong, Stretch -> Loggia, Robert -> Kozlowski, Linda -> Ljunggren, Sten -> Taslimi, Susan -> Pourhosseini, Parvis -> Adineh, Golab -> Forutan, Mohammad Reza -> Fat'hi, Mehdi -> Razavi, Atefeh
+CHAIN OF MOVIES:  => Grand Theft Auto III (2001) => Favorite Son (1988) => Zorn (1994) => Gr�nsen (1995) => Bashu (1989) => Fifth Season, The (1997) => Zir-e poost-e shahr (2000) => Eteraz (2000) => Zinat (1994) =>
+
+Norat, Max/Razavi, Atefeh
+DoS = 9, RS = 10
+CHAIN OF ACTORS: Norat, Max -> Randazzo, Steven -> Stormare, Peter -> Ljunggren, Sten -> Taslimi, Susan -> Pourhosseini, Parvis -> Adineh, Golab -> Forutan, Mohammad Reza -> Fat'hi, Mehdi -> Razavi, Atefeh
+CHAIN OF MOVIES:  => Faithful (1996) => 13 Moons (2002) => Sorts Hades, Ett (1996) => Gr�nsen (1995) => Bashu (1989) => Fifth Season, The (1997) => Zir-e poost-e shahr (2000) => Eteraz (2000) => Zinat (1994) =>
+
+Sanchez, Clark/Mahigiran, Norieh
+DoS = 10, RS = 12
+CHAIN OF ACTORS: Sanchez, Clark -> Noga, Tom -> Brundin, Bo -> Ljunggren, Sten -> Taslimi, Susan -> Pourhosseini, Parvis -> Adineh, Golab -> Forutan, Mohammad Reza -> Fat'hi, Mehdi -> Razavi, Atefeh -> Mahigiran, Norieh
+CHAIN OF MOVIES:  => New Eden (1994) => Late for Dinner (1991) => Enkel resa (1988) => Gr�nsen (1995) => Bashu (1989) => Fifth Season, The (1997) => Zir-e poost-e shahr (2000) => Eteraz (2000) => Zinat (1994) => Ghess� hay� kish (1999) =>
+
+Misner, Sandy/Razavi, Atefeh
+DoS = 10, RS = 12
+CHAIN OF ACTORS: Misner, Sandy -> Bianco, John -> Dukakis, Olympia -> Rabaeus, Johan -> Ljunggren, Sten -> Taslimi, Susan -> Pourhosseini, Parvis -> Adineh, Golab -> Forutan, Mohammad Reza -> Fat'hi, Mehdi -> Razavi, Atefeh
+CHAIN OF MOVIES:  => Cons (2000) => Brooklyn Sonnet (2000) => Jerusalem (1996) => Lotta 2 - Lotta flyttar hemifr�n (1993) => Gr�nsen (1995) => Bashu (1989) => Fifth Season, The (1997) => Zir-e poost-e shahr (2000) => Eteraz (2000) => Zinat (1994) =>
+
+Parra, Mar�a Jos�/Mahigiran, Norieh
+DoS = 11, RS = 14
+CHAIN OF ACTORS: Parra, Mar�a Jos� -> Arias, Mario -> Buscemi, Steve -> Stormare, Peter -> Ljunggren, Sten -> Taslimi, Susan -> Pourhosseini, Parvis -> Adineh, Golab -> Forutan, Mohammad Reza -> Fat'hi, Mehdi -> Razavi, Atefeh -> Mahigiran, Norieh
+CHAIN OF MOVIES:  => Se buscan fulmontis (1999) => Somebody to Love (1994) => 13 Moons (2002) => Sorts Hades, Ett (1996) => Gr�nsen (1995) => Bashu (1989) => Fifth Season, The (1997) => Zir-e poost-e shahr (2000) => Eteraz (2000) => Zinat (1994) => Ghess� hay� kish (1999) =>
+
+Daniel, Freddie/Motamed-Aria, Fatemah
+DoS = 11, RS = 11
+CHAIN OF ACTORS: Daniel, Freddie -> Taylor, Forrest -> Henry, Pat -> Ljunggren, Sten -> Taslimi, Susan -> Pourhosseini, Parvis -> Nonahali, Roya -> Kianian, Reza -> Mozaffari, Majid -> Sheikhi, Jamileh -> Pievar, Amir -> Motamed-Aria, Fatemah
+CHAIN OF MOVIES:  => Prairie Roundup (1951) => Sea of Grass, The (1947) => Disappearance of Finbar, The (1996) => Gr�nsen (1995) => Bashu (1989) => Fifth Season, The (1997) => Booye kafoor, atre yas (2000) => Sagkoshi (2001) => Mosaferan (1992) => Leila (1996) => Safar (1994) =>
+
