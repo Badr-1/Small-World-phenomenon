@@ -1,0 +1,11 @@
+E:\Small-World-phenomenon\WFA\bin\Debug\WFA.exe.config
+E:\Small-World-phenomenon\WFA\bin\Debug\WFA.exe
+E:\Small-World-phenomenon\WFA\bin\Debug\WFA.pdb
+E:\Small-World-phenomenon\WFA\obj\Debug\WFA.csproj.AssemblyReference.cache
+E:\Small-World-phenomenon\WFA\obj\Debug\WFA.csproj.SuggestedBindingRedirects.cache
+E:\Small-World-phenomenon\WFA\obj\Debug\WFA.Form1.resources
+E:\Small-World-phenomenon\WFA\obj\Debug\WFA.Properties.Resources.resources
+E:\Small-World-phenomenon\WFA\obj\Debug\WFA.csproj.GenerateResource.cache
+E:\Small-World-phenomenon\WFA\obj\Debug\WFA.csproj.CoreCompileInputs.cache
+E:\Small-World-phenomenon\WFA\obj\Debug\WFA.exe
+E:\Small-World-phenomenon\WFA\obj\Debug\WFA.pdb
