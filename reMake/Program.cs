@@ -294,6 +294,7 @@ namespace redone
         {
             StreamReader reader = new StreamReader(solutionPath);
             List<string> answer = new List<string>();
+            
 
             while (true)
             {
@@ -399,10 +400,11 @@ namespace redone
             for (int i = 0; i < path.Count() - 1; i++)
             {
                 //split adjsWeight into movies
-                int[] movies = actorsMovies[path[i]].Intersect(actorsMovies[path[i + 1]]).ToArray();
+                //int[] movies = actorsMovies[path[i]].Intersect(actorsMovies[path[i + 1]]).ToArray();
+                List<int> movies = getIntersection(actorsMovies[path[i]], (actorsMovies[path[i + 1]]));
                 chainOfActors.Push(actorsName[path[i]]);
                 chainOfMovies.Push(moviesNames[movies[0]]);
-                relation += movies.Length;
+                relation += movies.Count;
                 degree++;
             }
             answer += $"DoS = {degree}, RS = {relation}\n";
@@ -464,6 +466,8 @@ namespace redone
                     if (dist[v] == 0 || dist[v] > dist[u] + 1)
                     {
                         int commonWithU = Program.weight[v][u] /*actorsMovies[v].Intersect(actorsMovies[u]).Count()*/ + weight[u];
+                        //int commonWithU = getIntersection(actorsMovies[v], actorsMovies[u]).Count+ weight[u];
+
                         dist[v] = dist[u] + 1;
                         q.Enqueue(v);
                         parent[v] = -1;
@@ -474,6 +478,8 @@ namespace redone
                     }
                     else if (dist[v] == dist[u] + 1)
                     {
+                        //int commonWithU = getIntersection(actorsMovies[v], actorsMovies[u]).Count + weight[u];
+                        //int commonWithParent = getIntersection(actorsMovies[v], actorsMovies[parent[v]]).Count + weight[parent[v]];
                         int commonWithU = Program.weight[v][u] /* actorsMovies[v].Intersect(actorsMovies[u]).Count()*/ + weight[u];
                         int commonWithParent = Program.weight[v][parent[v]] /*actorsMovies[v].Intersect(actorsMovies[parent[v]]).Count()*/ + weight[parent[v]];
                         if (commonWithU > commonWithParent)
@@ -494,6 +500,32 @@ namespace redone
             return ConstructPath(parent, end);
         }
 
+        private static List<int> getIntersection(List<int> firstList,List<int>seacondList)
+        {
+            int fIter = 0;
+            int sIter = 0;
+            var result = new List<int>();
+            while (fIter < firstList.Count && sIter < seacondList.Count)
+            {
+                if (firstList[fIter] < seacondList[sIter])
+                {
+                    fIter++;
+                }
+                else if (firstList[fIter] > seacondList[sIter])
+                {
+                    sIter++;
+                }
+                else
+                {
+                    result.Add(firstList[fIter]);
+                    fIter++;
+                    sIter++;
+
+                }
+            }
+            return result;
+        }
+
 
         /// <summary>
         /// Construct path from parent array
@@ -512,6 +544,8 @@ namespace redone
             }
             return path;
         }
+
+    
 
     }
 }
