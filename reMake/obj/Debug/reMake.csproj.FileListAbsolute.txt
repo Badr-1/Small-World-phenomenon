@@ -14,3 +14,8 @@ C:\Users\ayman\Desktop\Pdf\6th semester\ALGORITHM\Small-World-phenomenon\reMake\
 C:\Users\ayman\Desktop\Pdf\6th semester\ALGORITHM\Small-World-phenomenon\reMake\bin\Debug\reMake.exe.config
 C:\Users\ayman\Desktop\Pdf\6th semester\ALGORITHM\Small-World-phenomenon\reMake\bin\Debug\reMake.exe
 C:\Users\ayman\Desktop\Pdf\6th semester\ALGORITHM\Small-World-phenomenon\reMake\bin\Debug\reMake.pdb
+E:\Small-World-phenomenon\reMake\obj\Debug\reMake.csproj.AssemblyReference.cache
+E:\Small-World-phenomenon\reMake\obj\Debug\reMake.csproj.SuggestedBindingRedirects.cache
+E:\Small-World-phenomenon\reMake\obj\Debug\reMake.csproj.CoreCompileInputs.cache
+E:\Small-World-phenomenon\reMake\obj\Debug\reMake.exe
+E:\Small-World-phenomenon\reMake\obj\Debug\reMake.pdb

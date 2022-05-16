@@ -1,8 +1,0 @@
-E:\Small-World-phenomenon\Small World Phenomenon\bin\Debug\Small World Phenomenon.exe.config
-E:\Small-World-phenomenon\Small World Phenomenon\bin\Debug\Small World Phenomenon.exe
-E:\Small-World-phenomenon\Small World Phenomenon\bin\Debug\Small World Phenomenon.pdb
-E:\Small-World-phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.csproj.AssemblyReference.cache
-E:\Small-World-phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.csproj.SuggestedBindingRedirects.cache
-E:\Small-World-phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.csproj.CoreCompileInputs.cache
-E:\Small-World-phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.exe
-E:\Small-World-phenomenon\Small World Phenomenon\obj\Debug\Small World Phenomenon.pdb
