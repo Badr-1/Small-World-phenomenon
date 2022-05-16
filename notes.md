@@ -19,6 +19,6 @@
     - [ ] Detailed analysis of the code
     - [x] Add Option to run the code without optimization
 - bonuses:
-  - [ ] Frequancy of Degree of Separation from one actor/actress to all other actors/actress
+  - [x] Frequancy of Degree of Separation from one actor/actress to all other actors/actress
   - [ ] Strongest Path between two actors/actress
   - [ ] Minimum number of Movies that link all actors/actress together

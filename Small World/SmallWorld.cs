@@ -22,6 +22,8 @@ namespace SmallWorld
         private static List<HashSet<int>> adjs = new List<HashSet<int>>();
         private static List<List<int>> actorsMovies = new List<List<int>>();
 
+        private static int MAX_DEGREE_FOUND = 0;
+        private static int[] dosFrequency;
         /// <summary>
         /// Runs the Optimization
         /// </summary>
@@ -31,8 +33,6 @@ namespace SmallWorld
             Console.WriteLine("Test case selected");
             Console.WriteLine("Parsing...");
             ParseMovies();
-            ParseQueries();
-            ParseSolutions();
             Console.WriteLine("Parsing done");
             ChooseOpeartion();
             ClearAll();
@@ -46,7 +46,9 @@ namespace SmallWorld
             Console.WriteLine("1.Find Shortest Path (Completed)");
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("2.Find Strongest Path (Pending)");
-            Console.WriteLine("3.Find Degree of Seperation Frequency (Pending)");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("3.Find Degree of Seperation Frequency (Completed)");
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("4.Find Minimum Movies that link all actors/actresses (Pending)");
             Console.ResetColor();
             Console.Write("Enter your choice: ");
@@ -54,17 +56,48 @@ namespace SmallWorld
             switch (Choice)
             {
                 case "1":
+                    ParseQueries();
+                    ParseSolutions();
                     RunTestCase();
                     break;
                 case "2":
                     break;
                 case "3":
+                    CalculateFrequency();
                     break;
                 case "4":
                     break;
             }
         }
 
+        private static void CalculateFrequency()
+        {
+            int src;
+            string actorName;
+            do
+            {
+                Console.Write("Enter Actor Name: ");
+                actorName = Console.ReadLine();
+                if(index.ContainsKey(actorName))
+                {
+                    src = index[actorName];
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Actor/Acteress Name");
+                }
+            } while (true);
+            
+            MAX_DEGREE_FOUND = 0;
+            GetKnown(src);
+            Console.WriteLine("Deg.of Separ.{0,2}Frequency", "");
+            for (int i = 0; i <= MAX_DEGREE_FOUND; i++)
+            {
+                Console.WriteLine("{0,12}{1,12}", i, dosFrequency[i]);
+            }
+
+        }
 
         /// <summary>
         /// Clear All Data Used in the previous test case
@@ -290,8 +323,7 @@ namespace SmallWorld
                     }
                 }
             }
-
-
+            dosFrequency = new int[index.Count()];
             reader.Close();
         }
 
@@ -399,7 +431,7 @@ namespace SmallWorld
         }
 
         /// <summary>
-        /// mix solution between bfs and dfs to find shortest and strongest path from src to dest
+        /// finds shortest path between src and dest using Modified BFS
         /// </summary>
         /// <param name="src">source actor</param>
         /// <param name="dest">destination actor</param>
@@ -411,7 +443,10 @@ namespace SmallWorld
             int iSecond = index[dest];
             List<int> shortestPath = FindShortestPath(iFirst, iSecond);
 
-            return generateAnswer(shortestPath);
+            if (shortestPath != null)
+                return GenerateAnswer(shortestPath);
+            else
+                return "";
         }
 
 
@@ -420,20 +455,27 @@ namespace SmallWorld
         /// </summary>
         /// <param name="path">contains the indices of actors from src to dest</param>
         /// <returns>string following the desired format</returns>
-        private static string generateAnswer(List<int> path)
+        private static string GenerateAnswer(List<int> path)
         {
             int degree = 0, relation = 0;
             Stack<string> chainOfActors = new Stack<string>();
             Stack<string> chainOfMovies = new Stack<string>();
             string answer = "";
             answer += $"{actorsName[path.Last()]}/{actorsName[path.First()]}\n";
-            for (int i = 0; i < path.Count() - 1; i++)
+            if (path.Count() != 1)
             {
-                List<int> movies = GetIntersection(actorsMovies[path[i]], (actorsMovies[path[i + 1]]));
-                chainOfActors.Push(actorsName[path[i]]);
-                chainOfMovies.Push(moviesNames[movies[0]]);
-                relation += movies.Count;
-                degree++;
+                for (int i = 0; i < path.Count() - 1; i++)
+                {
+                    List<int> movies = GetIntersection(actorsMovies[path[i]], (actorsMovies[path[i + 1]]));
+                    chainOfActors.Push(actorsName[path[i]]);
+                    chainOfMovies.Push(moviesNames[movies[0]]);
+                    relation += movies.Count;
+                    degree++;
+                }
+            }
+            else
+            {
+                relation += actorsMovies[path[0]].Count();
             }
             answer += $"DoS = {degree}, RS = {relation}\n";
             answer += $"CHAIN OF ACTORS: {actorsName[path.Last()]} -> ";
@@ -472,12 +514,83 @@ namespace SmallWorld
             bool[] visited = new bool[index.Count()];
             int maxDist = int.MaxValue;
             int[] dist = new int[index.Count()];
-            Queue<int> q = new Queue<int>();
-            q.Enqueue(start);
-            parent[start] = -1;
-            weight[start] = 0;
+            bool found = false;
+            if (start == end)
+            {
+                parent[end] = -1;
+                return ConstructPath(parent, end);
+            }
+            else
+            {
 
-            dist[start] = 0;
+                Queue<int> q = new Queue<int>();
+                q.Enqueue(start);
+                parent[start] = -1;
+                weight[start] = 0;
+
+                dist[start] = 0;
+                while (q.Count != 0)
+                {
+
+                    int u = q.Dequeue();
+                    if (visited[u])
+                        continue;
+                    if (dist[u] + 1 > maxDist)
+                        break;
+
+                    foreach (int v in adjs[u])
+                    {
+                        if (v == start)
+                            continue;
+                        if (dist[v] == 0 || dist[v] > dist[u] + 1)
+                        {
+                            int commonWithU = common[v][u] + weight[u];
+                            dist[v] = dist[u] + 1;
+                            q.Enqueue(v);
+                            parent[v] = u;
+                            weight[v] = commonWithU;
+                        }
+                        else if (dist[v] == dist[u] + 1)
+                        {
+
+                            int commonWithU = common[v][u] + weight[u];
+                            int commonWithParent = common[v][parent[v]] + weight[parent[v]];
+                            if (commonWithU > commonWithParent)
+                            {
+                                parent[v] = u;
+                                weight[v] = commonWithU;
+                            }
+                        }
+                        if (v == end)
+                        {
+                            found = true;
+                            maxDist = dist[v];
+                        }
+
+                    }
+                    visited[u] = true;
+                }
+                if (found == false)
+                    return null;
+                return ConstructPath(parent, end);
+            }
+        }
+
+        private static void GetKnown(int src)
+        {
+            dosFrequency[0] = 1;
+            int[] parent = new int[index.Count()];
+            int[] weight = new int[index.Count()];
+            bool[] visited = new bool[index.Count()];
+            int maxDist = int.MaxValue;
+            int[] dist = new int[index.Count()];
+            dist = Enumerable.Repeat(int.MaxValue, index.Count()).ToArray();
+            Queue<int> q = new Queue<int>();
+            q.Enqueue(src);
+            parent[src] = -1;
+            weight[src] = 0;
+
+            dist[src] = 0;
             while (q.Count != 0)
             {
 
@@ -489,14 +602,17 @@ namespace SmallWorld
 
                 foreach (int v in adjs[u])
                 {
-                    if (v == start)
-                        continue;
-                    if (dist[v] == 0 || dist[v] > dist[u] + 1)
+
+                    if (dist[v] > dist[u] + 1)
                     {
                         int commonWithU = common[v][u] + weight[u];
+                        if (dist[v] != int.MaxValue && dosFrequency[dist[v]] != 0)
+                            dosFrequency[dist[v]]--;
                         dist[v] = dist[u] + 1;
+                        dosFrequency[dist[v]]++;
+                        if (MAX_DEGREE_FOUND < dist[v])
+                            MAX_DEGREE_FOUND = dist[v];
                         q.Enqueue(v);
-                        parent[v] = -1;
                         weight[v] = 0;
                         parent[v] = u;
                         weight[v] = commonWithU;
@@ -512,16 +628,15 @@ namespace SmallWorld
                             weight[v] = commonWithU;
                         }
                     }
-                    if (v == end)
-                    {
-                        maxDist = dist[v];
-                    }
-                    visited[u] = true;
-                }
-            }
-            return ConstructPath(parent, end);
-        }
 
+
+                }
+                visited[u] = true;
+            }
+
+
+
+        }
         /// <summary>
         /// Takes two Lists and return the intersection of the two with complexity O(n)
         /// </summary>
