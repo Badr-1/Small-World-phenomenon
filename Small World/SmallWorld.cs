@@ -22,6 +22,7 @@ namespace SmallWorld
         private static List<HashSet<int>> adjs = new List<HashSet<int>>();
         private static List<List<int>> actorsMovies = new List<List<int>>();
 
+        static bool sample;
         private static int MAX_DEGREE_FOUND = 0;
         private static int[] dosFrequency;
         /// <summary>
@@ -29,30 +30,49 @@ namespace SmallWorld
         /// </summary>
         public static void Run()
         {
+            sample = false;
             SelectTestCase();
             Console.WriteLine("Test case selected");
             Console.WriteLine("Parsing...");
             ParseMovies();
             Console.WriteLine("Parsing done");
-            ChooseOpeartion();
+            ParseQueries();
+            ParseSolutions();
+            RunTestCase();
+            //ChooseOpeartion();
             ClearAll();
             Console.ReadLine();
-            Console.Clear();
+            
         }
 
+        /// <summary>
+        /// Display Menu With Possible Operations
+        /// </summary>
         private static void ChooseOpeartion()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("1.Find Shortest Path (Completed)");
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("2.Find Strongest Path (Pending)");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("3.Find Degree of Seperation Frequency (Completed)");
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine("4.Find Minimum Movies that link all actors/actresses (Pending)");
-            Console.ResetColor();
-            Console.Write("Enter your choice: ");
-            string Choice = Console.ReadLine();
+            string Choice;
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("1.Find Shortest Path (Completed)");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("2.Find Strongest Path (Completed)");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("3.Find Degree of Seperation Frequency (Completed)");
+                Console.ForegroundColor = ConsoleColor.DarkYellow;
+                Console.WriteLine("4.Find Minimum Movies that link all actors/actresses (Pending)");
+                Console.ResetColor();
+                Console.Write("Enter your choice: ");
+                Choice = Console.ReadLine();
+                if ((Choice == "1" || Choice == "2" || Choice == "3" || Choice == "4"))
+                    break;
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid Choice!");
+                    Console.ResetColor();
+                }
+            } while (true);
             switch (Choice)
             {
                 case "1":
@@ -61,15 +81,22 @@ namespace SmallWorld
                     RunTestCase();
                     break;
                 case "2":
+                    FindStrongestPath(index["Z"], index["F"]);
                     break;
                 case "3":
                     CalculateFrequency();
                     break;
                 case "4":
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine("Not implemented yet");
+                    Console.ResetColor();
                     break;
             }
         }
 
+        /// <summary>
+        /// <b>Bonus</b> Calculate Frequancy of Degree of Separation from one actor/actress to all other actors/actress
+        /// </summary>
         private static void CalculateFrequency()
         {
             int src;
@@ -78,7 +105,7 @@ namespace SmallWorld
             {
                 Console.Write("Enter Actor Name: ");
                 actorName = Console.ReadLine();
-                if(index.ContainsKey(actorName))
+                if (index.ContainsKey(actorName))
                 {
                     src = index[actorName];
                     break;
@@ -88,7 +115,7 @@ namespace SmallWorld
                     Console.WriteLine("Invalid Actor/Acteress Name");
                 }
             } while (true);
-            
+
             MAX_DEGREE_FOUND = 0;
             GetKnown(src);
             Console.WriteLine("Deg.of Separ.{0,2}Frequency", "");
@@ -124,7 +151,7 @@ namespace SmallWorld
             string choice;
             do
             {
-                Console.Clear();
+                
                 Console.WriteLine("0.Sample");
                 Console.WriteLine("-Complete");
 
@@ -152,33 +179,16 @@ namespace SmallWorld
 
                 Console.Write("Select Test Case: ");
                 choice = Console.ReadLine();
+                if (!(choice == "0" || choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5" || choice == "6" || choice == "7" || choice == "8" || choice == "9" || choice == "10"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid Choice");
+                    Console.ResetColor();
+                }
+                else
+                    break;
             }
-            while
-            (!
-                (
-                    choice == "0"
-                    ||
-                    choice == "1"
-                    ||
-                    choice == "2"
-                    ||
-                    choice == "3"
-                    ||
-                    choice == "4"
-                    ||
-                    choice == "5"
-                    ||
-                    choice == "6"
-                    ||
-                    choice == "7"
-                    ||
-                    choice == "8"
-                    ||
-                    choice == "9"
-                    ||
-                    choice == "10"
-                )
-            );
+            while(true);
             switch (choice)
             {
                 case "0":
@@ -186,6 +196,7 @@ namespace SmallWorld
                     moviesPath = path + "movies1.txt";
                     queriesPath = path + "queries1.txt";
                     solutionPath = path + "queries1 - Solution.txt";
+                    sample = true;
                     break;
                 case "1":
                     path += @"Complete\small\Case1\";
@@ -260,6 +271,9 @@ namespace SmallWorld
 
         }
 
+        /// <summary>
+        /// Reads the movies file and creates the movies list with actors
+        /// </summary>
         private static void ParseMovies()
         {
             StreamReader reader = new StreamReader(moviesPath);
@@ -348,29 +362,41 @@ namespace SmallWorld
         private static void ParseSolutions()
         {
             StreamReader reader = new StreamReader(solutionPath);
-            List<string> answer = new List<string>();
-
-
-            while (true)
+            if (!sample)
             {
-                string line = reader.ReadLine();
-                if (line == null)
-                    break;
-                if (line == "")
+                List<string> answer = new List<string>();
+                while (true)
                 {
-                    string ans;
+                    string line = reader.ReadLine();
+                    if (line == null)
+                        break;
+                    if (line == "")
+                    {
+                        string ans;
 
-                    ans = answer[0] + answer[1] + answer[2] + answer[3];
-                    answers.Enqueue(ans);
-                    answer.Clear();
-                }
-                else
-                {
-                    answer.Add(line + "\n");
-                }
+                        ans = answer[0] + answer[1] + answer[2] + answer[3];
+                        answers.Enqueue(ans);
+                        answer.Clear();
+                    }
+                    else
+                    {
+                        answer.Add(line + "\n");
+                    }
 
+                }
             }
-            Console.WriteLine("Solution Parsing Done, {0} answers", answers.Count());
+            else
+            {
+
+                while (true)
+                {
+                    string line = reader.ReadLine();
+                    if (line == null)
+                        break;
+                    answers.Enqueue(line);
+
+                }
+            }
         }
 
         /// <summary>
@@ -381,6 +407,8 @@ namespace SmallWorld
 
             int current = 1;
             int passed = 0;
+            if (sample)
+                Console.WriteLine(answers.Dequeue());
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             foreach (string query in queries)
@@ -442,33 +470,49 @@ namespace SmallWorld
             int iFirst = index[src];
             int iSecond = index[dest];
             List<int> shortestPath = FindShortestPath(iFirst, iSecond);
-
+            int dummy = 0;
             if (shortestPath != null)
-                return GenerateAnswer(shortestPath);
+                return GenerateAnswer(shortestPath, ref dummy);
             else
                 return "";
         }
-
 
         /// <summary>
         /// Generate an Answer from path to a desired format
         /// </summary>
         /// <param name="path">contains the indices of actors from src to dest</param>
         /// <returns>string following the desired format</returns>
-        private static string GenerateAnswer(List<int> path)
+        private static string GenerateAnswer(List<int> path, ref int r)
         {
             int degree = 0, relation = 0;
             Stack<string> chainOfActors = new Stack<string>();
             Stack<string> chainOfMovies = new Stack<string>();
             string answer = "";
-            answer += $"{actorsName[path.Last()]}/{actorsName[path.First()]}\n";
+            string commonMovies = "";
+            if (!sample)
+                answer += $"{actorsName[path.Last()]}/{actorsName[path.First()]}\n";
             if (path.Count() != 1)
             {
                 for (int i = 0; i < path.Count() - 1; i++)
                 {
                     List<int> movies = GetIntersection(actorsMovies[path[i]], (actorsMovies[path[i + 1]]));
                     chainOfActors.Push(actorsName[path[i]]);
-                    chainOfMovies.Push(moviesNames[movies[0]]);
+                    if (!sample)
+                        chainOfMovies.Push(moviesNames[movies[0]]);
+                    else
+                    {
+                        commonMovies = "";
+                        foreach (var m in movies)
+                        {
+                            if (commonMovies == "")
+                                commonMovies += moviesNames[m];
+                            else
+                                commonMovies += moviesNames[m].Substring(moviesNames[m].Count() - 1);
+                            if (m != movies.Last())
+                                commonMovies += " or ";
+                        }
+                        chainOfMovies.Push(commonMovies);
+                    }
                     relation += movies.Count;
                     degree++;
                 }
@@ -477,24 +521,39 @@ namespace SmallWorld
             {
                 relation += actorsMovies[path[0]].Count();
             }
-            answer += $"DoS = {degree}, RS = {relation}\n";
-            answer += $"CHAIN OF ACTORS: {actorsName[path.Last()]} -> ";
-            while (chainOfActors.Count() != 0)
+            r = relation;
+            if (!sample)
             {
-                answer += chainOfActors.Pop();
-                if (chainOfActors.Count() != 0)
-                    answer += " -> ";
+                answer += $"DoS = {degree}, RS = {relation}\n";
+                answer += $"CHAIN OF ACTORS: {actorsName[path.Last()]} -> ";
+                while (chainOfActors.Count() != 0)
+                {
+                    answer += chainOfActors.Pop();
+                    if (chainOfActors.Count() != 0)
+                        answer += " -> ";
+                }
+                answer += "\n";
+                answer += "CHAIN OF MOVIES:  =>";
+                while (chainOfMovies.Count() != 0)
+                {
+                    answer += " " + chainOfMovies.Pop();
+                    answer += " =>";
+
+                }
+                answer += "\n";
             }
-            answer += "\n";
-            answer += "CHAIN OF MOVIES:  =>";
-            while (chainOfMovies.Count() != 0)
+            else
             {
-                answer += " " + chainOfMovies.Pop();
-                answer += " =>";
+                //"A/B\t\t1\t\t3\t\tMovie 1 or 2 or 7"
+                answer += $"{actorsName[path.Last()]}/{actorsName[path.First()]}\t\t{degree}\t\t{relation}\t\t";
+                while (chainOfMovies.Count() != 0)
+                {
+                    answer += chainOfMovies.Pop();
+                    if (chainOfMovies.Count() != 0)
+                        answer += " => ";
 
+                }
             }
-            answer += "\n";
-
 
             return answer;
 
@@ -689,6 +748,65 @@ namespace SmallWorld
         }
 
 
+        /// <summary>
+        /// Finds Strongest Path Between src and dest using DFS
+        /// </summary>
+        /// <param name="src"></param>
+        /// <param name="dest"></param>
+        private static void FindStrongestPath(int src, int dest)
+        {
+            
+            bool isReachable = false;
+            isReachable = FindShortestPath(src, dest) != null;
+            if (isReachable)
+            {
+                bool[] discovered = new bool[index.Count()];
+                Stack<int> path = new Stack<int>();
+                List<List<int>> paths = new List<List<int>>();
+                path.Push(src);
+                int relation = 0;
+                int max = 0;
+                int maxIndex = 0;
+                Visit(src, discovered, dest, path, paths);
+                for (int i = 0; i < paths.Count(); i++)
+                {
+                    if (relation > max)
+                    {
+                        max = relation;
+                        maxIndex = i;
+                    }
+                }
+
+                Console.WriteLine(GenerateAnswer(paths[maxIndex], ref relation));
+            }
+        }
+
+        private static void Visit(int u, bool[] discovered, int dest, Stack<int> path, List<List<int>> paths)
+        {
+            discovered[u] = true;
+            foreach (var adj in adjs[u])
+            {
+                if (adj == dest)
+                {
+                    path.Push(adj);
+                    paths.Add(path.ToList());
+                    path.Pop();
+                    continue;
+                }
+
+                if (!discovered[adj])
+                {
+                    path.Push(adj);
+                    Visit(adj, discovered, dest, path, paths);
+                    path.Pop();
+                }
+
+            }
+            discovered[u] = false;
+        }
+
+
+
 
     }
     class Normal
@@ -699,8 +817,11 @@ namespace SmallWorld
         private static Queue<string> answers = new Queue<string>();
         private static Dictionary<string, HashSet<string>> actorsInMovie = new Dictionary<string, HashSet<string>>();
         private static Dictionary<string, HashSet<string>> moviesOfActor = new Dictionary<string, HashSet<string>>();
+
+        static bool sample;
         public static void Run()
         {
+            sample = false;
             SelectTestCase();
             Console.WriteLine("Parsing Test Case ...");
             ParseMovies();
@@ -710,7 +831,7 @@ namespace SmallWorld
             RunTestCase();
             ClearAll();
             Console.ReadLine();
-            Console.Clear();
+            
         }
         private static void ClearAll()
         {
@@ -722,24 +843,41 @@ namespace SmallWorld
         private static void ParseSolution()
         {
             StreamReader reader = new StreamReader(solutionPath);
-            string answer = "";
-            while (true)
+            if (!sample)
             {
-                string line = reader.ReadLine();
-                if (line == null)
-                    break;
-                if (line == "")
+                List<string> answer = new List<string>();
+                while (true)
                 {
-                    answers.Enqueue(answer);
-                    answer = "";
-                }
-                else
-                {
-                    answer += line + "\n";
-                }
+                    string line = reader.ReadLine();
+                    if (line == null)
+                        break;
+                    if (line == "")
+                    {
+                        string ans;
 
+                        ans = answer[0] + answer[1] + answer[2] + answer[3];
+                        answers.Enqueue(ans);
+                        answer.Clear();
+                    }
+                    else
+                    {
+                        answer.Add(line + "\n");
+                    }
+
+                }
             }
-            Console.WriteLine("Solution Parsing Done, {0} answers", answers.Count());
+            else
+            {
+
+                while (true)
+                {
+                    string line = reader.ReadLine();
+                    if (line == null)
+                        break;
+                    answers.Enqueue(line);
+
+                }
+            }
         }
         public static void ParseMovies()
         {
@@ -788,7 +926,7 @@ namespace SmallWorld
             string choice;
             do
             {
-                Console.Clear();
+                
                 Console.WriteLine("0.Sample");
                 Console.WriteLine("-Complete");
 
@@ -816,33 +954,16 @@ namespace SmallWorld
 
                 Console.Write("Select Test Case: ");
                 choice = Console.ReadLine();
+                if (!(choice == "0" || choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5" || choice == "6" || choice == "7" || choice == "8" || choice == "9" || choice == "10"))
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Invalid Choice");
+                    Console.ResetColor();
+                }
+                else
+                    break;
             }
-            while
-            (!
-                (
-                    choice == "0"
-                    ||
-                    choice == "1"
-                    ||
-                    choice == "2"
-                    ||
-                    choice == "3"
-                    ||
-                    choice == "4"
-                    ||
-                    choice == "5"
-                    ||
-                    choice == "6"
-                    ||
-                    choice == "7"
-                    ||
-                    choice == "8"
-                    ||
-                    choice == "9"
-                    ||
-                    choice == "10"
-                )
-            );
+            while(true);
             switch (choice)
             {
                 case "0":
@@ -850,6 +971,7 @@ namespace SmallWorld
                     moviesPath = path + "movies1.txt";
                     queriesPath = path + "queries1.txt";
                     solutionPath = path + "queries1 - Solution.txt";
+                    sample = true;
                     break;
                 case "1":
                     path += @"Complete\small\Case1\";
@@ -927,44 +1049,41 @@ namespace SmallWorld
         {
             int current = 1;
             int passed = 0;
+            if (sample)
+                Console.WriteLine(answers.Dequeue());
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
             foreach (KeyValuePair<string, string> kvp in queries)
             {
                 string answer = Solve(kvp.Key, kvp.Value);
-                if (answers.Count() == 0)
+
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
+                Console.Write("Query {0}/{1} ", current, queries.Count);
+                Console.ResetColor();
+                string actual = answers.Dequeue();
+
+                if (answer != actual)
                 {
-                    Console.WriteLine(answer);
+                    Console.WriteLine("+=======================+");
+                    Console.WriteLine("Query {0} failed: {1}/{2}", current, kvp.Key, kvp.Value);
+                    Console.WriteLine("Expected:\n {0}", actual);
+                    Console.WriteLine("Actual:\n {0}", answer);
+
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.Write($" Failed\n");
+                    Console.ResetColor();
                 }
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.DarkCyan;
-                    Console.Write("Query {0}/{1} ", current, queries.Count);
+                    passed++;
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write($" Passed\n");
                     Console.ResetColor();
-                    string actual = answers.Dequeue();
-
-                    if (answer != actual)
-                    {
-                        Console.WriteLine("+=======================+");
-                        Console.WriteLine("Query {0} failed: {1}/{2}", current, kvp.Key, kvp.Value);
-                        Console.WriteLine("Expected:\n {0}", actual);
-                        Console.WriteLine("Actual:\n {0}", answer);
-
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write($" Failed\n");
-                        Console.ResetColor();
-                    }
-                    else
-                    {
-                        passed++;
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write($" Passed\n");
-                        Console.ResetColor();
-                        Console.WriteLine(answer);
-                    }
-
-                    current++;
+                    Console.WriteLine(answer);
                 }
+
+                current++;
+
 
 
             }
@@ -1061,11 +1180,22 @@ namespace SmallWorld
                                     break;
 
                                 List<string> commonMoviesList = moviesOfActor[curr.name].Intersect(moviesOfActor[curr.parent.name]).ToList();
-                                string commonMovies = commonMoviesList[0];
+                                string commonMovies = "";
+                                if (!sample)
+                                    commonMovies = commonMoviesList[0];
                                 for (int i = 0; i < commonMoviesList.Count(); i++)
                                 {
                                     relation++;
-                                    string elm = commonMoviesList.ElementAt(i);
+                                    if (sample)
+                                    {
+                                        if (commonMovies == "")
+                                            commonMovies += commonMoviesList[i];
+                                        else
+                                            commonMovies += commonMoviesList[i].Substring(commonMoviesList[i].Count() - 1);
+                                        if (i != commonMoviesList.Count() - 1)
+                                            commonMovies += " or ";
+                                    }
+                                    string elm = commonMoviesList[i];
                                     actor.askedMovies[elm] = true;
                                 }
 
@@ -1176,25 +1306,39 @@ namespace SmallWorld
             public string print(string who, string whom)
             {
                 string answer = "";
-                answer += String.Format("{0}/{1}\n", who, whom);
-                answer += String.Format("DoS = {0}, RS = {1}\n", degree, relation);
-                answer += String.Format("CHAIN OF ACTORS: {0} -> ", who);
-                while (actorList.Count() != 0)
+                if (!sample)
                 {
-                    answer += actorList.Pop();
-                    if (actorList.Count() != 0)
-                        answer += " -> ";
+                    answer += String.Format("{0}/{1}\n", who, whom);
+                    answer += String.Format("DoS = {0}, RS = {1}\n", degree, relation);
+                    answer += String.Format("CHAIN OF ACTORS: {0} -> ", who);
+                    while (actorList.Count() != 0)
+                    {
+                        answer += actorList.Pop();
+                        if (actorList.Count() != 0)
+                            answer += " -> ";
+                    }
+                    answer += "\n";
+                    answer += "CHAIN OF MOVIES:  =>";
+                    while (moviesList.Count() != 0)
+                    {
+                        answer += " " + moviesList.Pop();
+                        answer += " =>";
+
+                    }
+                    answer += "\n";
                 }
-                answer += "\n";
-                answer += "CHAIN OF MOVIES:  =>";
-                while (moviesList.Count() != 0)
+                else
                 {
-                    answer += " " + moviesList.Pop();
-                    answer += " =>";
+                    answer += $"{who}/{whom}\t\t{degree}\t\t{relation}\t\t";
+                    while (moviesList.Count() != 0)
+                    {
+                        answer += moviesList.Pop();
+                        if (moviesList.Count() != 0)
+                            answer += " => ";
+
+                    }
 
                 }
-                answer += "\n";
-
                 return answer;
             }
         }

@@ -10,20 +10,18 @@ namespace SmallWorld
     {
         private static void Main(string[] args)
         {
-
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Welcome to Small World!");
+            Console.ResetColor();
             while (true)
-            {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("Welcome to SmallWorld!");
-                Console.ResetColor();
+            {             
                 Console.WriteLine("1. Normal");
                 Console.WriteLine("2. Optimization");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("3. Exit");
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.Write("Choice: ");
-                var mode = Console.ReadLine();
+                string mode = Console.ReadLine();
                 Console.ResetColor();
                 if (mode == "1")
                 {
@@ -39,7 +37,9 @@ namespace SmallWorld
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Invalid mode");
+                    Console.ResetColor();
                 }
             }
         }

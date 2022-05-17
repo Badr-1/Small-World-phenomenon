@@ -8,11 +8,11 @@ E:\Small-World-phenomenon\reMake\obj\Debug\Small.exe
 E:\Small-World-phenomenon\reMake\obj\Debug\Small.pdb
 E:\Small-World-phenomenon\reMake\obj\Debug\SmallWorld.GUI.resources
 E:\Small-World-phenomenon\reMake\obj\Debug\Small World.csproj.GenerateResource.cache
-E:\Small-World-phenomenon\Small World\bin\Debug\Small.exe.config
-E:\Small-World-phenomenon\Small World\bin\Debug\Small.exe
-E:\Small-World-phenomenon\Small World\bin\Debug\Small.pdb
+E:\Small-World-phenomenon\Small World\bin\Debug\Small World.exe.config
+E:\Small-World-phenomenon\Small World\bin\Debug\Small World.exe
+E:\Small-World-phenomenon\Small World\bin\Debug\Small World.pdb
 E:\Small-World-phenomenon\Small World\obj\Debug\Small World.csproj.AssemblyReference.cache
 E:\Small-World-phenomenon\Small World\obj\Debug\Small World.csproj.SuggestedBindingRedirects.cache
 E:\Small-World-phenomenon\Small World\obj\Debug\Small World.csproj.CoreCompileInputs.cache
-E:\Small-World-phenomenon\Small World\obj\Debug\Small.exe
-E:\Small-World-phenomenon\Small World\obj\Debug\Small.pdb
+E:\Small-World-phenomenon\Small World\obj\Debug\Small World.exe
+E:\Small-World-phenomenon\Small World\obj\Debug\Small World.pdb
