@@ -25,9 +25,6 @@ namespace SmallWorld
         static bool sample;
         private static int MAX_DEGREE_FOUND = 0;
         private static int[] dosFrequency;
-        /// <summary>
-        /// Runs the Optimization
-        /// </summary>
         public static void Run()
         {
             sample = false;
@@ -36,18 +33,12 @@ namespace SmallWorld
             Console.WriteLine("Parsing...");
             ParseMovies();
             Console.WriteLine("Parsing done");
-            ParseQueries();
-            ParseSolutions();
-            RunTestCase();
-            //ChooseOpeartion();
+            ChooseOpeartion();
             ClearAll();
             Console.ReadLine();
-            
+
         }
 
-        /// <summary>
-        /// Display Menu With Possible Operations
-        /// </summary>
         private static void ChooseOpeartion()
         {
             string Choice;
@@ -81,7 +72,7 @@ namespace SmallWorld
                     RunTestCase();
                     break;
                 case "2":
-                    FindStrongestPath(index["Z"], index["F"]);
+                    FindStrongestPath();
                     break;
                 case "3":
                     CalculateFrequency();
@@ -94,41 +85,6 @@ namespace SmallWorld
             }
         }
 
-        /// <summary>
-        /// <b>Bonus</b> Calculate Frequancy of Degree of Separation from one actor/actress to all other actors/actress
-        /// </summary>
-        private static void CalculateFrequency()
-        {
-            int src;
-            string actorName;
-            do
-            {
-                Console.Write("Enter Actor Name: ");
-                actorName = Console.ReadLine();
-                if (index.ContainsKey(actorName))
-                {
-                    src = index[actorName];
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid Actor/Acteress Name");
-                }
-            } while (true);
-
-            MAX_DEGREE_FOUND = 0;
-            GetKnown(src);
-            Console.WriteLine("Deg.of Separ.{0,2}Frequency", "");
-            for (int i = 0; i <= MAX_DEGREE_FOUND; i++)
-            {
-                Console.WriteLine("{0,12}{1,12}", i, dosFrequency[i]);
-            }
-
-        }
-
-        /// <summary>
-        /// Clear All Data Used in the previous test case
-        /// </summary>
         private static void ClearAll()
         {
             queries.Clear();
@@ -142,16 +98,13 @@ namespace SmallWorld
             common.Clear();
         }
 
-        /// <summary>
-        /// Selects the test case to run
-        /// </summary>
         private static void SelectTestCase()
         {
             string path = @"..\..\..\Testcases\";
             string choice;
             do
             {
-                
+
                 Console.WriteLine("0.Sample");
                 Console.WriteLine("-Complete");
 
@@ -188,7 +141,7 @@ namespace SmallWorld
                 else
                     break;
             }
-            while(true);
+            while (true);
             switch (choice)
             {
                 case "0":
@@ -271,9 +224,6 @@ namespace SmallWorld
 
         }
 
-        /// <summary>
-        /// Reads the movies file and creates the movies list with actors
-        /// </summary>
         private static void ParseMovies()
         {
             StreamReader reader = new StreamReader(moviesPath);
@@ -341,9 +291,6 @@ namespace SmallWorld
             reader.Close();
         }
 
-        /// <summary>
-        /// Parse the queries file for the Choosen test Case from <c>SelectTestCase</c> method and store the queries in <c>queries</c> list.
-        /// </summary>
         private static void ParseQueries()
         {
             StreamReader reader = new StreamReader(queriesPath);
@@ -356,9 +303,6 @@ namespace SmallWorld
             }
         }
 
-        /// <summary>
-        /// Parse the solution file for the Choosen test Case from  <c>SelectTestCase</c> method and stores in <c>answers</c> Queue
-        /// </summary>
         private static void ParseSolutions()
         {
             StreamReader reader = new StreamReader(solutionPath);
@@ -399,9 +343,6 @@ namespace SmallWorld
             }
         }
 
-        /// <summary>
-        /// Run test Choosen test Case from <c>SelectTestCase()</c> method
-        /// </summary>
         private static void RunTestCase()
         {
 
@@ -458,39 +399,25 @@ namespace SmallWorld
 
         }
 
-        /// <summary>
-        /// finds shortest path between src and dest using Modified BFS
-        /// </summary>
-        /// <param name="src">source actor</param>
-        /// <param name="dest">destination actor</param>
-        /// <returns>string with answer</returns>
         private static string Solve(string src, string dest)
         {
-
             int iFirst = index[src];
             int iSecond = index[dest];
             List<int> shortestPath = FindShortestPath(iFirst, iSecond);
-            int dummy = 0;
             if (shortestPath != null)
-                return GenerateAnswer(shortestPath, ref dummy);
+                return GenerateAnswer(shortestPath);
             else
                 return "";
         }
 
-        /// <summary>
-        /// Generate an Answer from path to a desired format
-        /// </summary>
-        /// <param name="path">contains the indices of actors from src to dest</param>
-        /// <returns>string following the desired format</returns>
-        private static string GenerateAnswer(List<int> path, ref int r)
+        private static string GenerateAnswer(List<int> path)
         {
             int degree = 0, relation = 0;
             Stack<string> chainOfActors = new Stack<string>();
             Stack<string> chainOfMovies = new Stack<string>();
             string answer = "";
             string commonMovies = "";
-            if (!sample)
-                answer += $"{actorsName[path.Last()]}/{actorsName[path.First()]}\n";
+            if (!sample) answer += $"{actorsName[path.Last()]}/{actorsName[path.First()]}\n";
             if (path.Count() != 1)
             {
                 for (int i = 0; i < path.Count() - 1; i++)
@@ -521,7 +448,6 @@ namespace SmallWorld
             {
                 relation += actorsMovies[path[0]].Count();
             }
-            r = relation;
             if (!sample)
             {
                 answer += $"DoS = {degree}, RS = {relation}\n";
@@ -538,34 +464,23 @@ namespace SmallWorld
                 {
                     answer += " " + chainOfMovies.Pop();
                     answer += " =>";
-
                 }
                 answer += "\n";
             }
             else
             {
-                //"A/B\t\t1\t\t3\t\tMovie 1 or 2 or 7"
                 answer += $"{actorsName[path.Last()]}/{actorsName[path.First()]}\t\t{degree}\t\t{relation}\t\t";
                 while (chainOfMovies.Count() != 0)
                 {
                     answer += chainOfMovies.Pop();
                     if (chainOfMovies.Count() != 0)
                         answer += " => ";
-
                 }
             }
 
             return answer;
-
         }
 
-
-        /// <summary>
-        /// Find shortest path between src and dest using bfs using weight array
-        /// </summary>
-        /// <param name="start">Source Actor</param>
-        /// <param name="end">Destination Actor</param>
-        /// <returns>return shrotest path from <c>start</c> to <c>end</c></returns>
         private static List<int> FindShortestPath(int start, int end)
         {
             int[] parent = new int[index.Count()];
@@ -581,33 +496,30 @@ namespace SmallWorld
             }
             else
             {
-
                 Queue<int> q = new Queue<int>();
                 q.Enqueue(start);
                 parent[start] = -1;
                 weight[start] = 0;
-
                 dist[start] = 0;
                 while (q.Count != 0)
                 {
-
                     int u = q.Dequeue();
                     if (visited[u])
                         continue;
                     if (dist[u] + 1 > maxDist)
                         break;
-
                     foreach (int v in adjs[u])
                     {
                         if (v == start)
+                            continue;
+                        if (visited[v])
                             continue;
                         if (dist[v] == 0 || dist[v] > dist[u] + 1)
                         {
                             int commonWithU = common[v][u] + weight[u];
                             dist[v] = dist[u] + 1;
                             q.Enqueue(v);
-                            parent[v] = u;
-                            weight[v] = commonWithU;
+                            parent[v] = u; weight[v] = commonWithU;
                         }
                         else if (dist[v] == dist[u] + 1)
                         {
@@ -625,7 +537,6 @@ namespace SmallWorld
                             found = true;
                             maxDist = dist[v];
                         }
-
                     }
                     visited[u] = true;
                 }
@@ -648,17 +559,14 @@ namespace SmallWorld
             q.Enqueue(src);
             parent[src] = -1;
             weight[src] = 0;
-
             dist[src] = 0;
             while (q.Count != 0)
             {
-
                 int u = q.Dequeue();
                 if (visited[u])
                     continue;
                 if (dist[u] + 1 > maxDist)
                     break;
-
                 foreach (int v in adjs[u])
                 {
 
@@ -667,8 +575,7 @@ namespace SmallWorld
                         int commonWithU = common[v][u] + weight[u];
                         if (dist[v] != int.MaxValue && dosFrequency[dist[v]] != 0)
                             dosFrequency[dist[v]]--;
-                        dist[v] = dist[u] + 1;
-                        dosFrequency[dist[v]]++;
+                        dist[v] = dist[u] + 1; dosFrequency[dist[v]]++;
                         if (MAX_DEGREE_FOUND < dist[v])
                             MAX_DEGREE_FOUND = dist[v];
                         q.Enqueue(v);
@@ -683,8 +590,7 @@ namespace SmallWorld
                         int commonWithParent = common[v][parent[v]] + weight[parent[v]];
                         if (commonWithU > commonWithParent)
                         {
-                            parent[v] = u;
-                            weight[v] = commonWithU;
+                            parent[v] = u; weight[v] = commonWithU;
                         }
                     }
 
@@ -692,16 +598,8 @@ namespace SmallWorld
                 }
                 visited[u] = true;
             }
-
-
-
         }
-        /// <summary>
-        /// Takes two Lists and return the intersection of the two with complexity O(n)
-        /// </summary>
-        /// <param name="first"></param>
-        /// <param name="second"></param>
-        /// <returns>Intersection between two Lists</returns>
+
         private static List<int> GetIntersection(List<int> first, List<int> second)
         {
             int fIter = 0;
@@ -719,43 +617,78 @@ namespace SmallWorld
                 }
                 else
                 {
-                    result.Add(first[fIter]);
-                    fIter++;
-                    sIter++;
-
+                    result.Add(first[fIter]); fIter++; sIter++;
                 }
             }
             return result;
         }
 
-
-        /// <summary>
-        /// Construct path from parent array
-        /// </summary>
-        /// <param name="parent">integer array Contains parent index of every actor</param>
-        /// <param name="dest">destination actor index</param>
-        /// <returns>return path indices</returns>
         private static List<int> ConstructPath(int[] parent, int dest)
         {
             List<int> path = new List<int>();
             int i = dest;
             while (i != -1)
             {
-                path.Add(i);
-                i = parent[i];
+                path.Add(i); i = parent[i];
             }
             return path;
         }
 
 
-        /// <summary>
-        /// Finds Strongest Path Between src and dest using DFS
-        /// </summary>
-        /// <param name="src"></param>
-        /// <param name="dest"></param>
-        private static void FindStrongestPath(int src, int dest)
+        private static void CalculateFrequency()
         {
-            
+            int src; string actorName; do
+            {
+                Console.Write("Enter Actor Name: ");
+                actorName = Console.ReadLine();
+                if (index.ContainsKey(actorName))
+                {
+                    src = index[actorName]; break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Actor/Acteress Name");
+                }
+            } while (true);
+
+            MAX_DEGREE_FOUND = 0; GetKnown(src);
+            Console.WriteLine("Deg.of Separ.{0,2}Frequency", "");
+            for (int i = 0; i <= MAX_DEGREE_FOUND; i++)
+            {
+                Console.WriteLine("{0,12}{1,12}", i, dosFrequency[i]);
+            }
+
+        }
+
+        private static void FindStrongestPath()
+        {
+            int src = -1, dest = -1;
+            do
+            {
+                Console.Write("Enter Source Actor Name: ");
+                string srcName = Console.ReadLine();
+                if (index.ContainsKey(srcName))
+                {
+                    src = index[srcName];
+                    Console.Write("Enter Destination Actor Name: ");
+                    string destName = Console.ReadLine();
+                    if (index.ContainsKey(destName))
+                    {
+                        dest = index[destName];
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid Actor/Acteress Name");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid Actor/Acteress Name");
+                }
+
+               
+            } while (src == -1 || dest == -1);
+
             bool isReachable = false;
             isReachable = FindShortestPath(src, dest) != null;
             if (isReachable)
@@ -764,24 +697,15 @@ namespace SmallWorld
                 Stack<int> path = new Stack<int>();
                 List<List<int>> paths = new List<List<int>>();
                 path.Push(src);
-                int relation = 0;
-                int max = 0;
-                int maxIndex = 0;
                 Visit(src, discovered, dest, path, paths);
-                for (int i = 0; i < paths.Count(); i++)
-                {
-                    if (relation > max)
-                    {
-                        max = relation;
-                        maxIndex = i;
-                    }
-                }
-
-                Console.WriteLine(GenerateAnswer(paths[maxIndex], ref relation));
+                Console.WriteLine(GenerateAnswer(paths[max_relation_index]));
             }
         }
 
-        private static void Visit(int u, bool[] discovered, int dest, Stack<int> path, List<List<int>> paths)
+
+        static int max_relation = 0;
+        static int max_relation_index = 0;
+        private static void Visit(int u, bool[] discovered, int dest, Stack<int> path, List<List<int>> paths, int w = 0)
         {
             discovered[u] = true;
             foreach (var adj in adjs[u])
@@ -789,25 +713,28 @@ namespace SmallWorld
                 if (adj == dest)
                 {
                     path.Push(adj);
+                    w += common[u][adj];
                     paths.Add(path.ToList());
+                    if (w > max_relation)
+                    {
+                        max_relation = w;
+                        max_relation_index = paths.Count() - 1;
+                    }
                     path.Pop();
+                    w -= common[u][adj];
                     continue;
                 }
 
                 if (!discovered[adj])
                 {
                     path.Push(adj);
-                    Visit(adj, discovered, dest, path, paths);
+                    Visit(adj, discovered, dest, path, paths, w + common[u][adj]);
                     path.Pop();
                 }
 
             }
             discovered[u] = false;
         }
-
-
-
-
     }
     class Normal
     {
@@ -831,7 +758,7 @@ namespace SmallWorld
             RunTestCase();
             ClearAll();
             Console.ReadLine();
-            
+
         }
         private static void ClearAll()
         {
@@ -926,7 +853,7 @@ namespace SmallWorld
             string choice;
             do
             {
-                
+
                 Console.WriteLine("0.Sample");
                 Console.WriteLine("-Complete");
 
@@ -963,7 +890,7 @@ namespace SmallWorld
                 else
                     break;
             }
-            while(true);
+            while (true);
             switch (choice)
             {
                 case "0":

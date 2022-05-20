@@ -16,7 +16,7 @@
 - Requirements
     - [x] without Optimization
     - [x] Optimization idea implemented
-    - [ ] Detailed analysis of the code
+    - [x] Detailed analysis of the code
     - [x] Add Option to run the code without optimization
 - bonuses:
   - [x] Frequancy of Degree of Separation from one actor/actress to all other actors/actress
