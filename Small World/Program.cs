@@ -13,12 +13,10 @@ namespace SmallWorld
         public static bool sample;
         public static void Run(bool Optimize)
         {
-            answers.Clear();queries.Clear();sample = false;
-            SelectTestCase();   
+            answers.Clear(); queries.Clear(); sample = false;
+            SelectTestCase();
             if (Optimize)
-            {
                 Optimization.ChooseOpeartion();
-            }
             else
             {
                 ParseSolutions();
@@ -30,125 +28,71 @@ namespace SmallWorld
         public static void SelectTestCase()
         {
             string path = @"..\..\..\Testcases\";
-            string choice;
+            string menu =
+            @"0-Sample\n1-Small 1\n2-Small 2\n3-Medium 85\n4-Medium 4000\n5-Medium 110\n6-Medium 2000\n
+            7-Large 26\n8-Large 600\n9-Extreme 22\n10-Extreme 200\nSelect Test Case: ";
+            int choice;
             do
             {
 
-                Console.WriteLine("0.Sample");
-                Console.WriteLine("-Complete");
-
-                Console.WriteLine(" -small");
-                Console.WriteLine("\t1-Case1");
-                Console.WriteLine("\t2-Case2");
-
-                Console.WriteLine(" -medium");
-                Console.WriteLine("  -Case1");
-                Console.WriteLine("\t3.queries85");
-                Console.WriteLine("\t4.queries4000");
-
-                Console.WriteLine("  -Case2");
-                Console.WriteLine("\t5.queries110");
-                Console.WriteLine("\t6.queries2000");
-
-                Console.WriteLine(" -large");
-                Console.WriteLine("\t7.queries26");
-                Console.WriteLine("\t8.queries600");
-
-
-                Console.WriteLine(" -extreme");
-                Console.WriteLine("\t9.queries22");
-                Console.WriteLine("\t10.queries200");
-
-                Console.Write("Select Test Case: ");
-                choice = Console.ReadLine();
-                if (!(choice == "0" || choice == "1" || choice == "2" || choice == "3" || choice == "4" || choice == "5" || choice == "6" || choice == "7" || choice == "8" || choice == "9" || choice == "10"))
+                Console.Write(menu);
+                try
+                {
+                    choice = int.Parse(Console.ReadLine());
+                    if (choice < 0 || choice > 10)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Invalid Choice");
+                        Console.ResetColor();
+                    }
+                    else
+                        break;
+                }
+                catch
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Invalid Choice");
                     Console.ResetColor();
                 }
-                else
-                    break;
             }
             while (true);
             switch (choice)
             {
-                case "0":
+                case 0:
                     path += @"Sample\";
-                    moviesPath = path + "movies1.txt";
-                    queriesPath = path + "queries1.txt";
-                    solutionPath = path + "queries1 - Solution.txt";
+                    moviesPath = path + "movies1.txt"; queriesPath = path + "queries1.txt"; solutionPath = path + "queries1 - Solution.txt";
                     sample = true;
                     break;
-                case "1":
-                    path += @"Complete\small\Case1\";
-                    moviesPath = path + "Movies193.txt";
-                    queriesPath = path + "queries110.txt";
-                    solutionPath = path + @"\Solution\queries110 - Solution.txt";
-
+                case 1:
+                    path += @"Complete\small\Case1\"; moviesPath = path + "Movies193.txt"; queriesPath = path + "queries110.txt"; solutionPath = path + @"\Solution\queries110 - Solution.txt";
                     break;
-                case "2":
-                    path += @"Complete\small\Case2\";
-                    moviesPath = path + "Movies187.txt";
-                    queriesPath = path + "queries50.txt";
-                    solutionPath = path + @"\Solution\queries50 - Solution.txt";
+                case 2:
+                    path += @"Complete\small\Case2\"; moviesPath = path + "Movies187.txt"; queriesPath = path + "queries50.txt"; solutionPath = path + @"\Solution\queries50 - Solution.txt";
                     break;
-                case "3":
-                    path += @"Complete\medium\Case1\";
-                    moviesPath = path + "Movies967.txt";
-                    queriesPath = path + "queries85.txt";
-                    solutionPath = path + @"\Solutions\queries85 - Solution.txt";
-
+                case 3:
+                    path += @"Complete\medium\Case1\"; moviesPath = path + "Movies967.txt"; queriesPath = path + "queries85.txt"; solutionPath = path + @"\Solutions\queries85 - Solution.txt";
                     break;
-                case "4":
-                    path += @"Complete\medium\Case1\";
-                    moviesPath = path + "Movies967.txt";
-                    queriesPath = path + "queries4000.txt";
-                    solutionPath = path + @"\Solutions\queries4000 - Solution.txt";
+                case 4:
+                    path += @"Complete\medium\Case1\"; moviesPath = path + "Movies967.txt"; queriesPath = path + "queries4000.txt"; solutionPath = path + @"\Solutions\queries4000 - Solution.txt";
                     break;
-
-
-                case "5":
-                    path += @"Complete\medium\Case2\";
-                    moviesPath = path + "Movies4736.txt";
-                    queriesPath = path + "queries110.txt";
-                    solutionPath = path + @"\Solutions\queries110 - Solution.txt";
+                case 5:
+                    path += @"Complete\medium\Case2\"; moviesPath = path + "Movies4736.txt"; queriesPath = path + "queries110.txt"; solutionPath = path + @"\Solutions\queries110 - Solution.txt";
                     break;
-                case "6":
-                    path += @"Complete\medium\Case2\";
-                    moviesPath = path + "Movies4736.txt";
-                    queriesPath = path + "queries2000.txt";
-                    solutionPath = path + @"\Solutions\queries2000 - Solution.txt";
+                case 6:
+                    path += @"Complete\medium\Case2\"; moviesPath = path + "Movies4736.txt"; queriesPath = path + "queries2000.txt"; solutionPath = path + @"\Solutions\queries2000 - Solution.txt";
                     break;
-
-                case "7":
-                    path += @"Complete\large\";
-                    moviesPath = path + "Movies14129.txt";
-                    queriesPath = path + "queries26.txt";
-                    solutionPath = path + @"\Solutions\queries26 - Solution.txt";
+                case 7:
+                    path += @"Complete\large\"; moviesPath = path + "Movies14129.txt"; queriesPath = path + "queries26.txt"; solutionPath = path + @"\Solutions\queries26 - Solution.txt";
                     break;
-                case "8":
-                    path += @"Complete\large\";
-                    moviesPath = path + "Movies14129.txt";
-                    queriesPath = path + "queries600.txt";
-                    solutionPath = path + @"\Solutions\queries600 - Solution.txt";
+                case 8:
+                    path += @"Complete\large\"; moviesPath = path + "Movies14129.txt"; queriesPath = path + "queries600.txt"; solutionPath = path + @"\Solutions\queries600 - Solution.txt";
                     break;
-
-
-                case "9":
-                    path += @"Complete\extreme\";
-                    moviesPath = path + "Movies122806.txt";
-                    queriesPath = path + "queries22.txt";
-                    solutionPath = path + @"\Solutions\queries22 - Solution.txt";
+                case 9:
+                    path += @"Complete\extreme\"; moviesPath = path + "Movies122806.txt"; queriesPath = path + "queries22.txt"; solutionPath = path + @"\Solutions\queries22 - Solution.txt";
                     break;
-                case "10":
-                    path += @"Complete\extreme\";
-                    moviesPath = path + "Movies122806.txt";
-                    queriesPath = path + "queries200.txt";
-                    solutionPath = path + @"\Solutions\queries200 - Solution.txt";
+                case 10:
+                    path += @"Complete\extreme\"; moviesPath = path + "Movies122806.txt"; queriesPath = path + "queries200.txt"; solutionPath = path + @"\Solutions\queries200 - Solution.txt";
                     break;
-
-
             }
 
         }
@@ -166,7 +110,6 @@ namespace SmallWorld
                     if (line == "")
                     {
                         string ans;
-
                         ans = answer[0] + answer[1] + answer[2] + answer[3];
                         answers.Enqueue(ans);
                         answer.Clear();
@@ -258,7 +201,8 @@ namespace SmallWorld
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             if (Optimize)
                 Console.Write("Optimized ");
-            Console.Write($"Time taken:  {stopwatch.ElapsedMilliseconds / 1000.0} Seconds | {stopwatch.ElapsedMilliseconds} Milliseconds\n");
+            Console.Write($"Time taken:  {stopwatch.ElapsedMilliseconds / 1000.0} Seconds |");
+            Console.Write($"{stopwatch.ElapsedMilliseconds} Milliseconds\n");
             Console.ResetColor();
         }
     }

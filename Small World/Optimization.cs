@@ -377,7 +377,6 @@ namespace SmallWorld
             {
                 Console.WriteLine("{0,12}{1,12}", i, dosFrequency[i]);
             }
-
         }
         private static void FindStrongestPath()
         {
