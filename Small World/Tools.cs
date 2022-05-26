@@ -1,33 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.IO;
+using System.Text;
+using System.Threading.Tasks;
 using System.Diagnostics;
+using System.IO;
 namespace SmallWorld
 {
-    class Program
+    class Tools
     {
-        public static string moviesPath = "", queriesPath = "", solutionPath = "";
-        public static Queue<string> answers = new Queue<string>();
-        public static List<string> queries = new List<string>();
-        public static bool sample;
-        public static void Run(bool Optimize)
-        {
-            answers.Clear();queries.Clear();sample = false;
-            SelectTestCase();   
-            if (Optimize)
-            {
-                Optimization.ChooseOpeartion();
-            }
-            else
-            {
-                ParseSolutions();
-                ParseQueries();
-                Normal.ParseMovies();
-                RunTestCase(Optimize);
-            }
-        }
-        public static void SelectTestCase()
+        // general
+        private static string moviesPath = "", queriesPath = "", solutionPath = "";
+        private static List<string> queries = new List<string>();
+        private static Queue<string> answers = new Queue<string>();
+        static bool sample;
+
+        // Optimization
+        private static Dictionary<int, Dictionary<int, int>> common = new Dictionary<int, Dictionary<int, int>>();
+        private static Dictionary<string, int> index = new Dictionary<string, int>();
+        private static List<string> moviesNames = new List<string>();
+        private static List<List<int>> movies = new List<List<int>>();
+        private static List<string> actorsName = new List<string>();
+        private static List<HashSet<int>> adjs = new List<HashSet<int>>();
+        private static List<List<int>> actorsMovies = new List<List<int>>();
+        private static int MAX_DEGREE_FOUND = 0;
+        private static int[] dosFrequency;
+        // Normal
+
+
+        private static string SelectTestCase()
         {
             string path = @"..\..\..\Testcases\";
             string choice;
@@ -150,9 +151,89 @@ namespace SmallWorld
 
 
             }
+            return choice;
 
         }
-        public static void ParseSolutions()
+        private static void ParseMovies()
+        {
+            StreamReader reader = new StreamReader(moviesPath);
+            while (true)
+            {
+                string line = reader.ReadLine();
+                if (line == null)
+                    break;
+
+                string movie_name = line.Substring(0, line.IndexOf('/'));
+                List<int> movieActors = new List<int>();
+                while (true)
+                {
+                    line = line.Remove(0, (line.IndexOf('/') != -1) ? line.IndexOf('/') + 1 : line.Length);
+                    if (line.Length == 0)
+                        break;
+                    string actor_name = (line.IndexOf('/') != -1) ? line.Substring(0, line.IndexOf('/')) : line;
+
+
+                    if (!index.ContainsKey(actor_name))
+                    {
+                        int newActorIndex = actorsName.Count();
+                        index[actor_name] = newActorIndex;
+                        movieActors.Add(newActorIndex);
+                        actorsMovies.Add(new List<int>());
+                        adjs.Add(new HashSet<int>());
+                        actorsMovies[newActorIndex].Add(moviesNames.Count());
+                        actorsName.Add(actor_name);
+                    }
+                    else
+                    {
+                        int prevActorIndex = index[actor_name];
+                        movieActors.Add(prevActorIndex);
+                        actorsMovies[prevActorIndex].Add(moviesNames.Count());
+                    }
+                }
+
+                movies.Add(new List<int>());
+                movies[moviesNames.Count()].AddRange(movieActors);
+                moviesNames.Add(movie_name);
+            }
+            foreach (var movie in movies)
+            {
+                foreach (var actor in movie)
+                {
+
+                    if (!common.ContainsKey(actor))
+                        common[actor] = new Dictionary<int, int>();
+                    foreach (var adj in movie)
+                    {
+
+
+                        if (adj != actor)
+                        {
+                            if (!common[actor].ContainsKey(adj))
+                                common[actor][adj] = 0;
+
+                            adjs[actor].Add(adj);
+                            common[actor][adj]++;
+                        }
+                    }
+                }
+            }
+            dosFrequency = new int[index.Count()];
+            reader.Close();
+        }
+
+        private static void ParseQueries()
+        {
+            StreamReader reader = new StreamReader(queriesPath);
+            while (true)
+            {
+                string line = reader.ReadLine();
+                if (line == null)
+                    break;
+                queries.Add(line);
+            }
+        }
+
+        private static void ParseSolutions()
         {
             StreamReader reader = new StreamReader(solutionPath);
             if (!sample)
@@ -191,45 +272,31 @@ namespace SmallWorld
                 }
             }
         }
-        public static void ParseQueries()
-        {
-            StreamReader reader = new StreamReader(queriesPath);
-            while (true)
-            {
-                string line = reader.ReadLine();
-                if (line == null)
-                    break;
-                queries.Add(line);
-            }
-        }
-        public static void RunTestCase(bool Optimize)
+
+        private static void RunTestCase()
         {
 
             int current = 1;
             int passed = 0;
             if (sample)
-                Console.WriteLine(Program.answers.Dequeue());
+                Console.WriteLine(answers.Dequeue());
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            foreach (string query in Program.queries)
+            foreach (string query in queries)
             {
                 string first = query.Substring(0, query.IndexOf('/'));
                 string second = query.Substring(query.IndexOf('/') + 1);
-                string answer;
-                if (Optimize)
-                    answer = Optimization.Solve(first, second);
-                else
-                    answer = Normal.Solve(first, second);
-                if (Program.answers.Count() == 0)
+                string answer = ""/*Solve(first, second)*/;
+                if (answers.Count() == 0)
                 {
                     Console.WriteLine(answer);
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.DarkCyan;
-                    Console.Write("Query {0}/{1} ", current, Program.queries.Count);
+                    Console.Write("Query {0}/{1} ", current, queries.Count);
                     Console.ResetColor();
-                    string actual = Program.answers.Dequeue();
+                    string actual = answers.Dequeue();
                     if (answer != actual)
                     {
                         Console.WriteLine("+=======================+");
@@ -256,10 +323,10 @@ namespace SmallWorld
             }
             stopwatch.Stop();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            if (Optimize)
-                Console.Write("Optimized ");
-            Console.Write($"Time taken:  {stopwatch.ElapsedMilliseconds / 1000.0} Seconds | {stopwatch.ElapsedMilliseconds} Milliseconds\n");
+            Console.Write($"Optimized Time taken:  {stopwatch.ElapsedMilliseconds / 1000.0} Seconds | {stopwatch.ElapsedMilliseconds} Milliseconds");
             Console.ResetColor();
+
+
         }
     }
 }

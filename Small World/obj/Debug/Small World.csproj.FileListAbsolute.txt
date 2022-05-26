@@ -16,3 +16,10 @@ E:\Small-World-phenomenon\Small World\obj\Debug\Small World.csproj.SuggestedBind
 E:\Small-World-phenomenon\Small World\obj\Debug\Small World.csproj.CoreCompileInputs.cache
 E:\Small-World-phenomenon\Small World\obj\Debug\Small World.exe
 E:\Small-World-phenomenon\Small World\obj\Debug\Small World.pdb
+E:\Projects\Small-World-phenomenon\Small World\bin\Debug\Small World.exe.config
+E:\Projects\Small-World-phenomenon\Small World\bin\Debug\Small World.exe
+E:\Projects\Small-World-phenomenon\Small World\bin\Debug\Small World.pdb
+E:\Projects\Small-World-phenomenon\Small World\obj\Debug\Small World.csproj.AssemblyReference.cache
+E:\Projects\Small-World-phenomenon\Small World\obj\Debug\Small World.csproj.CoreCompileInputs.cache
+E:\Projects\Small-World-phenomenon\Small World\obj\Debug\Small World.exe
+E:\Projects\Small-World-phenomenon\Small World\obj\Debug\Small World.pdb
