@@ -6,157 +6,160 @@ namespace SmallWorld
 {
     class Normal
     {
-        private static Dictionary<string, HashSet<string>> actorsInMovie = new Dictionary<string, HashSet<string>>();
-        private static Dictionary<string, HashSet<string>> moviesOfActor = new Dictionary<string, HashSet<string>>();
+        private static var actorsInMovie = new Dictionary<string, HashSet<string>>(); //O(1)
+        private static var moviesOfActor = new Dictionary<string, HashSet<string>>(); //O(1)
+        //O(N * M)
         public static void ParseMovies()
         {
-            actorsInMovie.Clear();
-            moviesOfActor.Clear();
-            StreamReader reader = new StreamReader(Program.moviesPath);
-            while (true)
+            actorsInMovie.Clear(); //O(1)
+            moviesOfActor.Clear(); //O(1)
+            StreamReader reader = new StreamReader(Program.moviesPath); //O(1)
+            while (true) //O(N * M)
             {
-                string line = reader.ReadLine();
-                if (line == null)
-                    break;
-                string[] data = line.Split('/');
-                actorsInMovie[data[0]] = new HashSet<string>();
-                Movie movie = new Movie(data[0]);
-                for (int i = 1; i < data.Length; i++)
+                string line = reader.ReadLine(); //O(1) 
+                if (line == null) //O(1)
+                    break; //O(1)
+                string[] data = line.Split('/'); //O(M)
+                actorsInMovie[data[0]] = new HashSet<string>(); //O(1)
+                Movie movie = new Movie(data[0]); //O(1)
+                for (int i = 1; i < data.Length; i++) //O(M)
                 {
-                    actorsInMovie[data[0]].Add(data[i]);
-                    if (!moviesOfActor.ContainsKey(data[i]))
-                        moviesOfActor[data[i]] = new HashSet<string>();
-                    moviesOfActor[data[i]].Add(data[0]);
-                    movie.actors.Add(data[i]);
+                    actorsInMovie[data[0]].Add(data[i]); //O(1)
+                    if (!moviesOfActor.ContainsKey(data[i])) //O(1)
+                        moviesOfActor[data[i]] = new HashSet<string>(); //O(1)
+                    moviesOfActor[data[i]].Add(data[0]); //O(1)
+                    movie.actors.Add(data[i]); //O(1)
                 }
             }
         }
+
+        //O(V + E)
         public static string Solve(string who, string whom)
         {
-            int degree = 1, answerDegree = int.MaxValue, maxRelation = 0;
-            List<Answer> answers = new List<Answer>();
-            Dictionary<string, Actor> dictActors = new Dictionary<string, Actor>();
-            Queue<Actor> actorsToAsk = new Queue<Actor>();
-            HashSet<string> lvlActors = new HashSet<string>();
-            HashSet<string> nextLvlActors = new HashSet<string>();
-            HashSet<string> lvlAskedActors = new HashSet<string>();
-            dictActors[who] = new Actor(who, null);
-            actorsToAsk.Enqueue(dictActors[who]);
-            lvlActors.Add(who);
-            while (actorsToAsk.Count() != 0)
+            int degree = 1, answerDegree = int.MaxValue, maxRelation = 0; //O(1)
+            List<Answer> answers = new List<Answer>(); //O(1)
+            var dictActors = new Dictionary<string, Actor>(); //O(1)
+            Queue<Actor> actorsToAsk = new Queue<Actor>(); //O(1)
+            HashSet<string> lvlActors = new HashSet<string>(); //O(1)
+            HashSet<string> nextLvlActors = new HashSet<string>(); //O(1)
+            HashSet<string> lvlAskedActors = new HashSet<string>(); //O(1)
+            dictActors[who] = new Actor(who, null); //O(1)
+            actorsToAsk.Enqueue(dictActors[who]); //O(1)
+            lvlActors.Add(who); //O(1)
+            while (actorsToAsk.Count() != 0) //O(V + E)
             {
-                Actor actor = actorsToAsk.Dequeue();
-                List<string> movies = moviesOfActor[actor.name].ToList();
-                foreach (string movie in movies)
+                Actor actor = actorsToAsk.Dequeue(); //O(1)
+                List<string> movies = moviesOfActor[actor.name].ToList(); //O(1)
+                foreach (string movie in movies) //O(V + E)
                 {
-                    if (actor.askedMovies.ContainsKey(movie) && actor.askedMovies[movie] == true)
-                        continue;
+                    if (actor.askedMovies.ContainsKey(movie) && actor.askedMovies[movie] == true) //O(1)
+                        continue; //O(1)
                     else
-                        actor.askedMovies[movie] = false;
-                    List<string> actors = actorsInMovie[movie].ToList();
-                    foreach (string actorInMovie in actors)
+                        actor.askedMovies[movie] = false; //O(1)
+                    List<string> actors = actorsInMovie[movie].ToList(); //O(N)
+                    foreach (string actorInMovie in actors) //O(E)
                     {
-                        Actor movieActor = new Actor(actorInMovie, actor);
-                        if (dictActors.ContainsKey(actorInMovie))
-                            movieActor = dictActors[actorInMovie];
+                        Actor movieActor = new Actor(actorInMovie, actor); //O(1)
+                        if (dictActors.ContainsKey(actorInMovie)) //O(1)
+                            movieActor = dictActors[actorInMovie]; //O(1)
                         else
                         {
-                            if (actorInMovie != actor.name)
+                            if (actorInMovie != actor.name) //O(1)
                             {
-                                List<string> commonMovies = moviesOfActor[actorInMovie].Intersect(moviesOfActor[actor.name]).ToList();
-                                movieActor.commonMovies = commonMovies;
-                                movieActor.weight = movieActor.parent.weight + movieActor.commonMovies.Count();
+                                List<string> commonMovies = moviesOfActor[actorInMovie].Intersect(moviesOfActor[actor.name]).ToList(); //O(N^2)
+                                movieActor.commonMovies = commonMovies; //O(1)
+                                movieActor.weight = movieActor.parent.weight + movieActor.commonMovies.Count(); //O(1)
                             }
-                            dictActors[actorInMovie] = movieActor;
+                            dictActors[actorInMovie] = movieActor; //O(1)
                         }
-                        if (!movieActor.asked && actorInMovie != actor.name && actorInMovie != whom)
+                        if (!movieActor.asked && actorInMovie != actor.name && actorInMovie != whom) //O(1)
                         {
-                            if (!movieActor.toSkip)
+                            if (!movieActor.toSkip) //O(1)
                             {
-                                actorsToAsk.Enqueue(movieActor);
-                                movieActor.toSkip = true;
+                                actorsToAsk.Enqueue(movieActor); //O(1)
+                                movieActor.toSkip = true; //O(1)
                             }
                             if (lvlActors.Contains(actor.name) && !lvlActors.Contains(actorInMovie))
                             {
-                                List<string> commonMovies = moviesOfActor[actorInMovie].Intersect(moviesOfActor[actor.name]).ToList();
-                                nextLvlActors.Add(actorInMovie);
-                                if (actor.weight + commonMovies.Count() > movieActor.parent.weight + movieActor.commonMovies.Count())
+                                List<string> commonMovies = moviesOfActor[actorInMovie].Intersect(moviesOfActor[actor.name]).ToList(); //O(N^2)
+                                nextLvlActors.Add(actorInMovie); //O(1)
+                                if (actor.weight + commonMovies.Count() > movieActor.parent.weight + movieActor.commonMovies.Count()) //O(1)
                                 {
-                                    movieActor.parent = actor;
-                                    movieActor.commonMovies = commonMovies;
-                                    movieActor.weight = movieActor.parent.weight + movieActor.commonMovies.Count();
+                                    movieActor.parent = actor; //O(1)
+                                    movieActor.commonMovies = commonMovies; //O(1)
+                                    movieActor.weight = movieActor.parent.weight + movieActor.commonMovies.Count(); //O(1)
                                 }
                             }
                         }
                         if (actorInMovie == whom)
                         {
-                            actor.askedMovies[movie] = true;
-                            Answer answer = new Answer();
-                            Actor whomActor = new Actor(whom, actor);
-                            Stack<string> moviesList = new Stack<string>();
-                            Stack<string> actorList = new Stack<string>();
-                            Actor curr = new Actor(whom, actor);
+                            actor.askedMovies[movie] = true; //O(1)
+                            Answer answer = new Answer(); //O(1)
+                            Actor whomActor = new Actor(whom, actor); //O(1)
+                            Stack<string> moviesList = new Stack<string>(); //O(1)
+                            Stack<string> actorList = new Stack<string>(); //O(1)
+                            Actor curr = new Actor(whom, actor); //O(1)
                             int relation = 0;
                             do
                             {
-                                if (curr == null || curr.parent == null)
-                                    break;
-                                List<string> commonMoviesList = moviesOfActor[curr.name].Intersect(moviesOfActor[curr.parent.name]).ToList();
-                                string commonMovies = "";
-                                if (!Program.sample)
-                                    commonMovies = commonMoviesList[0];
-                                for (int i = 0; i < commonMoviesList.Count(); i++)
+                                if (curr == null || curr.parent == null) //O(1)
+                                    break; //O(1)
+                                List<string> commonMoviesList = moviesOfActor[curr.name].Intersect(moviesOfActor[curr.parent.name]).ToList(); //O(N^2)
+                                string commonMovies = ""; //O(1)
+                                if (!Program.sample) //O(1)
+                                    commonMovies = commonMoviesList[0]; //O(1)
+                                for (int i = 0; i < commonMoviesList.Count(); i++) //O(N)
                                 {
-                                    relation++;
+                                    relation++; //O(1)
                                     if (Program.sample)
                                     {
                                         if (commonMovies == "")
-                                            commonMovies += commonMoviesList[i];
+                                            commonMovies += commonMoviesList[i]; //O(1)
                                         else
-                                            commonMovies += commonMoviesList[i].Substring(commonMoviesList[i].Count() - 1);
-                                        if (i != commonMoviesList.Count() - 1)
-                                            commonMovies += " or ";
+                                            commonMovies += commonMoviesList[i].Substring(commonMoviesList[i].Count() - 1); //O(1)
+                                        if (i != commonMoviesList.Count() - 1) //O(1)
+                                            commonMovies += " or "; //O(1)
                                     }
-                                    string elm = commonMoviesList[i];
-                                    actor.askedMovies[elm] = true;
+                                    string elm = commonMoviesList[i]; //O(1)
+                                    actor.askedMovies[elm] = true; //O(1)
                                 }
-                                moviesList.Push(commonMovies);
-                                actorList.Push(curr.name);
-                                curr = curr.parent;
-                            } while (true);
-                            maxRelation = (maxRelation < relation) ? relation : maxRelation;
-                            answer.moviesList = moviesList;
-                            answer.actorList = actorList;
-                            answer.degree = degree;
-                            answer.relation = relation;
-                            answerDegree = degree;
-                            answers.Add(answer);
+                                moviesList.Push(commonMovies); //O(1)
+                                actorList.Push(curr.name); //O(1)
+                                curr = curr.parent; //O(1)
+                            } while (true); //O(N^3)
+                            maxRelation = (maxRelation < relation) ? relation : maxRelation; //O(1)
+                            answer.moviesList = moviesList; //O(1)
+                            answer.actorList = actorList; //O(1)
+                            answer.degree = degree; //O(1)
+                            answer.relation = relation; //O(1)
+                            answerDegree = degree; //O(1)
+                            answers.Add(answer); //O(1)
                         }
                     }
 
                 }
-                actor.asked = true;
-                lvlAskedActors.Add(actor.name);
+                actor.asked = true; //O(1)
+                lvlAskedActors.Add(actor.name); //O(1)
                 if (lvlActors.Count() == lvlAskedActors.Count())
                 {
 
-                    degree++;
-                    lvlActors.Clear();
-                    lvlAskedActors.Clear();
-                    lvlActors = nextLvlActors;
-                    nextLvlActors = new HashSet<string>();
+                    degree++; //O(1)
+                    lvlActors.Clear(); //O(1)
+                    lvlAskedActors.Clear(); //O(1)
+                    lvlActors = nextLvlActors; //O(1)
+                    nextLvlActors = new HashSet<string>(); //O(1)
                 }
-                if (answerDegree < degree)
-                    break;
+                if (answerDegree < degree) //O(1)
+                    break; //O(1)
             }
-            foreach (Answer answer in answers)
+            foreach (Answer answer in answers) //O(N)
             {
                 if (answer.relation == maxRelation)
                 {
-                    return answer.print(who, whom);
+                    return answer.print(who, whom); //O(1)
                 }
             }
-            return "";
+            return ""; //O(1)
         }
         public class Actor
         {
@@ -188,40 +191,41 @@ namespace SmallWorld
             public int relation;
             public Stack<string> moviesList = new Stack<string>();
             public Stack<string> actorList = new Stack<string>();
+            //O(M + N)
             public string print(string who, string whom)
             {
                 string answer = "";
                 if (!Program.sample)
                 {
-                    answer += String.Format("{0}/{1}\n", who, whom);
-                    answer += String.Format("DoS = {0}, RS = {1}\n", degree, relation);
-                    answer += String.Format("CHAIN OF ACTORS: {0} -> ", who);
-                    while (actorList.Count() != 0)
+                    answer += String.Format("{0}/{1}\n", who, whom); //O(1)
+                    answer += String.Format("DoS = {0}, RS = {1}\n", degree, relation); //O(1)
+                    answer += String.Format("CHAIN OF ACTORS: {0} -> ", who); //O(1)
+                    while (actorList.Count() != 0) //O(N)
                     {
-                        answer += actorList.Pop();
+                        answer += actorList.Pop();//O(1)
                         if (actorList.Count() != 0)
-                            answer += " -> ";
+                            answer += " -> ";//O(1)
                     }
-                    answer += "\n";
-                    answer += "CHAIN OF MOVIES:  =>";
-                    while (moviesList.Count() != 0)
+                    answer += "\n";//O(1)
+                    answer += "CHAIN OF MOVIES:  =>";//O(1)
+                    while (moviesList.Count() != 0)//O(M)
                     {
-                        answer += " " + moviesList.Pop();
-                        answer += " =>";
+                        answer += " " + moviesList.Pop(); //O(1)
+                        answer += " =>"; //O(1)
                     }
-                    answer += "\n";
+                    answer += "\n"; //O(1)
                 }
                 else
                 {
-                    answer += $"{who}/{whom}\t\t{degree}\t\t{relation}\t\t";
-                    while (moviesList.Count() != 0)
+                    answer += $"{who}/{whom}\t\t{degree}\t\t{relation}\t\t"; //O(1)
+                    while (moviesList.Count() != 0) //O(N)
                     {
-                        answer += moviesList.Pop();
-                        if (moviesList.Count() != 0)
-                            answer += " => ";
+                        answer += moviesList.Pop(); //O(1)
+                        if (moviesList.Count() != 0) //O(1)
+                            answer += " => "; //O(1)
                     }
                 }
-                return answer;
+                return answer; //O(1)
             }
         }
     }

@@ -7,314 +7,318 @@ namespace SmallWorld
 {
     class Optimization
     {
-        private static Dictionary<int, Dictionary<int, int>> common = new Dictionary<int, Dictionary<int, int>>();
-        private static Dictionary<string, int> index = new Dictionary<string, int>();
-        private static List<string> moviesNames = new List<string>();
-        private static List<List<int>> movies = new List<List<int>>();
-        private static List<string> actorsName = new List<string>();
-        private static List<HashSet<int>> adjs = new List<HashSet<int>>();
-        private static List<List<int>> actorsMovies = new List<List<int>>();
-        private static int MAX_DEGREE_FOUND = 0;
-        private static int[] dosFrequency;
+        private static var common = new Dictionary<int, Dictionary<int, int>>(); //O(1)
+        private static var index = new Dictionary<string, int>(); //O(1)
+        private static List<string> moviesNames = new List<string>(); //O(1)
+        private static List<List<int>> movies = new List<List<int>>(); //O(1)
+        private static List<string> actorsName = new List<string>(); //O(1)
+        private static List<HashSet<int>> adjs = new List<HashSet<int>>(); //O(1)
+        private static List<List<int>> actorsMovies = new List<List<int>>(); //O(1)
+        private static int MAX_DEGREE_FOUND = 0; //O(1)
+        private static int[] dosFrequency; //O(1)
+        //O(V + E)
         public static void ChooseOpeartion()
         {
-            string Choice;
+            string Choice; //O(1)
             do
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("1.Find Shortest Path (Completed)");
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("2.Find Strongest Path (Completed)");
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("3.Find Degree of Seperation Frequency (Completed)");
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine("4.Find Minimum Movies that link all actors/actresses (Pending)");
-                Console.ResetColor();
-                Console.Write("Enter your choice: ");
-                Choice = Console.ReadLine();
-                if ((Choice == "1" || Choice == "2" || Choice == "3" || Choice == "4"))
-                    break;
+                Console.ForegroundColor = ConsoleColor.Green; //O(1)
+                Console.WriteLine("1.Find Shortest Path (Completed)"); //O(1)
+                Console.ForegroundColor = ConsoleColor.Green; //O(1)
+                Console.WriteLine("2.Find Strongest Path (Completed)"); //O(1)
+                Console.ForegroundColor = ConsoleColor.Green; //O(1)
+                Console.WriteLine("3.Find Degree of Seperation Frequency (Completed)"); //O(1)
+                Console.ForegroundColor = ConsoleColor.DarkYellow; //O(1)
+                Console.WriteLine("4.Find Minimum Movies that link all actors/actresses (Pending)"); //O(1)
+                Console.ResetColor(); //O(1)
+                Console.Write("Enter your choice: "); //O(1)
+                Choice = Console.ReadLine(); //O(1)
+                if ((Choice == "1" || Choice == "2" || Choice == "3" || Choice == "4")) //O(1)
+                    break; //O(1)
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Invalid Choice!");
-                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Red; //O(1)
+                    Console.WriteLine("Invalid Choice!"); //O(1)
+                    Console.ResetColor(); //O(1)
                 }
-            } while (true);
-            ParseMovies();
+            } while (true); //O(1)
+            ParseMovies(); //O(V + E)
             switch (Choice)
             {
                 case "1":
-                    Program.ParseQueries();
-                    Program.ParseSolutions();
-                    Program.RunTestCase(true);
-                    break;
+                    Program.ParseQueries(); //O(N)
+                    Program.ParseSolutions(); //O(N) 
+                    Program.RunTestCase(true); //O(V + E)
+                    break; //O(1)
                 case "2":
-                    FindStrongestPath();
-                    break;
-                case "3":
-                    CalculateFrequency();
-                    break;
-                case "4":
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
-                    Console.WriteLine("Not implemented yet");
-                    Console.ResetColor();
-                    break;
+                    FindStrongestPath(); //O(V + E)
+                    break; //O(1)
+                case "3": //O(1)
+                    CalculateFrequency(); //O(V + E)
+                    break; //O(1)
+                case "4": //O(1)
+                    Console.ForegroundColor = ConsoleColor.DarkYellow; //O(1)
+                    Console.WriteLine("Not implemented yet"); //O(1)
+                    Console.ResetColor(); //O(1)
+                    break; //O(1)
             }
         }
+        //O(V + E)
         public static void ParseMovies()
         {
-            common.Clear();
-            index.Clear();
-            moviesNames.Clear();
-            movies.Clear();
-            actorsName.Clear();
-            adjs.Clear();
-            actorsMovies.Clear();
-            StreamReader reader = new StreamReader(Program.moviesPath);
+            common.Clear(); //O(1)
+            index.Clear(); //O(1)
+            moviesNames.Clear(); //O(1)
+            movies.Clear(); //O(1)
+            actorsName.Clear(); //O(1)
+            adjs.Clear(); //O(1)
+            actorsMovies.Clear(); //O(1)
+            StreamReader reader = new StreamReader(Program.moviesPath); //O(1)
             while (true)
             {
-                string line = reader.ReadLine();
-                if (line == null)
+                string line = reader.ReadLine(); //O(1)
+                if (line == null) //O(1)
                     break;
-                string[] data = line.Split('/');
-                string movie_name = data[0];
-                List<int> movieActors = new List<int>();
-                for(int i = 1;i < data.Length;i++)
+                string[] data = line.Split('/'); //O(N)
+                string movie_name = data[0]; //O(1)
+                List<int> movieActors = new List<int>(); //O(1)
+                for (int i = 1; i < data.Length; i++) //O(N)
                 {
-                    string actor_name = data[i];
-                    if (!index.ContainsKey(actor_name))
+                    string actor_name = data[i]; //O(1)
+                    if (!index.ContainsKey(actor_name)) //O(1)
                     {
-                        int newActorIndex = actorsName.Count();
-                        index[actor_name] = newActorIndex;
-                        movieActors.Add(newActorIndex);
-                        actorsMovies.Add(new List<int>());
-                        adjs.Add(new HashSet<int>());
-                        actorsMovies[newActorIndex].Add(moviesNames.Count());
-                        actorsName.Add(actor_name);
+                        int newActorIndex = actorsName.Count(); //O(1)
+                        index[actor_name] = newActorIndex; //O(1)
+                        movieActors.Add(newActorIndex); //O(1)
+                        actorsMovies.Add(new List<int>()); //O(1)
+                        adjs.Add(new HashSet<int>()); //O(1)
+                        actorsMovies[newActorIndex].Add(moviesNames.Count()); //O(1)
+                        actorsName.Add(actor_name); //O(1)
                     }
                     else
                     {
-                        int prevActorIndex = index[actor_name];
-                        movieActors.Add(prevActorIndex);
-                        actorsMovies[prevActorIndex].Add(moviesNames.Count());
+                        int prevActorIndex = index[actor_name]; //O(1)
+                        movieActors.Add(prevActorIndex); //O(1)
+                        actorsMovies[prevActorIndex].Add(moviesNames.Count()); //O(1)
                     }
                 }
-
-                movies.Add(new List<int>());
-                movies[moviesNames.Count()].AddRange(movieActors);
-                moviesNames.Add(movie_name);
+                movies.Add(new List<int>()); //O(1)
+                movies[moviesNames.Count()].AddRange(movieActors); //O(N)
+                moviesNames.Add(movie_name); //O(1)
             }
+            //O(V + E)
             foreach (var movie in movies)
             {
-                foreach (var actor in movie)
+                foreach (var actor in movie) //O(N)
                 {
-                    if (!common.ContainsKey(actor))
-                        common[actor] = new Dictionary<int, int>();
-                    foreach (var adj in movie)
+                    if (!common.ContainsKey(actor)) //O(1)
+                        common[actor] = new Dictionary<int, int>(); //O(1)
+                    foreach (var adj in movie) //O(E)
                     {
                         if (adj != actor)
                         {
-                            if (!common[actor].ContainsKey(adj))
-                                common[actor][adj] = 0;
-                            adjs[actor].Add(adj);
-                            common[actor][adj]++;
+                            if (!common[actor].ContainsKey(adj)) //O(1)
+                                common[actor][adj] = 0; //O(1)
+                            adjs[actor].Add(adj); //O(1)
+                            common[actor][adj]++; //O(1)
                         }
                     }
                 }
             }
-            dosFrequency = new int[index.Count()];
-            reader.Close();
+            dosFrequency = new int[index.Count()]; //O(1)
+            reader.Close(); //O(1)
         }
+        //O(V + E)
         public static string Solve(string src, string dest)
         {
-            int iFirst = index[src];
-            int iSecond = index[dest];
-            List<int> shortestPath = FindShortestPath(iFirst, iSecond);
+            int iFirst = index[src]; //O(1)
+            int iSecond = index[dest]; //O(1)
+            List<int> shortestPath = FindShortestPath(iFirst, iSecond); //O(V+E)
             if (shortestPath != null)
-                return GenerateAnswer(shortestPath);
-            else
-                return "";
+                return GenerateAnswer(shortestPath); //O(V+E)
+            else return ""; //O(1)
         }
+        //O(V + E)
         private static string GenerateAnswer(List<int> path)
         {
-            int degree = 0, relation = 0;
-            Stack<string> chainOfActors = new Stack<string>();
-            Stack<string> chainOfMovies = new Stack<string>();
-            string answer = "";
-            string commonMovies = "";
-            if (!Program.sample) answer += $"{actorsName[path.Last()]}/{actorsName[path.First()]}\n";
-            if (path.Count() != 1)
+            int degree = 0, relation = 0; //O(1)
+            Stack<string> chainOfActors = new Stack<string>(); //O(1)
+            Stack<string> chainOfMovies = new Stack<string>(); //O(1)
+            string answer = ""; //O(1)
+            string commonMovies = ""; //O(1)
+            if (!Program.sample) answer += $"{actorsName[path.Last()]}/{actorsName[path.First()]}\n"; //O(1)
+            if (path.Count() != 1) //O(1) 
             {
-                for (int i = 0; i < path.Count() - 1; i++)
+                for (int i = 0; i < path.Count() - 1; i++) //O(V + E)
                 {
-                    List<int> movies = GetIntersection(actorsMovies[path[i]], (actorsMovies[path[i + 1]]));
-                    chainOfActors.Push(actorsName[path[i]]);
-                    if (!Program.sample)
-                        chainOfMovies.Push(moviesNames[movies[0]]);
-                    else
+                    List<int> movies = GetIntersection(actorsMovies[path[i]], (actorsMovies[path[i + 1]])); //O(N + M)
+                    chainOfActors.Push(actorsName[path[i]]); //O(1)
+                    if (!Program.sample) //O(1)
+                        chainOfMovies.Push(moviesNames[movies[0]]); //O(1)
+                    else //O(1)
                     {
-                        commonMovies = "";
-                        foreach (var m in movies)
+                        commonMovies = ""; //O(1)
+                        foreach (var m in movies) //O(N)
                         {
-                            if (commonMovies == "")
-                                commonMovies += moviesNames[m];
+                            if (commonMovies == "") //O(1)
+                                commonMovies += moviesNames[m]; //O(1)
                             else
-                                commonMovies += moviesNames[m].Substring(moviesNames[m].Count() - 1);
-                            if (m != movies.Last())
-                                commonMovies += " or ";
+                                commonMovies += moviesNames[m].Substring(moviesNames[m].Count() - 1); //O(1)
+                            if (m != movies.Last()) //O(1)
+                                commonMovies += " or "; //O(1)
                         }
-                        chainOfMovies.Push(commonMovies);
+                        chainOfMovies.Push(commonMovies); //O(1)
                     }
-                    relation += movies.Count;
-                    degree++;
+                    relation += movies.Count; //O(1)
+                    degree++; //O(1)
                 }
             }
             else
             {
-                relation += actorsMovies[path[0]].Count();
+                relation += actorsMovies[path[0]].Count(); //O(1)
             }
-            if (!Program.sample)
+            if (!Program.sample) //O(1)
             {
-                answer += $"DoS = {degree}, RS = {relation}\n";
-                answer += $"CHAIN OF ACTORS: {actorsName[path.Last()]} -> ";
-                while (chainOfActors.Count() != 0)
+                answer += $"DoS = {degree}, RS = {relation}\n"; //O(1)
+                answer += $"CHAIN OF ACTORS: {actorsName[path.Last()]} -> "; //O(1)
+                while (chainOfActors.Count() != 0) //O(N)
                 {
-                    answer += chainOfActors.Pop();
-                    if (chainOfActors.Count() != 0)
-                        answer += " -> ";
+                    answer += chainOfActors.Pop(); //O(1)
+                    if (chainOfActors.Count() != 0) //O(1)
+                        answer += " -> "; //O(1)
                 }
-                answer += "\n";
-                answer += "CHAIN OF MOVIES:  =>";
-                while (chainOfMovies.Count() != 0)
+                answer += "\n"; //O(1)
+                answer += "CHAIN OF MOVIES:  =>"; //O(1)
+                while (chainOfMovies.Count() != 0) //O(N)
                 {
-                    answer += " " + chainOfMovies.Pop();
-                    answer += " =>";
+                    answer += " " + chainOfMovies.Pop(); //O(1)
+                    answer += " =>"; //O(1)
                 }
-                answer += "\n";
+                answer += "\n"; //O(1)
             }
             else
             {
-                answer += $"{actorsName[path.Last()]}/{actorsName[path.First()]}\t\t{degree}\t\t{relation}\t\t";
-                while (chainOfMovies.Count() != 0)
+                answer += $"{actorsName[path.Last()]}/{actorsName[path.First()]}\t\t{degree}\t\t{relation}\t\t"; //O(1)
+                while (chainOfMovies.Count() != 0) //O(N)
                 {
-                    answer += chainOfMovies.Pop();
-                    if (chainOfMovies.Count() != 0)
-                        answer += " => ";
+                    answer += chainOfMovies.Pop(); //O(1)
+                    if (chainOfMovies.Count() != 0) //O(1)
+                        answer += " => "; //O(1)
                 }
             }
 
-            return answer;
+            return answer; //O(1)
         }
+        // O(V + E)
         private static List<int> FindShortestPath(int start, int end)
         {
-            int[] parent = new int[index.Count()];
-            int[] weight = new int[index.Count()];
-            bool[] visited = new bool[index.Count()];
-            int maxDist = int.MaxValue;
-            int[] dist = new int[index.Count()];
-            bool found = false;
-            if (start == end)
+            int[] parent = new int[index.Count()]; //O(1)
+            int[] weight = new int[index.Count()]; //O(1)
+            bool[] visited = new bool[index.Count()]; //O(1)
+            int maxDist = int.MaxValue; //O(1)
+            int[] dist = new int[index.Count()]; //O(1)
+            bool found = false; //O(1)
+            if (start == end) //O(1)
             {
-                parent[end] = -1;
-                return ConstructPath(parent, end);
+                parent[end] = -1; //O(1)
+                return ConstructPath(parent, end); //O(V)
             }
             else
             {
-                Queue<int> q = new Queue<int>();
-                q.Enqueue(start);
-                parent[start] = -1;
-                weight[start] = 0;
-                dist[start] = 0;
-                while (q.Count != 0)
+                Queue<int> q = new Queue<int>(); //O(1)
+                q.Enqueue(start); //O(1)
+                parent[start] = -1; //O(1)
+                weight[start] = 0; //O(1)
+                dist[start] = 0; //O(1)
+                while (q.Count != 0) // O(V)
                 {
-                    int u = q.Dequeue();
-                    if (visited[u])
-                        continue;
-                    if (dist[u] + 1 > maxDist)
-                        break;
-                    foreach (int v in adjs[u])
+                    int u = q.Dequeue(); //O(1)
+                    if (visited[u]) //O(1)
+                        continue; //O(1)
+                    if (dist[u] + 1 > maxDist) //O(1)
+                        break; //O(1)
+                    foreach (int v in adjs[u]) //O(E)
                     {
-                        if (v == start)
-                            continue;
-                        if (visited[v])
-                            continue;
-                        if (dist[v] == 0 || dist[v] > dist[u] + 1)
+                        if (v == start) //O(1)
+                            continue; //O(1)
+                        if (visited[v]) //O(1)
+                            continue; //O(1)
+                        if (dist[v] == 0 || dist[v] > dist[u] + 1) //O(1)
                         {
-                            int commonWithU = common[v][u] + weight[u];
-                            dist[v] = dist[u] + 1;
-                            q.Enqueue(v);
-                            parent[v] = u; weight[v] = commonWithU;
+                            int commonWithU = common[v][u] + weight[u]; //O(1)
+                            dist[v] = dist[u] + 1; //O(1)
+                            q.Enqueue(v); //O(1)
+                            parent[v] = u; weight[v] = commonWithU; //O(1)
                         }
-                        else if (dist[v] == dist[u] + 1)
+                        else if (dist[v] == dist[u] + 1) //O(1)
                         {
 
-                            int commonWithU = common[v][u] + weight[u];
-                            int commonWithParent = common[v][parent[v]] + weight[parent[v]];
-                            if (commonWithU > commonWithParent)
+                            int commonWithU = common[v][u] + weight[u]; //O(1)
+                            int commonWithParent = common[v][parent[v]] + weight[parent[v]]; //O(1)
+                            if (commonWithU > commonWithParent) //O(1)
                             {
-                                parent[v] = u;
-                                weight[v] = commonWithU;
+                                parent[v] = u; //O(1)
+                                weight[v] = commonWithU; //O(1)
                             }
                         }
-                        if (v == end)
+                        if (v == end) //O(1)
                         {
-                            found = true;
-                            maxDist = dist[v];
+                            found = true; //O(1)
+                            maxDist = dist[v]; //O(1)
                         }
                     }
-                    visited[u] = true;
+                    visited[u] = true; //O(1)
                 }
-                if (found == false)
-                    return null;
-                return ConstructPath(parent, end);
+                if (found == false) //O(1)
+                    return null; //O(1)
+                return ConstructPath(parent, end); //O(V)
             }
         }
+
+        // O(V + E)
         private static void GetKnown(int src)
         {
-            dosFrequency[0] = 1;
-            int[] parent = new int[index.Count()];
-            int[] weight = new int[index.Count()];
-            bool[] visited = new bool[index.Count()];
-            int maxDist = int.MaxValue;
-            int[] dist = new int[index.Count()];
-            dist = Enumerable.Repeat(int.MaxValue, index.Count()).ToArray();
-            Queue<int> q = new Queue<int>();
-            q.Enqueue(src);
-            parent[src] = -1;
-            weight[src] = 0;
-            dist[src] = 0;
+            dosFrequency[0] = 1; //O(1)
+            int[] parent = new int[index.Count()]; //O(1)
+            int[] weight = new int[index.Count()]; //O(1)
+            bool[] visited = new bool[index.Count()]; //O(1)
+            int maxDist = int.MaxValue; //O(1)
+            int[] dist = new int[index.Count()]; //O(1)
+            dist = Enumerable.Repeat(int.MaxValue, index.Count()).ToArray(); //O(V)
+            Queue<int> q = new Queue<int>(); //O(1)
+            q.Enqueue(src); //O(1)
+            parent[src] = -1; //O(1)
+            weight[src] = 0; //O(1)
+            dist[src] = 0; //O(1)
             while (q.Count != 0)
             {
-                int u = q.Dequeue();
-                if (visited[u])
-                    continue;
-                if (dist[u] + 1 > maxDist)
-                    break;
-                foreach (int v in adjs[u])
+                int u = q.Dequeue(); //O(1)
+                if (visited[u]) //O(1)
+                    continue; //O(1)
+                if (dist[u] + 1 > maxDist) //O(1)
+                    break; //O(1)
+                foreach (int v in adjs[u]) //O(E)
                 {
-
                     if (dist[v] > dist[u] + 1)
                     {
-                        int commonWithU = common[v][u] + weight[u];
-                        if (dist[v] != int.MaxValue && dosFrequency[dist[v]] != 0)
-                            dosFrequency[dist[v]]--;
-                        dist[v] = dist[u] + 1; dosFrequency[dist[v]]++;
-                        if (MAX_DEGREE_FOUND < dist[v])
-                            MAX_DEGREE_FOUND = dist[v];
-                        q.Enqueue(v);
-                        weight[v] = 0;
-                        parent[v] = u;
-                        weight[v] = commonWithU;
+                        int commonWithU = common[v][u] + weight[u]; //O(1)
+                        if (dist[v] != int.MaxValue && dosFrequency[dist[v]] != 0) //O(1)
+                            dosFrequency[dist[v]]--; //O(1)
+                        dist[v] = dist[u] + 1; dosFrequency[dist[v]]++; //O(1)
+                        if (MAX_DEGREE_FOUND < dist[v]) //O(1)
+                            MAX_DEGREE_FOUND = dist[v]; //O(1)
+                        q.Enqueue(v); //O(1)
+                        weight[v] = 0; //O(1)
+                        parent[v] = u; //O(1)
+                        weight[v] = commonWithU; //O(1)
                     }
                     else if (dist[v] == dist[u] + 1)
                     {
-
-                        int commonWithU = common[v][u] + weight[u];
-                        int commonWithParent = common[v][parent[v]] + weight[parent[v]];
+                        int commonWithU = common[v][u] + weight[u]; //O(1)
+                        int commonWithParent = common[v][parent[v]] + weight[parent[v]]; //O(1)
                         if (commonWithU > commonWithParent)
                         {
-                            parent[v] = u; weight[v] = commonWithU;
+                            parent[v] = u; weight[v] = commonWithU; //O(1)
                         }
                     }
 
@@ -323,133 +327,137 @@ namespace SmallWorld
                 visited[u] = true;
             }
         }
+        //O(M + N)
         private static List<int> GetIntersection(List<int> first, List<int> second)
         {
-            int fIter = 0;
-            int sIter = 0;
-            var result = new List<int>();
-            while (fIter < first.Count && sIter < second.Count)
+            int fIter = 0; //O(1)
+            int sIter = 0; //O(1)
+            var result = new List<int>(); //O(1)
+            while (fIter < first.Count && sIter < second.Count) //O(M + N)
             {
-                if (first[fIter] < second[sIter])
-                {
-                    fIter++;
-                }
-                else if (first[fIter] > second[sIter])
-                {
+                if (first[fIter] < second[sIter]) //O(1)
+                    fIter++; //O(1)
+                else if (first[fIter] > second[sIter]) //O(1)
                     sIter++;
-                }
-                else
+                else //O(1)
                 {
-                    result.Add(first[fIter]); fIter++; sIter++;
+                    result.Add(first[fIter]); fIter++; sIter++; //O(1)
                 }
             }
-            return result;
+            return result; //O(1)
         }
+
+        //O(V)
         private static List<int> ConstructPath(int[] parent, int dest)
         {
-            List<int> path = new List<int>();
-            int i = dest;
-            while (i != -1)
+            List<int> path = new List<int>(); //O(1)
+            int i = dest; //O(1)
+            while (i != -1) //O(V)
             {
-                path.Add(i); i = parent[i];
+                path.Add(i); //O(1)
+                i = parent[i]; //O(1)
             }
-            return path;
+            return path; //O(1)
         }
+        //O(V + E)
         private static void CalculateFrequency()
         {
-            int src; string actorName; do
+            int src; string actorName; //O(1)
+            do
             {
-                Console.Write("Enter Actor Name: ");
-                actorName = Console.ReadLine();
-                if (index.ContainsKey(actorName))
+                Console.Write("Enter Actor Name: "); //O(1)
+                actorName = Console.ReadLine(); //O(1)
+                if (index.ContainsKey(actorName)) //O(1) 
                 {
-                    src = index[actorName]; break;
+                    src = index[actorName]; break; //O(1)
                 }
                 else
                 {
-                    Console.WriteLine("Invalid Actor/Acteress Name");
+                    Console.WriteLine("Invalid Actor/Acteress Name"); //O(1)
                 }
             } while (true);
 
-            MAX_DEGREE_FOUND = 0; GetKnown(src);
-            Console.WriteLine("Deg.of Separ.{0,2}Frequency", "");
-            for (int i = 0; i <= MAX_DEGREE_FOUND; i++)
+            MAX_DEGREE_FOUND = 0; GetKnown(src); //O(V + E)
+            Console.WriteLine("Deg.of Separ.{0,2}Frequency", ""); //O(1)
+            for (int i = 0; i <= MAX_DEGREE_FOUND; i++) //O(N)
             {
-                Console.WriteLine("{0,12}{1,12}", i, dosFrequency[i]);
+                Console.WriteLine("{0,12}{1,12}", i, dosFrequency[i]); //O(1)
             }
         }
+        // O(V + E)
         private static void FindStrongestPath()
         {
-            int src = -1, dest = -1;
+            int src = -1, dest = -1; //O(1)
             do
             {
-                Console.Write("Enter Source Actor Name: ");
-                string srcName = Console.ReadLine();
-                if (index.ContainsKey(srcName))
+                Console.Write("Enter Source Actor Name: "); //O(1)
+                string srcName = Console.ReadLine(); //O(1)
+                if (index.ContainsKey(srcName)) //O(1)
                 {
-                    src = index[srcName];
-                    Console.Write("Enter Destination Actor Name: ");
-                    string destName = Console.ReadLine();
-                    if (index.ContainsKey(destName))
+                    src = index[srcName];//O(1)
+                    Console.Write("Enter Destination Actor Name: "); //O(1)
+                    string destName = Console.ReadLine(); //O(1)
+                    if (index.ContainsKey(destName)) //O(1)
                     {
-                        dest = index[destName];
+                        dest = index[destName]; //O(1)
                     }
                     else
                     {
-                        Console.WriteLine("Invalid Actor/Acteress Name");
+                        Console.WriteLine("Invalid Actor/Acteress Name"); //O(1)
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Invalid Actor/Acteress Name");
+                    Console.WriteLine("Invalid Actor/Acteress Name"); //O(1)
                 }
 
 
             } while (src == -1 || dest == -1);
 
-            bool isReachable = false;
-            isReachable = FindShortestPath(src, dest) != null;
+            bool isReachable = false; //O(1)
+            isReachable = FindShortestPath(src, dest) != null; // O(V + E)
             if (isReachable)
             {
-                bool[] discovered = new bool[index.Count()];
-                Stack<int> path = new Stack<int>();
-                List<List<int>> paths = new List<List<int>>();
-                path.Push(src);
-                Visit(src, discovered, dest, path, paths);
-                Console.WriteLine(GenerateAnswer(paths[max_relation_index]));
+                bool[] discovered = new bool[index.Count()]; //O(1)
+                Stack<int> path = new Stack<int>(); //O(1)
+                List<List<int>> paths = new List<List<int>>(); //O(1)
+                path.Push(src); //O(1)
+                Visit(src, discovered, dest, path, paths); //O(V) 
+                Console.WriteLine(GenerateAnswer(paths[max_relation_index])); //O(V + E)
             }
         }
-        private static int max_relation = 0;
-        private static int max_relation_index = 0;
+        private static int max_relation = 0; //O(1)
+        private static int max_relation_index = 0; //O(1)
+        //O(V)
         private static void Visit(int u, bool[] discovered, int dest, Stack<int> path, List<List<int>> paths, int w = 0)
         {
-            discovered[u] = true;
-            foreach (var adj in adjs[u])
+            discovered[u] = true; //O(1)
+            foreach (var adj in adjs[u]) //O(E)
             {
-                if (adj == dest)
+                if (adj == dest) //O(1)
                 {
-                    path.Push(adj);
-                    w += common[u][adj];
-                    paths.Add(path.ToList());
+                    path.Push(adj); //O(1)
+                    w += common[u][adj]; //O(1)
+                    paths.Add(path.ToList()); //O(N)
                     if (w > max_relation)
                     {
-                        max_relation = w;
-                        max_relation_index = paths.Count() - 1;
+                        max_relation = w; //O(1)
+                        max_relation_index = paths.Count() - 1; //O(1)
                     }
-                    path.Pop();
-                    w -= common[u][adj];
-                    continue;
+                    path.Pop(); //O(1)
+                    w -= common[u][adj]; //O(1)
+                    continue; //O(1)
                 }
 
                 if (!discovered[adj])
                 {
-                    path.Push(adj);
+                    path.Push(adj); //O(1)
                     Visit(adj, discovered, dest, path, paths, w + common[u][adj]);
-                    path.Pop();
+                    path.Pop(); //O(1)
                 }
 
             }
-            discovered[u] = false;
+            discovered[u] = false; //O(1)
         }
     }
 }

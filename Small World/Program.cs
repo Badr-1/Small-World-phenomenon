@@ -7,39 +7,40 @@ namespace SmallWorld
 {
     class Program
     {
-        public static string moviesPath = "", queriesPath = "", solutionPath = "";
-        public static Queue<string> answers = new Queue<string>();
-        public static List<string> queries = new List<string>();
-        public static bool sample;
+        public static string moviesPath = "", queriesPath = "", solutionPath = ""; //O(1)
+        public static Queue<string> answers = new Queue<string>(); //O(1)
+        public static List<string> queries = new List<string>(); //O(1)
+        public static bool sample; //O(1)
+        //O(V + E)
         public static void Run(bool Optimize)
         {
-            answers.Clear(); queries.Clear(); sample = false;
-            SelectTestCase();
-            if (Optimize)
-                Optimization.ChooseOpeartion();
+            answers.Clear(); queries.Clear(); sample = false; //O(1)
+            SelectTestCase(); //O(1)
+            if (Optimize) //O(1)
+                Optimization.ChooseOpeartion(); //O(V + E)
             else
             {
-                ParseSolutions();
-                ParseQueries();
-                Normal.ParseMovies();
-                RunTestCase(Optimize);
+                ParseSolutions(); //O(N)
+                ParseQueries(); //O(N)
+                Normal.ParseMovies(); //O(N * M)
+                RunTestCase(Optimize); //O(V + E)
             }
         }
+        //O(1)
         public static void SelectTestCase()
         {
-            string path = @"..\..\..\Testcases\";
+            string path = @"..\..\..\Testcases\"; //O(1)
             string menu =
             @"0-Sample\n1-Small 1\n2-Small 2\n3-Medium 85\n4-Medium 4000\n5-Medium 110\n6-Medium 2000\n
-            7-Large 26\n8-Large 600\n9-Extreme 22\n10-Extreme 200\nSelect Test Case: ";
-            int choice;
+            7-Large 26\n8-Large 600\n9-Extreme 22\n10-Extreme 200\nSelect Test Case: "; //O(1)
+            int choice; //O(1)
             do
             {
-
-                Console.Write(menu);
+                Console.Write(menu); //O(1)
                 try
                 {
-                    choice = int.Parse(Console.ReadLine());
-                    if (choice < 0 || choice > 10)
+                    choice = int.Parse(Console.ReadLine()); //O(1)
+                    if (choice < 0 || choice > 10) //O(1)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Invalid Choice");
@@ -94,116 +95,108 @@ namespace SmallWorld
                     path += @"Complete\extreme\"; moviesPath = path + "Movies122806.txt"; queriesPath = path + "queries200.txt"; solutionPath = path + @"\Solutions\queries200 - Solution.txt";
                     break;
             }
-
         }
+        //O(N)
         public static void ParseSolutions()
         {
-            StreamReader reader = new StreamReader(solutionPath);
-            if (!sample)
+            StreamReader reader = new StreamReader(solutionPath); //O(1)
+            if (!sample) //O(1)
             {
-                List<string> answer = new List<string>();
-                while (true)
+                List<string> answer = new List<string>(); //O(1)
+                while (true) //O(N)
                 {
-                    string line = reader.ReadLine();
-                    if (line == null)
+                    string line = reader.ReadLine(); //O(1)
+                    if (line == null) //O(1)
                         break;
-                    if (line == "")
+                    if (line == "") //O(1)
                     {
-                        string ans;
-                        ans = answer[0] + answer[1] + answer[2] + answer[3];
-                        answers.Enqueue(ans);
-                        answer.Clear();
+                        string ans; //O(1)
+                        ans = answer[0] + answer[1] + answer[2] + answer[3]; //O(1)
+                        answers.Enqueue(ans); //O(1)
+                        answer.Clear(); //O(1)
                     }
-                    else
-                    {
-                        answer.Add(line + "\n");
-                    }
-
+                    else answer.Add(line + "\n"); //O(1)
                 }
             }
             else
             {
-
-                while (true)
+                while (true) //O(N)  
                 {
-                    string line = reader.ReadLine();
-                    if (line == null)
-                        break;
-                    answers.Enqueue(line);
-
+                    string line = reader.ReadLine(); //O(1)
+                    if (line == null) //O(1)
+                        break; //O(1)
+                    answers.Enqueue(line); //O(1)
                 }
             }
         }
+        //O(N)
         public static void ParseQueries()
         {
-            StreamReader reader = new StreamReader(queriesPath);
-            while (true)
+            StreamReader reader = new StreamReader(queriesPath); //O(1)
+            while (true) //O(N)
             {
-                string line = reader.ReadLine();
-                if (line == null)
-                    break;
-                queries.Add(line);
+                string line = reader.ReadLine(); //O(1)
+                if (line == null) //O(1)
+                    break; //O(1)
+                queries.Add(line); //O(1)
             }
         }
+        //O(V + E)
         public static void RunTestCase(bool Optimize)
         {
 
-            int current = 1;
-            int passed = 0;
-            if (sample)
-                Console.WriteLine(Program.answers.Dequeue());
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-            foreach (string query in Program.queries)
+            int current = 1; //O(1)
+            int passed = 0; //O(1)
+            if (sample) //O(1)
+                Console.WriteLine(Program.answers.Dequeue()); //O(1)
+            Stopwatch stopwatch = new Stopwatch(); //O(1)
+            stopwatch.Start(); //O(1)
+            foreach (string query in Program.queries) //O(V + E)
             {
-                string first = query.Substring(0, query.IndexOf('/'));
-                string second = query.Substring(query.IndexOf('/') + 1);
-                string answer;
-                if (Optimize)
-                    answer = Optimization.Solve(first, second);
+                string first = query.Substring(0, query.IndexOf('/')); //O(1)
+                string second = query.Substring(query.IndexOf('/') + 1); //O(1)
+                string answer; //O(1)
+                if (Optimize)  //O(1)
+                    answer = Optimization.Solve(first, second); //O(V + E)
                 else
-                    answer = Normal.Solve(first, second);
-                if (Program.answers.Count() == 0)
-                {
-                    Console.WriteLine(answer);
-                }
+                    answer = Normal.Solve(first, second); //O(V + E)
+                if (Program.answers.Count() == 0) Console.WriteLine(answer); //O(1)
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.DarkCyan;
-                    Console.Write("Query {0}/{1} ", current, Program.queries.Count);
-                    Console.ResetColor();
-                    string actual = Program.answers.Dequeue();
-                    if (answer != actual)
+                    Console.ForegroundColor = ConsoleColor.DarkCyan; //O(1)
+                    Console.Write("Query {0}/{1} ", current, Program.queries.Count); //O(1)
+                    Console.ResetColor(); //O(1)
+                    string actual = Program.answers.Dequeue(); //O(1)
+                    if (answer != actual) //O(1)
                     {
-                        Console.WriteLine("+=======================+");
-                        Console.WriteLine("Query {0} failed: {1}/{2}", current, first, second);
-                        Console.WriteLine("Expected:\n {0}", actual);
-                        Console.WriteLine("Actual:\n {0}", answer);
-
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write($" Failed\n");
-                        Console.ResetColor();
+                        Console.WriteLine("+=======================+"); //O(1)
+                        Console.WriteLine("Query {0} failed: {1}/{2}", current, first, second); //O(1)
+                        Console.WriteLine("Expected:\n {0}", actual); //O(1)
+                        Console.WriteLine("Actual:\n {0}", answer); //O(1)
+                        Console.ForegroundColor = ConsoleColor.Red; //O(1)
+                        Console.Write($" Failed\n"); //O(1)
+                        Console.ResetColor(); //O(1)
                     }
                     else
                     {
-                        passed++;
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write($" Passed\n");
-                        Console.ResetColor();
-                        Console.WriteLine(answer);
+                        passed++; //O(1)
+                        Console.ForegroundColor = ConsoleColor.Green; //O(1)
+                        Console.Write($" Passed\n"); //O(1)
+                        Console.ResetColor(); //O(1)
+                        Console.WriteLine(answer); //O(1)
                     }
 
-                    current++;
+                    current++; //O(1)
                 }
 
             }
-            stopwatch.Stop();
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            if (Optimize)
-                Console.Write("Optimized ");
-            Console.Write($"Time taken:  {stopwatch.ElapsedMilliseconds / 1000.0} Seconds |");
-            Console.Write($"{stopwatch.ElapsedMilliseconds} Milliseconds\n");
-            Console.ResetColor();
+            stopwatch.Stop(); //O(1)
+            Console.ForegroundColor = ConsoleColor.DarkYellow; //O(1)
+            if (Optimize) //O(1)
+                Console.Write("Optimized "); //O(1)
+            Console.Write($"Time taken:  {stopwatch.ElapsedMilliseconds / 1000.0} Seconds |"); //O(1)
+            Console.Write($"{stopwatch.ElapsedMilliseconds} Milliseconds\n"); //O(1)
+            Console.ResetColor(); //O(1)
         }
     }
 }

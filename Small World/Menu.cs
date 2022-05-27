@@ -5,31 +5,30 @@ namespace SmallWorld
     {
         private static void Main(string[] args)
         {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("Welcome to Small World!");
-            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Cyan; //O(1)
+            Console.WriteLine("Welcome to Small World!"); //O(1)
+            Console.ResetColor(); //O(1)
             while (true)
             {
-                Console.WriteLine("1. Normal");
-                Console.WriteLine("2. Optimization");
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("3. Exit");
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.Write("Choice: ");
-                string mode = Console.ReadLine();
-                Console.ResetColor();
-                if (mode == "1")
-                    Program.Run(false);
-                else if (mode == "2")
-                    Program.Run(true);
-                else if (mode == "3")
+                Console.WriteLine("1. Normal"); //O(1)
+                Console.WriteLine("2. Optimization"); //O(1)
+                Console.ForegroundColor = ConsoleColor.Red; //O(1)
+                Console.WriteLine("3. Exit"); //O(1)
+                Console.ForegroundColor = ConsoleColor.DarkYellow; //O(1)
+                Console.Write("Choice: "); //O(1)
+                string mode = Console.ReadLine(); //O(1)
+                Console.ResetColor(); //O(1)
+                if (mode == "1") //O(1)
+                    Program.Run(false); //O(V + E)
+                else if (mode == "2") //O(1)
+                    Program.Run(true); //O(V + E)
+                else if (mode == "3") //O(1)
                     break;
                 else
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Invalid mode");
-                    Console.ResetColor();
-                   
+                    Console.ForegroundColor = ConsoleColor.Red; //O(1)
+                    Console.WriteLine("Invalid mode"); //O(1)
+                    Console.ResetColor(); //O(1)
                 }
             }
         }
