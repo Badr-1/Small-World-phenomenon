@@ -7,8 +7,8 @@ namespace SmallWorld
 {
     class Optimization
     {
-        private static var common = new Dictionary<int, Dictionary<int, int>>(); //O(1)
-        private static var index = new Dictionary<string, int>(); //O(1)
+        private static Dictionary<int,Dictionary<int,int>> common = new Dictionary<int, Dictionary<int, int>>(); //O(1)
+        private static Dictionary<string,int> index = new Dictionary<string, int>(); //O(1)
         private static List<string> moviesNames = new List<string>(); //O(1)
         private static List<List<int>> movies = new List<List<int>>(); //O(1)
         private static List<string> actorsName = new List<string>(); //O(1)

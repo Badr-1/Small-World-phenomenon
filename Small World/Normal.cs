@@ -6,8 +6,8 @@ namespace SmallWorld
 {
     class Normal
     {
-        private static var actorsInMovie = new Dictionary<string, HashSet<string>>(); //O(1)
-        private static var moviesOfActor = new Dictionary<string, HashSet<string>>(); //O(1)
+        private static Dictionary<string, HashSet<string>> actorsInMovie = new Dictionary<string, HashSet<string>>(); //O(1)
+        private static Dictionary<string, HashSet<string>> moviesOfActor = new Dictionary<string, HashSet<string>>(); //O(1)
         //O(N * M)
         public static void ParseMovies()
         {

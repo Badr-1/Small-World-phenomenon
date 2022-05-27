@@ -30,9 +30,8 @@ namespace SmallWorld
         public static void SelectTestCase()
         {
             string path = @"..\..\..\Testcases\"; //O(1)
-            string menu =
-            @"0-Sample\n1-Small 1\n2-Small 2\n3-Medium 85\n4-Medium 4000\n5-Medium 110\n6-Medium 2000\n
-            7-Large 26\n8-Large 600\n9-Extreme 22\n10-Extreme 200\nSelect Test Case: "; //O(1)
+            string menu = "0-Sample\n1-Small 1\n2-Small 2\n3-Medium 85\n4-Medium 4000\n5-Medium 110\n";//O(1)
+            menu +="6-Medium 2000\n7-Large 26\n8-Large 600\n9-Extreme 22\n10-Extreme 200\nSelect Test Case: "; //O(1)
             int choice; //O(1)
             do
             {
